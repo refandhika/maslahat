@@ -1,4 +1,7 @@
-	<script src="assets/js/bootstrap.js"></script>
+	</div>
+
+	<script src="<?php echo base_url('assets/js/jquery-1.12.3.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/bootstrap.js'); ?>"></script>
 
 </body>
 </html>

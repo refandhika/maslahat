@@ -20,7 +20,7 @@ class Landing extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['title'] = "MIM";
+		$data['title'] = "Maslahat";
 
 		$this->load->view('template/header', $data);
 		$this->load->view('landing/section1');
