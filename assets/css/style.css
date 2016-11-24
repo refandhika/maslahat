@@ -1,8 +1,20 @@
+body {
+	overflow-y: hidden;
+}
+
+input, select, textarea {
+	margin: 5px 0;
+}
+
+textarea {
+	resize: vertical;
+}
+
 .navbar {
 	border-radius: 0;
 }
 
-.container-fluid {
+.container-fluid, table, th {
 	text-align: center;
 }
 
@@ -17,6 +29,10 @@
 	text-align: left;
 }
 
+.align-right {
+	text-align: right;
+}
+
 .section-1 {
 	height: 100vh;
 }
@@ -25,10 +41,36 @@
 	padding: 50px 30px;
 }
 
-.form-group {
+#detail-perusahaan {
+	padding-bottom: 50px;
+}
+
+.nav-content {
+	padding: 10px 30px;
+	height: 80vh;
+	overflow-y: auto;
+}
+
+#scoring .form-group {
 	padding: 10px;
 }
 
-#result {
+#result, #detail-perusahaan {
 	padding-top: 70px;
+}
+
+#dp-tab2,#dp-tab3,#dp-tab4,#dp-tab5,#dp-tab6, #sanksi-true, #jns-keu-con, #opn-keu-con {
+	display: none;
+}
+
+.form-horizontal .control-label, .panel-heading, .panel-body {
+	text-align: left;
+}
+
+a.tab-disable {
+	cursor: no-drop;
+	color: #999999;
+}
+a.tab-disable:hover {
+	color: #999999;
 }

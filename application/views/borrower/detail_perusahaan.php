@@ -1,0 +1,1208 @@
+<div id="detail-perusahaan">
+	<form action="" method="post" class="form-horizontal">
+		<ul class="nav nav-tabs" role="navigation">
+			<li role="presentation" class="active" id="tab1"><a name="dp-tab1">Identitas Perusahaan</a></li>
+			<li role="presentation" id="tab2"><a class="tab-disable" name="dp-tab2">Identitas Pengurus</a></li>
+			<li role="presentation" id="tab3"><a class="tab-disable" name="dp-tab3">Informasi Usaha</a></li>
+			<li role="presentation" id="tab4"><a class="tab-disable" name="dp-tab4">Informasi Keuangan</a></li>
+			<li role="presentation" id="tab5"><a class="tab-disable" name="dp-tab5">Permohonan Pendanaan</a></li>
+			<li role="presentation" id="tab6"><a class="tab-disable" name="dp-tab6">Agunan</a></li>
+		</ul>
+		<div class="nav-content">
+			<div id="dp-tab1">
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Biodata Perusahaan</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="nama-perusahaan" class="col-md-2 control-label">Nama Perusahaan :</label>
+							<div class="col-md-4">
+								<input type="text" name="nama-perusahaan" class="form-control">
+							</div>
+							<label for="badan-hukum" class="col-md-2 control-label">Badan Hukum :</label>
+							<div class="col-md-4">
+								<select name="badan-hukum" id="badan-hukum" class="form-control">
+									<option value="PT">PT</option>
+									<option value="Yayasan">Yayasan</option>
+									<option value="CV/Firma">CV/Firma</option>
+									<option value="Lain-lain">Lain-lain</option>
+								</select>
+							</div>
+							<label for="alamat" class="col-md-2 control-label">Alamat :</label>
+							<div class="col-md-10">
+								<textarea name="alamat" class="form-control" rows="3" data-toggle="tooltip" data-placement="left" title='Gunakan kata "Jalan" untuk mengawali alamat atau gunakan kata "Perumahan" jika lokasi berada di Kompleks'></textarea>
+							</div>
+							<label for="kode-tel" class="col-md-2 control-label">Nomor Telpon :</label>
+							<div class="col-md-1">
+								<select name="kode-tel" id="kode-tel" class="form-control">
+									<option value="021">021</option>
+									<option value="0251">0251</option>
+								</select>
+							</div>
+							<div class="col-md-3">
+								<input type="text" name="nom-tel" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="kota-kab" class="col-md-2 control-label">Kota/Kabupaten :</label>
+							<div class="col-md-4">
+								<select name="kota-kab" id="kota-kab" class="form-control">
+									<option value="Jakarta Pusat">Jakarta Pusat</option>
+									<option value="Jakarta Timur">Jakarta Timur</option>
+									<option value="Jakarta Barat">Jakarta Barat</option>
+									<option value="Jakarta Utara">Jakarta Utara</option>
+									<option value="Jakarta Selatan">Jakarta Selatan</option>
+									<option value="Kabupaten Kepulauan Seribu">Kabupaten Kepulauan Seribu</option>
+									<option value="Kota Bekasi">Kota Bekasi</option>
+									<option value="Kabupaten Bekasi">Kabupaten Bekasi</option>
+									<option value="Kota Depok">Kota Depok</option>
+									<option value="Kota Bogor">Kota Bogor</option>
+									<option value="Kabupaten Bogor">Kabupaten Bogor</option>
+									<option value="Kota Tangerang">Kota Tangerang</option>
+									<option value="Kota Tangerang Selatan">Kota Tangerang Selatan</option>
+									<option value="Kabupaten Tangerang">Kabupaten Tangerang</option>
+								</select>
+							</div>
+							<label for="provinsi" class="col-md-1 control-label">Provinsi :</label>
+							<div class="col-md-5">
+								<select name="provinsi" id="provinsi" class="form-control">
+									<option value="DKI Jakarta">DKI Jakarta</option>
+									<option value="Jawa Barat">Jawa Barat</option>
+									<option value="Banten">Banten</option>
+								</select>
+							</div>
+							<label for="kode-pos" class="col-md-2 control-label">Kode Pos :</label>
+							<div class="col-md-4">
+								<input type="text" name="kode-pos" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Akta</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="pendirian-no" class="col-md-2 control-label">Akta Pendirian Nomor :</label>
+							<div class="col-md-2">
+								<input type="text" name="pendirian-no" class="form-control">
+							</div>
+							<label for="pendirian-th" class="col-md-1 control-label">Tahun :</label>
+							<div class="col-md-1">
+								<input type="text" name="pendirian-th" id="pendirian-th" class="form-control">
+							</div>
+							<label for="pendirian-ham" class="col-md-2 control-label">Nomor Pengesahan :</label>
+							<div class="col-md-2">
+								<input type="text" name="pendirian-ham" class="form-control">
+							</div>
+							<label for="pendirian-ham-th" class="col-md-1 control-label">Tahun :</label>
+							<div class="col-md-1">
+								<input type="text" name="pendirian-ham-th" id="pendirian-ham-th" class="form-control">
+							</div>
+							<label for="pendirian-bn" class="col-md-2 control-label">Berita Negara Nomor :</label>
+							<div class="col-md-2">
+								<input type="text" name="pendirian-bn" class="form-control">
+							</div>
+							<label for="pendirian-bn-th" class="col-md-1 control-label">Tahun :</label>
+							<div class="col-md-1">
+								<input type="text" name="pendirian-bn-th" id="pendirian-bn-th" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="terakhir-no" class="col-md-2 control-label">Akta Terakhir Nomor :</label>
+							<div class="col-md-2">
+								<input type="text" name="terakhir-no" class="form-control">
+							</div>
+							<label for="terakhir-th" class="col-md-1 control-label">Tahun :</label>
+							<div class="col-md-1">
+								<input type="text" name="terakhir-th" id="terakhir-th" class="form-control">
+							</div>
+							<label for="terakhir-ham" class="col-md-2 control-label">Nomor Pengesahan :</label>
+							<div class="col-md-2">
+								<input type="text" name="terakhir-ham" class="form-control">
+							</div>
+							<label for="terakhir-ham-th" class="col-md-1 control-label">Tahun :</label>
+							<div class="col-md-1">
+								<input type="text" name="terakhir-ham-th" id="terakhir-ham-th" class="form-control">
+							</div>
+							<label for="terakhir-bn" class="col-md-2 control-label">Berita Negara Nomor :</label>
+							<div class="col-md-2">
+								<input type="text" name="terakhir-bn" class="form-control">
+							</div>
+							<label for="terakhir-bn-th" class="col-md-1 control-label">Tahun :</label>
+							<div class="col-md-1">
+								<input type="text" name="terakhir-bn-th" id="terakhir-bn-th" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Izin Usaha</div>
+					<div class="panel-body">
+						<label for="no-iupu" class="col-md-3 control-label">Nomor Izin Usaha Penyelenggara Umroh :</label>
+						<div class="col-md-3">
+							<input type="text" name="no-iupu" class="form-control">
+						</div>
+						<label for="no-iupu-th" class="col-md-1 control-label">Tahun :</label>
+						<div class="col-md-1">
+							<input type="text" name="no-iupu-th" id="no-iupu-th" class="form-control">
+						</div>
+						<label for="no-iupu-jt" class="col-md-2 control-label">Tanggal Jatuh Tempo :</label>
+						<div class="col-md-2">
+							<input type="text" name="no-iupu-jt" id="no-iupu-jt" class="form-control" placeholder="HH/BB/TTTT">
+						</div>
+						<label for="no-iut" class="col-md-3 control-label">Nomor Izin Usaha Perjalanan Umum :</label>
+						<div class="col-md-3">
+							<input type="text" name="no-iut" class="form-control">
+						</div>
+						<label for="no-iut-th" class="col-md-1 control-label">Tahun :</label>
+						<div class="col-md-1">
+							<input type="text" name="no-iut-th" id="no-iut-th" class="form-control">
+						</div>
+						<label for="no-iut-jt" class="col-md-2 control-label">Tanggal Jatuh Tempo :</label>
+						<div class="col-md-2">
+							<input type="text" name="no-iut-jt" id="no-iut-jt" class="form-control" placeholder="HH/BB/TTTT">
+						</div>
+						<label for="no-iphk" class="col-md-3 control-label">Izin Penyelenggara Haji Khusus :</label>
+						<div class="col-md-3">
+							<input type="text" name="no-iphk" class="form-control">
+						</div>
+						<label for="no-iphk-th" class="col-md-1 control-label">Tahun :</label>
+						<div class="col-md-1">
+							<input type="text" name="no-iphk-th" id="no-iphk-th" class="form-control">
+						</div>
+						<label for="no-iphk-jt" class="col-md-2 control-label">Tanggal Jatuh Tempo :</label>
+						<div class="col-md-2">
+							<input type="text" name="no-iphk-jt" id="no-iphk-jt" class="form-control" placeholder="HH/BB/TTTT">
+						</div>
+						<label for="no-iata" class="col-md-3 control-label">Nomor Keanggotaan IATA :</label>
+						<div class="col-md-3">
+							<input type="text" name="no-iata" class="form-control">
+						</div>
+						<label for="no-iata-th" class="col-md-1 control-label">Tahun :</label>
+						<div class="col-md-1">
+							<input type="text" name="no-iata-th" id="no-iata-th" class="form-control">
+						</div>
+						<label for="no-iata-jt" class="col-md-2 control-label">Tanggal Jatuh Tempo :</label>
+						<div class="col-md-2">
+							<input type="text" name="no-iata-jt" id="no-iata-jt" class="form-control" placeholder="HH/BB/TTTT">
+						</div>
+						<label for="no-npwp" class="col-md-2 control-label">Nomor NPWP :</label>
+						<div class="col-md-2">
+							<input type="text" name="no-npwp" class="form-control">
+						</div>
+						<label for="asosiasi" class="col-md-2 control-label">Keanggotaan Asosiasi :</label>
+						<div class="col-md-2">
+							<select name="asosiasi" class="form-control" id="asosiasi">
+								<option value="himpuh">HIMPUH</option>
+								<option value="amphuri">AMPHURI</option>
+								<option value="kesthurindo">KESTHURINDO</option>
+								<option value="asphurindo">ASPHURINDO</option>
+							</select>
+						</div>
+						<label for="no-aso-th" class="col-md-2 control-label">Sejak Tahun :</label>
+						<div class="col-md-2">
+							<input type="text" name="no-aso-th" id="no-aso-th" class="form-control">
+						</div>
+					</div>
+				</div>
+				<button type="button" class="btn btn-default" id="btn-dp-next1">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
+			</div>
+			<div id="dp-tab2">
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Pemilik</div>
+					<div class="panel-body">
+						<label for="nama-pemilik" class="col-md-2 control-label">Nama :</label>
+						<div class="col-md-4">
+							<input type="text" name="nama-pemilik" class="form-control">
+						</div>
+						<label for="ktp-pemilik" class="col-md-2 control-label">Nomor KTP :</label>
+						<div class="col-md-4">
+							<input type="text" name="ktp-pemilik" class="form-control">
+						</div>
+						<label for="tl-pemilik" class="col-md-2 control-label">Tempat Lahir :</label>
+						<div class="col-md-4">
+							<input type="text" name="tl-pemilik" class="form-control">
+						</div>
+						<label for="tgl-pemilik" class="col-md-2 control-label">Tanggal Lahir :</label>
+						<div class="col-md-4">
+							<input type="text" name="tgl-pemilik" id="tgl-pemilik" class="form-control" placeholder="HH/BB/TTTT">
+						</div>
+						<label for="alamat-pemilik" class="col-md-2 control-label">Alamat :</label>
+						<div class="col-md-10">
+							<textarea name="alamat-pemilik" class="form-control" rows="3" data-toggle="tooltip" data-placement="left" title='Gunakan kata "Jalan" untuk mengawali alamat atau gunakan kata "Perumahan" jika lokasi berada di Kompleks'></textarea>
+						</div>
+						<label for="kota-kab-pemilik" class="col-md-2 control-label">Kota/Kabupaten :</label>
+						<div class="col-md-4">
+							<input type="text" name="kota-kab-pemilik" class="form-control">
+						</div>
+						<label for="prov-pemilik" class="col-md-1 control-label">Provinsi :</label>
+						<div class="col-md-5">
+							<input type="text" name="prov-pemilik" class="form-control">
+						</div>
+						<label for="jab-pemilik" class="col-md-2 control-label">Jabatan :</label>
+						<div class="col-md-4">
+							<input type="text" name="jab-pemilik" class="form-control">
+						</div>
+						<label for="kelola-pemilik" class="col-md-3 control-label">Mengelola Haji/Umrah Sejak Tahun :</label>
+						<div class="col-md-3">
+							<input type="text" name="kelola-pemilik" id="kelola-pemilik" class="form-control">
+						</div>
+						<label for="pendidikan-pemilik" class="col-md-2 control-label">Pendidikan Terakhir :</label>
+						<div class="col-md-4">
+							<select name="pendidikan-pemilik" class="form-control" id="pendidikan-pemilik">
+								<option value="SLTA">SLTA</option>
+								<option value="Sarjana Muda">Sarjana Muda</option>
+								<option value="Sarjana">Sarjana</option>
+								<option value="S2">S2</option>
+								<option value="S3">S3</option>
+							</select>
+						</div>
+						<label for="jurusan-pemilik" class="col-md-2 control-label">Jurusan/Bidang :</label>
+						<div class="col-md-4">
+							<input type="text" name="jurusan-pemilik" class="form-control">
+						</div>
+						<label for="sklh-pt-pemilik" class="col-md-3 control-label">Nama Sekolah/Perguruan Tinggi :</label>
+						<div class="col-md-3">
+							<input type="text" name="sklh-pt-pemilik" class="form-control">
+						</div>
+						<Label class="col-md-12 control-label">Pengalaman</label>
+						<table class="table table-striped">
+						    <thead>
+							    <tr>
+							        <th>#</th>
+							        <th>Jabatan</th>
+							        <th>Nama Perusahaan/Organisasi</th>
+							        <th>Bidang Perusahaan</th>
+							        <th>Tahun</th>
+							        <th> </th>
+							        <th>Tahun</th>
+							    </tr>
+							    <tr>
+							    	<td>1</td>
+							    	<td><input type="text" name="pemilik-jab1" class="form-control"></td>
+							    	<td><input type="text" name="pemilik-po1" class="form-control"></td>
+							    	<td><input type="text" name="pemilik-bid1" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pemilik-tha1" id="pemilik-tha1" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pemilik-thb1" id="pemilik-thb1" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>2</td>
+							    	<td><input type="text" name="pemilik-jab2" class="form-control"></td>
+							    	<td><input type="text" name="pemilik-po2" class="form-control"></td>
+							    	<td><input type="text" name="pemilik-bid2" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pemilik-tha2" id="pemilik-tha2" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pemilik-thb2" id="pemilik-thb2" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>3</td>
+							    	<td><input type="text" name="pemilik-jab3" class="form-control"></td>
+							    	<td><input type="text" name="pemilik-po3" class="form-control"></td>
+							    	<td><input type="text" name="pemilik-bid3" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pemilik-tha3" id="pemilik-tha3" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pemilik-thb3" id="pemilik-thb3" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>4</td>
+							    	<td><input type="text" name="pemilik-jab4" class="form-control"></td>
+							    	<td><input type="text" name="pemilik-po4" class="form-control"></td>
+							    	<td><input type="text" name="pemilik-bid4" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pemilik-tha4" id="pemilik-tha4" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pemilik-thb4" id="pemilik-thb4" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>5</td>
+							    	<td><input type="text" name="pemilik-jab5" class="form-control"></td>
+							    	<td><input type="text" name="pemilik-po5" class="form-control"></td>
+							    	<td><input type="text" name="pemilik-bid5" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pemilik-tha5" id="pemilik-tha5" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pemilik-thb5" id="pemilik-thb5" class="form-control"></td>
+							    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Pengurus 1</div>
+					<div class="panel-body">
+						<label for="nama-pengurus1" class="col-md-2 control-label">Nama :</label>
+						<div class="col-md-4">
+							<input type="text" name="nama-pengurus1" class="form-control">
+						</div>
+						<label for="ktp-pengurus1" class="col-md-2 control-label">Nomor KTP :</label>
+						<div class="col-md-4">
+							<input type="text" name="ktp-pengurus1" class="form-control">
+						</div>
+						<label for="tl-pengurus1" class="col-md-2 control-label">Tempat Lahir :</label>
+						<div class="col-md-4">
+							<input type="text" name="tl-pengurus1" class="form-control">
+						</div>
+						<label for="tgl-pengurus1" class="col-md-2 control-label">Tanggal Lahir :</label>
+						<div class="col-md-4">
+							<input type="text" name="tgl-pengurus1" id="tgl-pengurus1" class="form-control" placeholder="HH/BB/TTTT">
+						</div>
+						<label for="alamat-pengurus1" class="col-md-2 control-label">Alamat :</label>
+						<div class="col-md-10">
+							<textarea name="alamat-pengurus1" class="form-control" rows="3" data-toggle="tooltip" data-placement="left" title='Gunakan kata "Jalan" untuk mengawali alamat atau gunakan kata "Perumahan" jika lokasi berada di Kompleks'></textarea>
+						</div>
+						<label for="kota-kab-pengurus1" class="col-md-2 control-label">Kota/Kabupaten :</label>
+						<div class="col-md-4">
+							<input type="text" name="kota-kab-pengurus1" class="form-control">
+						</div>
+						<label for="prov-pengurus1" class="col-md-1 control-label">Provinsi :</label>
+						<div class="col-md-5">
+							<input type="text" name="prov-pengurus1" class="form-control">
+						</div>
+						<label for="jab-pengurus1" class="col-md-2 control-label">Jabatan :</label>
+						<div class="col-md-4">
+							<input type="text" name="jab-pengurus1" class="form-control">
+						</div>
+						<label for="kelola-pengurus1" class="col-md-3 control-label">Mengelola Haji/Umrah Sejak Tahun :</label>
+						<div class="col-md-3">
+							<input type="text" name="kelola-pengurus1" id="kelola-pengurus1" class="form-control">
+						</div>
+						<label for="pendidikan-pengurus1" class="col-md-2 control-label">Pendidikan Terakhir :</label>
+						<div class="col-md-4">
+							<select name="pendidikan-pengurus1" class="form-control" id="pendidikan-pengurus1">
+								<option value="SLTA">SLTA</option>
+								<option value="Sarjana Muda">Sarjana Muda</option>
+								<option value="Sarjana">Sarjana</option>
+								<option value="S2">S2</option>
+								<option value="S3">S3</option>
+							</select>
+						</div>
+						<label for="jurusan-pengurus1" class="col-md-2 control-label">Jurusan/Bidang :</label>
+						<div class="col-md-4">
+							<input type="text" name="jurusan-pengurus1" class="form-control">
+						</div>
+						<label for="sklh-pt-pengurus1" class="col-md-3 control-label">Nama Sekolah/Perguruan Tinggi :</label>
+						<div class="col-md-3">
+							<input type="text" name="sklh-pt-pengurus1" class="form-control">
+						</div>
+						<Label class="col-md-12 control-label">Pengalaman</label>
+						<table class="table table-striped">
+						    <thead>
+							    <tr>
+							        <th>#</th>
+							        <th>Jabatan</th>
+							        <th>Nama Perusahaan/Organisasi</th>
+							        <th>Bidang Perusahaan</th>
+							        <th>Tahun</th>
+							        <th> </th>
+							        <th>Tahun</th>
+							    </tr>
+							    <tr>
+							    	<td>1</td>
+							    	<td><input type="text" name="pengurus1-jab1" class="form-control"></td>
+							    	<td><input type="text" name="pengurus1-po1" class="form-control"></td>
+							    	<td><input type="text" name="pengurus1-bid1" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus1-tha1" id="pengurus1-tha1" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus1-thb1" id="pengurus1-thb1" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>2</td>
+							    	<td><input type="text" name="pengurus1-jab2" class="form-control"></td>
+							    	<td><input type="text" name="pengurus1-po2" class="form-control"></td>
+							    	<td><input type="text" name="pengurus1-bid2" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus1-tha2" id="pengurus1-tha2" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus1-thb2" id="pengurus1-thb2" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>3</td>
+							    	<td><input type="text" name="pengurus1-jab3" class="form-control"></td>
+							    	<td><input type="text" name="pengurus1-po3" class="form-control"></td>
+							    	<td><input type="text" name="pengurus1-bid3" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus1-tha3" id="pengurus1-tha3" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus1-thb3" id="pengurus1-thb3" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>4</td>
+							    	<td><input type="text" name="pengurus1-jab4" class="form-control"></td>
+							    	<td><input type="text" name="pengurus1-po4" class="form-control"></td>
+							    	<td><input type="text" name="pengurus1-bid4" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus1-tha4" id="pengurus1-tha4" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus1-thb4" id="pengurus1-thb4" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>5</td>
+							    	<td><input type="text" name="pengurus1-jab5" class="form-control"></td>
+							    	<td><input type="text" name="pengurus1-po5" class="form-control"></td>
+							    	<td><input type="text" name="pengurus1-bid5" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus1-tha5" id="pengurus1-tha5" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus1-thb5" id="pengurus1-thb5" class="form-control"></td>
+							    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Pengurus 2</div>
+					<div class="panel-body">
+						<label for="nama-pengurus2" class="col-md-2 control-label">Nama :</label>
+						<div class="col-md-4">
+							<input type="text" name="nama-pengurus2" class="form-control">
+						</div>
+						<label for="ktp-pengurus2" class="col-md-2 control-label">Nomor KTP :</label>
+						<div class="col-md-4">
+							<input type="text" name="ktp-pengurus2" class="form-control">
+						</div>
+						<label for="tl-pengurus2" class="col-md-2 control-label">Tempat Lahir :</label>
+						<div class="col-md-4">
+							<input type="text" name="tl-pengurus2" class="form-control">
+						</div>
+						<label for="tgl-pengurus2" class="col-md-2 control-label">Tanggal Lahir :</label>
+						<div class="col-md-4">
+							<input type="text" name="tgl-pengurus2" id="tgl-pengurus2" class="form-control" placeholder="HH/BB/TTTT">
+						</div>
+						<label for="alamat-pengurus2" class="col-md-2 control-label">Alamat :</label>
+						<div class="col-md-10">
+							<textarea name="alamat-pengurus2" class="form-control" rows="3" data-toggle="tooltip" data-placement="left" title='Gunakan kata "Jalan" untuk mengawali alamat atau gunakan kata "Perumahan" jika lokasi berada di Kompleks'></textarea>
+						</div>
+						<label for="kota-kab-pengurus2" class="col-md-2 control-label">Kota/Kabupaten :</label>
+						<div class="col-md-4">
+							<input type="text" name="kota-kab-pengurus2" class="form-control">
+						</div>
+						<label for="prov-pengurus2" class="col-md-1 control-label">Provinsi :</label>
+						<div class="col-md-5">
+							<input type="text" name="prov-pengurus2" class="form-control">
+						</div>
+						<label for="jab-pengurus2" class="col-md-2 control-label">Jabatan :</label>
+						<div class="col-md-4">
+							<input type="text" name="jab-pengurus2" class="form-control">
+						</div>
+						<label for="kelola-pengurus2" class="col-md-3 control-label">Mengelola Haji/Umrah Sejak Tahun :</label>
+						<div class="col-md-3">
+							<input type="text" name="kelola-pengurus2" id="kelola-pengurus2" class="form-control">
+						</div>
+						<label for="pendidikan-pengurus2" class="col-md-2 control-label">Pendidikan Terakhir :</label>
+						<div class="col-md-4">
+							<select name="pendidikan-pengurus2" class="form-control" id="pendidikan-pengurus2">
+								<option value="SLTA">SLTA</option>
+								<option value="Sarjana Muda">Sarjana Muda</option>
+								<option value="Sarjana">Sarjana</option>
+								<option value="S2">S2</option>
+								<option value="S3">S3</option>
+							</select>
+						</div>
+						<label for="jurusan-pengurus2" class="col-md-2 control-label">Jurusan/Bidang :</label>
+						<div class="col-md-4">
+							<input type="text" name="jurusan-pengurus2" class="form-control">
+						</div>
+						<label for="sklh-pt-pengurus2" class="col-md-3 control-label">Nama Sekolah/Perguruan Tinggi :</label>
+						<div class="col-md-3">
+							<input type="text" name="sklh-pt-pengurus2" class="form-control">
+						</div>
+						<Label class="col-md-12 control-label">Pengalaman</label>
+						<table class="table table-striped">
+						    <thead>
+							    <tr>
+							        <th>#</th>
+							        <th>Jabatan</th>
+							        <th>Nama Perusahaan/Organisasi</th>
+							        <th>Bidang Perusahaan</th>
+							        <th>Tahun</th>
+							        <th> </th>
+							        <th>Tahun</th>
+							    </tr>
+							    <tr>
+							    	<td>1</td>
+							    	<td><input type="text" name="pengurus2-jab1" class="form-control"></td>
+							    	<td><input type="text" name="pengurus2-po1" class="form-control"></td>
+							    	<td><input type="text" name="pengurus2-bid1" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus2-tha1" id="pengurus2-tha1" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus2-thb1" id="pengurus2-thb1" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>2</td>
+							    	<td><input type="text" name="pengurus2-jab2" class="form-control"></td>
+							    	<td><input type="text" name="pengurus2-po2" class="form-control"></td>
+							    	<td><input type="text" name="pengurus2-bid2" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus2-tha2" id="pengurus2-tha2" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus2-thb2" id="pengurus2-thb2" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>3</td>
+							    	<td><input type="text" name="pengurus2-jab3" class="form-control"></td>
+							    	<td><input type="text" name="pengurus2-po3" class="form-control"></td>
+							    	<td><input type="text" name="pengurus2-bid3" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus2-tha3" id="pengurus2-tha3" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus2-thb3" id="pengurus2-thb3" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>4</td>
+							    	<td><input type="text" name="pengurus2-jab4" class="form-control"></td>
+							    	<td><input type="text" name="pengurus2-po4" class="form-control"></td>
+							    	<td><input type="text" name="pengurus2-bid4" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus2-tha4" id="pengurus2-tha4" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus2-thb4" id="pengurus2-thb4" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>5</td>
+							    	<td><input type="text" name="pengurus2-jab5" class="form-control"></td>
+							    	<td><input type="text" name="pengurus2-po5" class="form-control"></td>
+							    	<td><input type="text" name="pengurus2-bid5" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus2-tha5" id="pengurus2-tha5" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus2-thb5" id="pengurus2-thb5" class="form-control"></td>
+							    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Pengurus 3</div>
+					<div class="panel-body">
+						<label for="nama-pengurus3" class="col-md-2 control-label">Nama :</label>
+						<div class="col-md-4">
+							<input type="text" name="nama-pengurus3" class="form-control">
+						</div>
+						<label for="ktp-pengurus3" class="col-md-2 control-label">Nomor KTP :</label>
+						<div class="col-md-4">
+							<input type="text" name="ktp-pengurus3" class="form-control">
+						</div>
+						<label for="tl-pengurus3" class="col-md-2 control-label">Tempat Lahir :</label>
+						<div class="col-md-4">
+							<input type="text" name="tl-pengurus3" class="form-control">
+						</div>
+						<label for="tgl-pengurus3" class="col-md-2 control-label">Tanggal Lahir :</label>
+						<div class="col-md-4">
+							<input type="text" name="tgl-pengurus3" id="tgl-pengurus3" class="form-control" placeholder="HH/BB/TTTT">
+						</div>
+						<label for="alamat-pengurus3" class="col-md-2 control-label">Alamat :</label>
+						<div class="col-md-10">
+							<textarea name="alamat-pengurus3" class="form-control" rows="3" data-toggle="tooltip" data-placement="left" title='Gunakan kata "Jalan" untuk mengawali alamat atau gunakan kata "Perumahan" jika lokasi berada di Kompleks'></textarea>
+						</div>
+						<label for="kota-kab-pengurus3" class="col-md-2 control-label">Kota/Kabupaten :</label>
+						<div class="col-md-4">
+							<input type="text" name="kota-kab-pengurus3" class="form-control">
+						</div>
+						<label for="prov-pengurus3" class="col-md-1 control-label">Provinsi :</label>
+						<div class="col-md-5">
+							<input type="text" name="prov-pengurus3" class="form-control">
+						</div>
+						<label for="jab-pengurus3" class="col-md-2 control-label">Jabatan :</label>
+						<div class="col-md-4">
+							<input type="text" name="jab-pengurus3" class="form-control">
+						</div>
+						<label for="kelola-pengurus3" class="col-md-3 control-label">Mengelola Haji/Umrah Sejak Tahun :</label>
+						<div class="col-md-3">
+							<input type="text" name="kelola-pengurus3" id="kelola-pengurus3" class="form-control">
+						</div>
+						<label for="pendidikan-pengurus3" class="col-md-2 control-label">Pendidikan Terakhir :</label>
+						<div class="col-md-4">
+							<select name="pendidikan-pengurus3" class="form-control" id="pendidikan-pengurus3">
+								<option value="SLTA">SLTA</option>
+								<option value="Sarjana Muda">Sarjana Muda</option>
+								<option value="Sarjana">Sarjana</option>
+								<option value="S2">S2</option>
+								<option value="S3">S3</option>
+							</select>
+						</div>
+						<label for="jurusan-pengurus3" class="col-md-2 control-label">Jurusan/Bidang :</label>
+						<div class="col-md-4">
+							<input type="text" name="jurusan-pengurus3" class="form-control">
+						</div>
+						<label for="sklh-pt-pengurus3" class="col-md-3 control-label">Nama Sekolah/Perguruan Tinggi :</label>
+						<div class="col-md-3">
+							<input type="text" name="sklh-pt-pengurus3" class="form-control">
+						</div>
+						<Label class="col-md-12 control-label">Pengalaman</label>
+						<table class="table table-striped">
+						    <thead>
+							    <tr>
+							        <th>#</th>
+							        <th>Jabatan</th>
+							        <th>Nama Perusahaan/Organisasi</th>
+							        <th>Bidang Perusahaan</th>
+							        <th>Tahun</th>
+							        <th> </th>
+							        <th>Tahun</th>
+							    </tr>
+							    <tr>
+							    	<td>1</td>
+							    	<td><input type="text" name="pengurus3-jab1" class="form-control"></td>
+							    	<td><input type="text" name="pengurus3-po1" class="form-control"></td>
+							    	<td><input type="text" name="pengurus3-bid1" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus3-tha1" id="pengurus3-tha1" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus3-thb1" id="pengurus3-thb1" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>2</td>
+							    	<td><input type="text" name="pengurus3-jab2" class="form-control"></td>
+							    	<td><input type="text" name="pengurus3-po2" class="form-control"></td>
+							    	<td><input type="text" name="pengurus3-bid2" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus3-tha2" id="pengurus3-tha2" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus3-thb2" id="pengurus3-thb2" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>3</td>
+							    	<td><input type="text" name="pengurus3-jab3" class="form-control"></td>
+							    	<td><input type="text" name="pengurus3-po3" class="form-control"></td>
+							    	<td><input type="text" name="pengurus3-bid3" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus3-tha3" id="pengurus3-tha3" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus3-thb3" id="pengurus3-thb3" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>4</td>
+							    	<td><input type="text" name="pengurus3-jab4" class="form-control"></td>
+							    	<td><input type="text" name="pengurus3-po4" class="form-control"></td>
+							    	<td><input type="text" name="pengurus3-bid4" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus3-tha4" id="pengurus3-tha4" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus3-thb4" id="pengurus3-thb4" class="form-control"></td>
+							    </tr>
+							    <tr>
+							    	<td>5</td>
+							    	<td><input type="text" name="pengurus3-jab5" class="form-control"></td>
+							    	<td><input type="text" name="pengurus3-po5" class="form-control"></td>
+							    	<td><input type="text" name="pengurus3-bid5" class="form-control"></td>
+							    	<td class="col-md-1"><input type="text" name="pengurus3-tha5" id="pengurus3-tha5" class="form-control"></td>
+							    	<td>s.d.</td>
+							    	<td class="col-md-1"><input type="text" name="pengurus3-thb5" id="pengurus3-thb5" class="form-control"></td>
+							    </tr>
+						    </thead>
+						</table>
+					</div>
+				</div>
+				<button type="button" class="btn btn-default" id="btn-dp-prev1"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
+				<button type="button" class="btn btn-default" id="btn-dp-next2">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
+			</div>
+			<div id="dp-tab3">
+				<div class="form-group panel panel-default">
+					<div id="brgkt-6-bln" class="col-md-12 panel-heading">Keberangkatan Umroh 6 Bulan Terakhir <span class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="Keberangkatan Selama Musim Umroh"></span></div>
+					<div class="panel-body">
+						<label for="bln-brgkt1" class="col-md-1 control-label">Bulan :</label>
+						<div class="col-md-1">
+							<select class="form-control" name="bln-brgkt1" id="bln-brgkt1">
+								<option value="Jan">Jan</option>
+								<option value="Feb">Feb</option>
+								<option value="Mar">Mar</option>
+								<option value="Apr">Apr</option>
+								<option value="Mei">Mei</option>
+								<option value="Jun">Jun</option>
+								<option value="Jul">Jul</option>
+								<option value="Agu">Agu</option>
+								<option value="Sep">Sep</option>
+								<option value="Okt">Okt</option>
+								<option value="Nov">Nov</option>
+								<option value="Des">Des</option>
+							</select>
+						</div>
+						<label for="thn-brgkt1" class="col-md-1 control-label">Tahun :</label>
+						<div class="col-md-1">
+							<input type="text" class="form-control" name="thn-brgkt1" id="thn-brgkt1">
+						</div>
+						<label for="jmh-brgkt1" class="col-md-2 control-label">Jumlah Jamaah :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jmh-brgkt1">
+						</div>
+						<label for="jml-brgkt1" class="col-md-2 control-label">Jumlah Keberangkatan :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jml-brgkt1">
+						</div>
+						<label for="bln-brgkt2" class="col-md-1 control-label">Bulan :</label>
+						<div class="col-md-1">
+							<select class="form-control" name="bln-brgkt2" id="bln-brgkt2">
+								<option value="Jan">Jan</option>
+								<option value="Feb">Feb</option>
+								<option value="Mar">Mar</option>
+								<option value="Apr">Apr</option>
+								<option value="Mei">Mei</option>
+								<option value="Jun">Jun</option>
+								<option value="Jul">Jul</option>
+								<option value="Agu">Agu</option>
+								<option value="Sep">Sep</option>
+								<option value="Okt">Okt</option>
+								<option value="Nov">Nov</option>
+								<option value="Des">Des</option>
+							</select>
+						</div>
+						<label for="thn-brgkt2" class="col-md-1 control-label">Tahun :</label>
+						<div class="col-md-1">
+							<input type="text" class="form-control" name="thn-brgkt2" id="thn-brgkt2">
+						</div>
+						<label for="jmh-brgkt2" class="col-md-2 control-label">Jumlah Jamaah :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jmh-brgkt2">
+						</div>
+						<label for="jml-brgkt2" class="col-md-2 control-label">Jumlah Keberangkatan :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jml-brgkt2">
+						</div>
+						<label for="bln-brgkt3" class="col-md-1 control-label">Bulan :</label>
+						<div class="col-md-1">
+							<select class="form-control" name="bln-brgkt3" id="bln-brgkt3">
+								<option value="Jan">Jan</option>
+								<option value="Feb">Feb</option>
+								<option value="Mar">Mar</option>
+								<option value="Apr">Apr</option>
+								<option value="Mei">Mei</option>
+								<option value="Jun">Jun</option>
+								<option value="Jul">Jul</option>
+								<option value="Agu">Agu</option>
+								<option value="Sep">Sep</option>
+								<option value="Okt">Okt</option>
+								<option value="Nov">Nov</option>
+								<option value="Des">Des</option>
+							</select>
+						</div>
+						<label for="thn-brgkt3" class="col-md-1 control-label">Tahun :</label>
+						<div class="col-md-1">
+							<input type="text" class="form-control" name="thn-brgkt3" id="thn-brgkt3">
+						</div>
+						<label for="jmh-brgkt3" class="col-md-2 control-label">Jumlah Jamaah :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jmh-brgkt3">
+						</div>
+						<label for="jml-brgkt3" class="col-md-2 control-label">Jumlah Keberangkatan :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jml-brgkt3">
+						</div>
+						<label for="bln-brgkt4" class="col-md-1 control-label">Bulan :</label>
+						<div class="col-md-1">
+							<select class="form-control" name="bln-brgkt4" id="bln-brgkt4">
+								<option value="Jan">Jan</option>
+								<option value="Feb">Feb</option>
+								<option value="Mar">Mar</option>
+								<option value="Apr">Apr</option>
+								<option value="Mei">Mei</option>
+								<option value="Jun">Jun</option>
+								<option value="Jul">Jul</option>
+								<option value="Agu">Agu</option>
+								<option value="Sep">Sep</option>
+								<option value="Okt">Okt</option>
+								<option value="Nov">Nov</option>
+								<option value="Des">Des</option>
+							</select>
+						</div>
+						<label for="thn-brgkt4" class="col-md-1 control-label">Tahun :</label>
+						<div class="col-md-1">
+							<input type="text" class="form-control" name="thn-brgkt4" id="thn-brgkt4">
+						</div>
+						<label for="jmh-brgkt4" class="col-md-2 control-label">Jumlah Jamaah :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jmh-brgkt4">
+						</div>
+						<label for="jml-brgkt4" class="col-md-2 control-label">Jumlah Keberangkatan :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jml-brgkt4">
+						</div>
+						<label for="bln-brgkt5" class="col-md-1 control-label">Bulan :</label>
+						<div class="col-md-1">
+							<select class="form-control" name="bln-brgkt5" id="bln-brgkt5">
+								<option value="Jan">Jan</option>
+								<option value="Feb">Feb</option>
+								<option value="Mar">Mar</option>
+								<option value="Apr">Apr</option>
+								<option value="Mei">Mei</option>
+								<option value="Jun">Jun</option>
+								<option value="Jul">Jul</option>
+								<option value="Agu">Agu</option>
+								<option value="Sep">Sep</option>
+								<option value="Okt">Okt</option>
+								<option value="Nov">Nov</option>
+								<option value="Des">Des</option>
+							</select>
+						</div>
+						<label for="thn-brgkt5" class="col-md-1 control-label">Tahun :</label>
+						<div class="col-md-1">
+							<input type="text" class="form-control" name="thn-brgkt5" id="thn-brgkt5">
+						</div>
+						<label for="jmh-brgkt5" class="col-md-2 control-label">Jumlah Jamaah :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jmh-brgkt5">
+						</div>
+						<label for="jml-brgkt5" class="col-md-2 control-label">Jumlah Keberangkatan :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jml-brgkt5">
+						</div>
+						<label for="bln-brgkt6" class="col-md-1 control-label">Bulan :</label>
+						<div class="col-md-1">
+							<select class="form-control" name="bln-brgkt6" id="bln-brgkt6">
+								<option value="Jan">Jan</option>
+								<option value="Feb">Feb</option>
+								<option value="Mar">Mar</option>
+								<option value="Apr">Apr</option>
+								<option value="Mei">Mei</option>
+								<option value="Jun">Jun</option>
+								<option value="Jul">Jul</option>
+								<option value="Agu">Agu</option>
+								<option value="Sep">Sep</option>
+								<option value="Okt">Okt</option>
+								<option value="Nov">Nov</option>
+								<option value="Des">Des</option>
+							</select>
+						</div>
+						<label for="thn-brgkt6" class="col-md-1 control-label">Tahun :</label>
+						<div class="col-md-1">
+							<input type="text" class="form-control" name="thn-brgkt6" id="thn-brgkt6">
+						</div>
+						<label for="jmh-brgkt6" class="col-md-2 control-label">Jumlah Jamaah :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jmh-brgkt6">
+						</div>
+						<label for="jml-brgkt6" class="col-md-2 control-label">Jumlah Keberangkatan :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="jml-brgkt6">
+						</div>
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Lokasi Kantor</div>
+					<div class="panel-body">
+						<label for="lok-jln" class="col-md-2 control-label">Jalan Kantor :</label>
+						<div class="col-md-2">
+							<select name="lok-jln" id="lok-jln" class="col-md-3 form-control">
+								<option value="Jalan Utama">Jalan Utama</option>
+								<option value="Jalan Arteri">Jalan Arteri</option>	
+							</select>
+						</div>
+						<label for="lok-drh" class="col-md-2 control-label">Daerah Kantor :</label>
+						<div class="col-md-2">
+							<select name="lok-drh" id="lok-drh" class="col-md-3 form-control">
+								<option value="Pusat Kota">Pusat Kota</option>
+								<option value="Pinggir Kota">Pinggir Kota</option>	
+							</select>
+						</div>
+						<label for="jml-cbg" class="col-md-2 control-label">Jumlah Cabang/Agen :</label>
+						<div class="col-md-2">
+							<input type="text" name="jml-cbg" class="col-md-3 form-control">
+						</div>
+						<label for="lok-stg" class="col-md-2 control-label">Posisi Kantor :</label>
+						<div class="col-md-2">
+							<select name="lok-stg" id="lok-stg" class="col-md-3 form-control">
+								<option value="Sangat Strategis">Sangat Strategis</option>
+								<option value="Strategis">Strategis</option>
+								<option value="Kurang Strategis">Kurang Strategis</option>
+								<option value="Tidak Strategis">Tidak Strategis</option>	
+							</select>
+						</div>
+						<label for="lok-cbg" class="col-md-2 control-label">Lokasi Cabang/Agen :</label>
+						<div class="col-md-2">
+							<select name="lok-cbg" id="lok-cbg" class="col-md-3 form-control">
+								<option value="Dalam kota yang sama">Dalam kota yang sama</option>
+								<option value="Dalam kota dan kuar kota">Dalam kota dan kuar kota</option>
+								<option value="Luar kota">Luar kota</option>	
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Media Pemasaran</div>
+					<div class="panel-body">
+						<div class="col-md-4">
+							<label class="checkbox-inline"><input name="mp1" type="checkbox" value="1">Internet</label>
+						</div>
+						<div class="col-md-4">
+							<label class="checkbox-inline"><input name="mp2" type="checkbox" value="1">Media Elektronik</label>
+						</div>
+						<div class="col-md-4">
+							<label class="checkbox-inline"><input name="mp3" type="checkbox" value="1">Media Cetak</label>
+						</div>
+						<div class="col-md-4">
+							<label class="checkbox-inline"><input name="mp4" type="checkbox" value="1">Brosur</label>
+						</div>
+						<div class="col-md-4">
+							<label class="checkbox-inline"><input name="mp5" type="checkbox" value="1">Pengajian</label>
+						</div>
+						<div class="col-md-4">
+							<label class="checkbox-inline"><input name="mp6" type="checkbox" value="1">Kerjasama Instansi</label>
+						</div>
+						<div class="col-md-4">
+							<label class="checkbox-inline"><input name="mp7" type="checkbox" value="1">Proyek Pemerintah</label>
+						</div>
+						<div class="col-md-4">
+							<label class="checkbox-inline"><input name="mp8" type="checkbox" value="1">Web Sendiri</label>
+						</div>
+						<label for="mp9" class="col-md-1 control-label">Lainnya :</label>
+						<div class="col-md-3">
+							<input type="text" name="mp9" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Sanksi/Peringatan</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="chk-sanksi" class="col-md-6 control-label">Apakah PPIU Anda pernah mendapatkan sanksi atau peringatan dari Kementrian Agama?</label>
+							<div class="col-md-2">
+								<select name="chk-sanksi" id="chk-sanksi" class="form-control">
+									<option value="tidak">Tidak</option>
+									<option value="ya">Ya</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group" id="sanksi-true">
+							<label for="jns-sanksi" class="col-md-2 control-label">Jenis Sanksi :</label>
+							<div class="col-md-4">
+								<input type="text" class="form-control" name="jns-sanksi">
+							</div>
+							<label for="thn-sanksi" class="col-md-1 control-label">Tahun :</label>
+							<div class="col-md-1">
+								<input type="text" class="form-control" name="thn-sanksi" id="thn-sanksi">
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Jumlah Keberangkatan</div>
+					<div class="panel-body">
+						<label for="umr-2014" class="col-md-4 control-label">Jumlah keberangkatan jamaah Umroh 2014 :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="umr-2014">
+						</div>
+						<label for="hj-2014" class="col-md-4 control-label">Jumlah keberangkatan Haji Khusus 2014 :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="hj-2014">
+						</div>
+						<label for="umr-2015" class="col-md-4 control-label">Jumlah keberangkatan jamaah Umroh 2015 :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="umr-2015">
+						</div>
+						<label for="hj-2015" class="col-md-4 control-label">Jumlah keberangkatan Haji Khusus 2015 :</label>
+						<div class="col-md-2">
+							<input type="text" class="form-control" name="hj-2015">
+						</div>
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Sumber Daya</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="jml-sdm" class="col-md-2 control-label">Jumlah Pegawai :</label>
+							<div class="col-md-1">
+								<input type="text" name="jml-sdm" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="sdm-qs1" class="col-md-6 control-label">Apakah Anda sebagai pengurus terlibat langsung dalam pengelolaan usaha?</label>
+							<div class="col-md-2">
+								<select name="sdm-qs1" id="sdm-qs1" class="form-control">
+									<option value="tidak">Tidak</option>
+									<option value="ya">Ya</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="sdm-qs2" class="col-md-6 control-label">Apakah PPIU Anda juga bertindak sebagai agen penjual Visa?</label>
+							<div class="col-md-2">
+								<select name="sdm-qs2" id="sdm-qs2" class="form-control">
+									<option value="tidak">Tidak</option>
+									<option value="ya">Ya</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="sdm-qs3" class="col-md-6 control-label">Apakah PPIU Anda juga bertindak sebagai agen penjual Landing Arrangement?</label>
+							<div class="col-md-2">
+								<select name="sdm-qs3" id="sdm-qs3" class="form-control">
+									<option value="tidak">Tidak</option>
+									<option value="ya">Ya</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="btn btn-default" id="btn-dp-prev2"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
+				<button type="button" class="btn btn-default" id="btn-dp-next3">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
+			</div>
+			<div id="dp-tab4">
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Laporan Keuangan</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="lap-keu" class="col-md-4">Apakah perusahaan telah memiliki laporan keuangan?</label>
+							<div class="col-md-2">
+								<select name="lap-keu" id="lap-keu" class="form-control">
+									<option value="tidak">Tidak</option>
+									<option value="ya">Ya</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group" id="jns-keu-con">
+							<label for="jns-keu" class="col-md-4">Jenis Laporan Keuangan :</label>
+							<div class="col-md-2">
+								<select name="jns-keu" id="jns-keu" class="form-control">
+									<option value="inhouse">Inhouse</option>
+									<option value="audit">Audit</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group" id="opn-keu-con">
+							<label for="opn-keu" class="col-md-5">Apakah opini auditor terhadap laporan keuangan PPIU Auditor Anda?</label>
+							<div class="col-md-4">
+								<select name="opn-keu" id="opn-keu" class="form-control">
+									<option value="wtp">Wajar Tanpa Pengecualian</option>
+									<option value="wtpp">Wajar Tanpa Pengecualian dengan paragraf penjelas</option>
+									<option value="wdp">Wajar Dengan Pengecualian</option>
+									<option value="tw">Tidak Wajar</option>
+									<option value="tp">Tidak memberikan pendapat</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Bank</div>
+					<div class="panel-body">
+						<label for="giro-bank" class="col-md-4 control-label">Perusahaan menggunakan Giro pada Bank :</label>
+						<div class="col-md-3">
+							<select name="giro-bank" id="giro-bank" class="form-control">
+								<option value="bank1">Bank Mandiri</option>
+								<option value="bank1">BRI</option>
+								<option value="bank1">BNI</option>
+								<option value="bank2">BTN</option>
+								<option value="bank2">Bank Syariah Mandiri</option>
+								<option value="bank2">BCA</option>
+								<option value="bank2">Bank Danamon</option>
+								<option value="bank2">CIMB Niaga</option>
+								<option value="bank3">BNI Syariah</option>
+								<option value="bank3">BRI Syariah</option>
+								<option value="bank3">Bank Panin</option>
+								<option value="bank3">Bank Panin Dubai Syariah</option>
+								<option value="bank3">Bank Muamalat</option>
+								<option value="bank4">Bank Lokal lainnya</option>
+								<option value="bank5">Bank Asing</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="btn btn-default" id="btn-dp-prev3"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
+				<button type="button" class="btn btn-default" id="btn-dp-next4">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
+			</div>
+			<div id="dp-tab5">
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Rencana Pendanaan</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="tgl-pp-a" class="col-md-4 control-label">Tanggal rencana keberangkatan :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="tgl-pp-a" id="tgl-pp-a">
+							</div>
+							<label for="wkt-pp" class="col-md-4 control-label">Jangka waktu :</label>
+							<div class="col-md-2">
+								<select name="wkt-pp" id="wkt-pp" class="form-control">
+									<option value="0">-</option>
+									<option value="30">30</option>
+									<option value="45">45</option>
+									<option value="60">60</option>
+									<option value="75">75</option>
+								</select>
+							</div>
+							<label for="jml-pp" class="col-md-4 control-label">Proyeksi jumlah jamaah yang akan berangkat :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="jml-pp">
+							</div>
+							<label for="dp-pp" class="col-md-4 control-label">Jumlah jamaah yang sudah terdaftar dan membayar DP :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="dp-pp">
+							</div>	
+							<label for="pkt-pp" class="col-md-4 control-label">Harga jual paket umroh :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="pkt-pp">
+							</div>
+							<label for="dpj-pp" class="col-md-4 control-label">DP per jamaah :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="dpj-pp">
+							</div>
+							<label for="ln-pp" class="col-md-4 control-label">Pelunasan biaya paket umroh oleh jamaah :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="ln-pp">
+							</div>
+							<label for="tkt-pp" class="col-md-4 control-label">Biaya tiket pesawat :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="tkt-pp">
+							</div>
+							<label for="la-pp" class="col-md-4 control-label">Biaya Landing Arrangement :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="la-pp">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="tgl-pp-b" class="col-md-4 control-label">Jatuh tempo pelengkapan dokumen Permohonan Pendanaan ini :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="tgl-pp-b" id="tgl-pp-b" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ned-pp" class="col-md-4 control-label">Jumlah kebutuhan pendanaan :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="ned-pp" disabled>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="sum-pp" class="col-md-4 control-label">Jumlah pendanaan yang dapat difasilitasi :</label>
+							<div class="col-md-2">
+								<input type="text" class="form-control" name="sum-pp" disabled>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="btn btn-default" id="btn-dp-prev4"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
+				<button type="button" class="btn btn-default" id="btn-dp-next5">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
+			</div>
+			<div id="dp-tab6">
+				<div class="form-group panel panel-default">
+					<div class="panel-heading">Garansi</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label for="p-gua" class="col-md-6 control-label">Apakah Anda bersedia menyerahkan Garansi Personal?</label>
+							<div class="col-md-2">
+								<select name="p-gua" id="p-gua" class="form-control">
+									<option value="tidak">Tidak</option>
+									<option value="ya">Ya</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="c-gua" class="col-md-6 control-label">Apakah Anda bersedia menyerahkan Garansi Corporate?</label>
+							<div class="col-md-2">
+								<select name="c-gua" id="c-gua" class="form-control">
+									<option value="tidak">Tidak</option>
+									<option value="ya">Ya</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="s-gua" class="col-md-6 control-label">Garansi Personal/Corporate Anda akan menyebutkan barang yang menjadi jaminan?</label>
+							<div class="col-md-2">
+								<select name="s-gua" id="s-gua" class="form-control">
+									<option value="tidak">Tidak</option>
+									<option value="ya">Ya</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="n-gua" class="col-md-6 control-label">Perkiraan nilai barang yang disebutkan lebih dari nilai pendanaan?</label>
+							<div class="col-md-2">
+								<select name="n-gua" id="n-gua" class="form-control">
+									<option value="tidak">Tidak</option>
+									<option value="ya">Ya</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="align-right">
+					<input type="button" class="btn btn-default align-right" value="Ajukan">
+				</div>
+				<button type="button" class="btn btn-default" id="btn-dp-prev5"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
+			</div>
+		</div>
+	</form>
+</div>

@@ -9,7 +9,7 @@ class Scoring extends CI_Controller {
 		$data['title'] = "Maslahat";
 
 		$this->load->view('template/header', $data);
-		$this->load->view('borrower/scoring', $data);
+		$this->load->view('borrower/detail_perusahaan', $data);
 		$this->load->view('template/footer');
 	}
 
