@@ -1,7 +1,18 @@
 $.fn.datepicker.defaults.language = 'id';
 
 $(document).ready(function(){
+	/* Modal */
 	$('.landing-modal').modal();
+
+	/* Number Only Text */
+	$('.number-only').keypress(function(){
+		return event.charCode >= 48 && event.charCode <= 57;
+	});
+
+	/* AUto Save Form */
+	$(function(){
+		$('#form-maslahat1').sisyphus();
+	});
 
 	/* Tab Nav */
 	$('.nav-tabs a').on('click', function(e){
@@ -12,16 +23,22 @@ $(document).ready(function(){
 		    $(this).parent().addClass("active");
 		    $('.nav-content').children().hide();
 		    $('div#'+name).show();
+		    $(".nav-content").scrollTop(0);
 		};
 	});
 	$('#btn-dp-next1').on('click', function(e){
 		e.preventDefault();
 		var tab = "dp-tab2";
-		$('#tab1').removeClass('active');
-		$('#tab2').addClass('active');
-		$('#tab2').children('a').removeClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
+		$('#dp-tab1').find('.required').each(function(){
+            if($(this).val() != ""){
+				$('#tab1').removeClass('active');
+				$('#tab2').addClass('active');
+				$('#tab2').children('a').removeClass('tab-disable');
+			    $('.nav-content').children().hide();
+			    $('div#'+tab).show();
+			    $(".nav-content").scrollTop(0);
+            };
+        });
 	});
 	$('#btn-dp-next2').on('click', function(e){
 		e.preventDefault();
@@ -31,6 +48,7 @@ $(document).ready(function(){
 		$('#tab3').children('a').removeClass('tab-disable');
 	    $('.nav-content').children().hide();
 	    $('div#'+tab).show();
+		$(".nav-content").scrollTop(0);
 	});
 	$('#btn-dp-next3').on('click', function(e){
 		e.preventDefault();
@@ -40,6 +58,7 @@ $(document).ready(function(){
 		$('#tab4').children('a').removeClass('tab-disable');
 	    $('.nav-content').children().hide();
 	    $('div#'+tab).show();
+		$(".nav-content").scrollTop(0);
 	});
 	$('#btn-dp-next4').on('click', function(e){
 		e.preventDefault();
@@ -49,6 +68,7 @@ $(document).ready(function(){
 		$('#tab5').children('a').removeClass('tab-disable');
 	    $('.nav-content').children().hide();
 	    $('div#'+tab).show();
+		$(".nav-content").scrollTop(0);
 	});
 	$('#btn-dp-next5').on('click', function(e){
 		e.preventDefault();
@@ -58,6 +78,7 @@ $(document).ready(function(){
 		$('#tab6').children('a').removeClass('tab-disable');
 	    $('.nav-content').children().hide();
 	    $('div#'+tab).show();
+		$(".nav-content").scrollTop(0);
 	});
 	$('#btn-dp-prev1').on('click', function(e){
 		e.preventDefault();
@@ -67,6 +88,7 @@ $(document).ready(function(){
 		//$('#tab2').children('a').addClass('tab-disable');
 	    $('.nav-content').children().hide();
 	    $('div#'+tab).show();
+		$(".nav-content").scrollTop(0);
 	});
 	$('#btn-dp-prev2').on('click', function(e){
 		e.preventDefault();
@@ -76,6 +98,7 @@ $(document).ready(function(){
 		//$('#tab3').children('a').addClass('tab-disable');
 	    $('.nav-content').children().hide();
 	    $('div#'+tab).show();
+		$(".nav-content").scrollTop(0);
 	});
 	$('#btn-dp-prev3').on('click', function(e){
 		e.preventDefault();
@@ -85,6 +108,7 @@ $(document).ready(function(){
 		//$('#tab4').children('a').addClass('tab-disable');
 	    $('.nav-content').children().hide();
 	    $('div#'+tab).show();
+		$(".nav-content").scrollTop(0);
 	});
 	$('#btn-dp-prev4').on('click', function(e){
 		e.preventDefault();
@@ -94,6 +118,7 @@ $(document).ready(function(){
 		//$('#tab5').children('a').addClass('tab-disable');
 	    $('.nav-content').children().hide();
 	    $('div#'+tab).show();
+		$(".nav-content").scrollTop(0);
 	});
 	$('#btn-dp-prev5').on('click', function(e){
 		e.preventDefault();
@@ -103,6 +128,7 @@ $(document).ready(function(){
 		//$('#tab6').children('a').addClass('tab-disable');
 	    $('.nav-content').children().hide();
 	    $('div#'+tab).show();
+		$(".nav-content").scrollTop(0);
 	});
 
 	/* Data Toggle */
@@ -120,52 +146,65 @@ $(document).ready(function(){
     });
     $('#lap-keu').change(function(){
     	//console.log($('#lap-keu').val());
-    	if($('#lap-keu').val() == 'ya'){
+    	if($('#lap-keu').val() == 'Ya'){
     		$('#jns-keu-con').show();
+    		$('#jns-keu').prop('disabled',false);
     	}
-    	else if(($('#lap-keu').val() == 'tidak')){
+    	else if(($('#lap-keu').val() == 'Tidak')){
     		$('#jns-keu-con').hide();
+    		$('#jns-keu').prop('disabled','disabled');
     		$('#opn-keu-con').hide();
+    		$('#opn-keu').prop('disabled','disabled');
     	};
     });
     $('#jns-keu').change(function(){
     	//console.log($('#jns-keu').val());
-    	if($('#jns-keu').val() == 'audit'){
+    	if($('#jns-keu').val() == 'Audit'){
     		$('#opn-keu-con').show();
+    		$('#opn-keu').prop('disabled',false);
     	}
-    	else if(($('#jns-keu').val() == 'inhouse')){
+    	else if(($('#jns-keu').val() == 'Inhouse')){
     		$('#opn-keu-con').hide();
+    		$('#opn-keu').prop('disabled','disabled');
     	};
     });
 
     /* Calculate Permohonan Dana */
-    $('#wkt-pp').change(function(){
+    $('#wkt-pp, #tgl-pp-a').change(function(){
     	if ($(this).val() != "0"){
-	    	console.log($('#tgl-pp-a').val());
-	    	console.log($(this).val());
 	    	var date1 = $('#tgl-pp-a').val();
 	    	var subs = parseInt($(this).val()) + 21;
 	    	var date2 = toDate(date1, subs);
-	    	console.log(date2);
 	    	$('#tgl-pp-b').val(date2);
     	}
     	else {
     		$('#tgl-pp-b').val("Masukkan Jangka Waktu");
     	};
+    	console.log('Tanggal Berangkat : ' + $('#tgl-pp-a').val());
+    	console.log('Jangka Waktu : ' + $('#wkt-pp').val());
+	    console.log('Jatuh Tempo :' + $('#tgl-pp-b').val());
     });
-    $('#tgl-pp-a').change(function(){
-    	if ($('#wkt-pp').val() != "0"){
-	    	console.log($('#tgl-pp-a').val());
-	    	console.log($('#wkt-pp').val());
-	    	var date1 = $('#tgl-pp-a').val();
-	    	var subs = parseInt($('#wkt-pp').val()) + 21;
-	    	var date2 = toDate(date1, subs);
-	    	console.log(date2);
-	    	$('#tgl-pp-b').val(date2);
+    $('#dp-pp, #dpj-pp, #tkt-pp, #la-pp').change(function(){
+    	if($(this).val()){
+    		var dp = parseInt($('#dp-pp').val());
+    		var dpj = parseInt($('#dpj-pp').val());
+    		var tkt = parseInt($('#tkt-pp').val());
+    		var la = parseInt($('#la-pp').val());
+    		var ned = dp * (tkt + la - dpj);
+    		$('#ned-pp').val(commafy(ned));
+    		var sum = ned * 13145 * 0.8;
+    		$('#sum-pp').val("Rp. " + commafy(sum) + ",-");
     	}
     	else {
-    		$('#tgl-pp-b').val("Masukkan Jangka Waktu");
-    	};
+    		$('#ned-pp').val("");
+    		$('#sum-pp').val("");
+    	}
+    	console.log('Pelunas : ' + $('#dp-pp').val());
+    	console.log('DP : ' + $('#dpj-pp').val());
+    	console.log('Tiket : ' + $('#tkt-pp').val());
+    	console.log('LA : ' + $('#la-pp').val());
+    	console.log('Kebutuhan : ' + $('#ned-pp').val());
+    	console.log('Available : ' + $('#sum-pp').val());
     });
 
     /* Isian Lokasi Kantor */
@@ -2555,364 +2594,32 @@ $(document).ready(function(){
     	};
     });
 
-	$('#provinsi').change(function(){
-		console.log($('#provinsi').val()+','+$('#kota-kab').val()+','+$('#kecamatan').val()+','+$('#kelurahan').val());
-	});
-	$('#kota-kab').change(function(){
-		console.log($('#provinsi').val()+','+$('#kota-kab').val()+','+$('#kecamatan').val()+','+$('#kelurahan').val());
-	});
-	$('#kecamatan').change(function(){
-		console.log($('#provinsi').val()+','+$('#kota-kab').val()+','+$('#kecamatan').val()+','+$('#kelurahan').val());
-	});
-	$('#kelurahan').change(function(){
-		console.log($('#provinsi').val()+','+$('#kota-kab').val()+','+$('#kecamatan').val()+','+$('#kelurahan').val());
+	$('#provinsi, #kota-kab, #kecamatan, #kelurahan').change(function(){
+		//console.log($('#provinsi').val()+','+$('#kota-kab').val()+','+$('#kecamatan').val()+','+$('#kelurahan').val()+','+$('#kode-pos').val());
 	});
 
 	/* Date Picker */
-	$("#pendirian-th").datepicker( {
+	$("#pendirian-th, #pendirian-ham-th, #pendirian-bn-th, #terakhir-th, #terakhir-ham-th, #terakhir-bn-th, #no-iupu-th, #no-iut-th, #no-iphk-th, #no-iata-th, #aso-th, #kelola-pemilik, #kelola-pengurus1, #kelola-pengurus2, #kelola-pengurus3, #pemilik-tha1, #pemilik-thb1, #pemilik-tha2, #pemilik-thb2, #pemilik-tha3, #pemilik-thb3, #pemilik-tha4, #pemilik-thb4, #pemilik-tha5, #pemilik-thb5, #pengurus1-tha1, #pengurus1-thb1, #pengurus1-tha2, #pengurus1-thb2, #pengurus1-tha3, #pengurus1-thb3, #pengurus1-tha4, #pengurus1-thb4, #pengurus1-tha5, #pengurus1-thb5, #pengurus2-tha1, #pengurus2-thb1, #pengurus2-tha2, #pengurus2-thb2, #pengurus2-tha3, #pengurus2-thb3, #pengurus2-tha4, #pengurus2-thb4, #pengurus2-tha5, #pengurus2-thb5, #pengurus3-tha1, #pengurus3-thb1, #pengurus3-tha2, #pengurus3-thb2, #pengurus3-tha3, #pengurus3-thb3, #pengurus3-tha4, #pengurus3-thb4, #pengurus3-tha5, #pengurus3-thb5, #thn-brgkt1, #thn-brgkt2, #thn-brgkt3, #thn-brgkt4, #thn-brgkt5, #thn-brgkt6, #thn-sanksi").datepicker( {
 	    format: " yyyy",
 	    viewMode: "years", 
 	    minViewMode: "years"
 	});
-	$("#pendirian-ham-th").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pendirian-bn-th").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#terakhir-th").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#terakhir-ham-th").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#terakhir-bn-th").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#no-iupu-th").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#no-iupu-jt").datepicker( {
-	    format: "dd/mm/yyyy",
-	});
-	$("#no-iut-th").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#no-iut-jt").datepicker( {
-	    format: "dd/mm/yyyy",
-	});
-	$("#no-iphk-th").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#no-iphk-jt").datepicker( {
-	    format: "dd/mm/yyyy",
-	});
-	$("#no-iata-th").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#no-iata-jt").datepicker( {
-	    format: "dd/mm/yyyy",
-	});
-	$("#no-aso-th").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#tgl-pemilik").datepicker( {
-	    format: "dd/mm/yyyy",
-	});
-	$("#kelola-pemilik").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#tgl-pengurus1").datepicker( {
-	    format: "dd/mm/yyyy",
-	});
-	$("#kelola-pengurus1").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#tgl-pengurus2").datepicker( {
-	    format: "dd/mm/yyyy",
-	});
-	$("#kelola-pengurus2").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#tgl-pengurus3").datepicker( {
-	    format: "dd/mm/yyyy",
-	});
-	$("#kelola-pengurus3").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pemilik-tha1").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pemilik-thb1").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pemilik-tha2").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pemilik-thb2").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pemilik-tha3").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pemilik-thb3").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pemilik-tha4").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pemilik-thb4").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pemilik-tha5").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pemilik-thb5").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus1-tha1").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus1-thb1").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus1-tha2").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus1-thb2").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus1-tha3").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus1-thb3").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus1-tha4").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus1-thb4").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus1-tha5").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus1-thb5").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus2-tha1").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus2-thb1").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus2-tha2").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus2-thb2").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus2-tha3").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus2-thb3").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus2-tha4").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus2-thb4").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus2-tha5").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus2-thb5").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus3-tha1").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus3-thb1").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus3-tha2").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus3-thb2").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus3-tha3").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus3-thb3").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus3-tha4").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus3-thb4").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus3-tha5").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#pengurus3-thb5").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#thn-brgkt1").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#thn-brgkt2").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#thn-brgkt3").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#thn-brgkt4").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#thn-brgkt5").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#thn-brgkt6").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#thn-sanksi").datepicker( {
-	    format: " yyyy",
-	    viewMode: "years", 
-	    minViewMode: "years"
-	});
-	$("#tgl-pp-a").datepicker( {
+	$("#no-iupu-jt, #no-iut-jt, #no-iphk-jt, #no-iata-jt, #tgl-pemilik, #tgl-pengurus1, #tgl-pengurus2, #tgl-pengurus3, #tgl-pp-a").datepicker( {
 	    format: "dd/mm/yyyy",
 	});
 });
 
 function toDate(date, subs){
 	var parts = date.split("/");
-	console.log(parts);
+	//console.log(parts);
 	var d = new Date(parts[2], parts[1] - 1, parts[0]);
 	var r = new Date(d.setDate(d.getDate() - subs));
-	console.log(r);
+	//console.log(r);
 	return r.toLocaleDateString('en-GB');
+}
+
+function commafy(num){
+	var str = num.toString();
+	str = str.replace(/(\d)(?=(\d{3})+$)/g, '$1.');
+	return str;
 }

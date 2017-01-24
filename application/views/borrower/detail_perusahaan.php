@@ -1,5 +1,5 @@
 <div id="detail-perusahaan">
-	<form action="" method="post" class="form-horizontal">
+	<form action="<?php echo base_url('scoring/saveData'); ?>" method="post" class="form-horizontal" id="form-maslahat1" autocomplete="on">
 		<ul class="nav nav-tabs" role="navigation">
 			<li role="presentation" class="active" id="tab1"><a name="dp-tab1">Identitas Perusahaan</a></li>
 			<li role="presentation" id="tab2"><a class="tab-disable" name="dp-tab2">Identitas Pengurus</a></li>
@@ -23,7 +23,8 @@
 								<select name="badan-hukum" id="badan-hukum" class="form-control">
 									<option value="PT">PT</option>
 									<option value="Yayasan">Yayasan</option>
-									<option value="CV/Firma">CV/Firma</option>
+									<option value="CV">CV</option>
+									<option value="Firma">Firma</option>
 									<option value="Lain-lain">Lain-lain</option>
 								</select>
 							</div>
@@ -39,7 +40,7 @@
 								</select>
 							</div>
 							<div class="col-md-3">
-								<input type="text" name="nom-tel" class="form-control">
+								<input type="text" name="nom-tel" class="form-control number-only">
 							</div>
 						</div>
 						<div class="form-group">
@@ -68,7 +69,7 @@
 							</div>
 							<label for="kode-pos" class="col-md-2 control-label">Kode Pos :</label>
 							<div class="col-md-4">
-								<input type="text" name="kode-pos" class="form-control" id="kode-pos" disabled value="Masukkan Kelurahan">
+								<input type="text" name="kode-pos" class="form-control" id="kode-pos" readonly value="Masukkan Kelurahan">
 							</div>
 						</div>
 					</div>
@@ -188,15 +189,15 @@
 						<label for="asosiasi" class="col-md-2 control-label">Keanggotaan Asosiasi :</label>
 						<div class="col-md-2">
 							<select name="asosiasi" class="form-control" id="asosiasi">
-								<option value="himpuh">HIMPUH</option>
-								<option value="amphuri">AMPHURI</option>
-								<option value="kesthurindo">KESTHURINDO</option>
-								<option value="asphurindo">ASPHURINDO</option>
+								<option value="Himpuh">HIMPUH</option>
+								<option value="Amphuri">AMPHURI</option>
+								<option value="Kesthurindo">KESTHURINDO</option>
+								<option value="Asphurindo">ASPHURINDO</option>
 							</select>
 						</div>
-						<label for="no-aso-th" class="col-md-2 control-label">Sejak Tahun :</label>
+						<label for="aso-th" class="col-md-2 control-label">Sejak Tahun :</label>
 						<div class="col-md-2">
-							<input type="text" name="no-aso-th" id="no-aso-th" class="form-control">
+							<input type="text" name="aso-th" id="aso-th" class="form-control">
 						</div>
 					</div>
 				</div>
@@ -261,8 +262,8 @@
 							<div class="col-md-4">
 								<select name="pendidikan-pemilik" class="form-control" id="pendidikan-pemilik">
 									<option value="SLTA">SLTA</option>
-									<option value="Sarjana Muda">Sarjana Muda</option>
-									<option value="Sarjana">Sarjana</option>
+									<option value="Sarjana Muda/D3">Sarjana Muda/D3</option>
+									<option value="Sarjana/S1">Sarjana/S1</option>
 									<option value="S2">S2</option>
 									<option value="S3">S3</option>
 								</select>
@@ -395,8 +396,8 @@
 							<div class="col-md-4">
 								<select name="pendidikan-pengurus1" class="form-control" id="pendidikan-pengurus1">
 									<option value="SLTA">SLTA</option>
-									<option value="Sarjana Muda">Sarjana Muda</option>
-									<option value="Sarjana">Sarjana</option>
+									<option value="Sarjana Muda/D3">Sarjana Muda/D3</option>
+									<option value="Sarjana/S1">Sarjana/S1</option>
 									<option value="S2">S2</option>
 									<option value="S3">S3</option>
 								</select>
@@ -529,8 +530,8 @@
 							<div class="col-md-4">
 								<select name="pendidikan-pengurus2" class="form-control" id="pendidikan-pengurus2">
 									<option value="SLTA">SLTA</option>
-									<option value="Sarjana Muda">Sarjana Muda</option>
-									<option value="Sarjana">Sarjana</option>
+									<option value="Sarjana Muda/D3">Sarjana Muda/D3</option>
+									<option value="Sarjana/S1">Sarjana/S1</option>
 									<option value="S2">S2</option>
 									<option value="S3">S3</option>
 								</select>
@@ -663,8 +664,8 @@
 							<div class="col-md-4">
 								<select name="pendidikan-pengurus3" class="form-control" id="pendidikan-pengurus3">
 									<option value="SLTA">SLTA</option>
-									<option value="Sarjana Muda">Sarjana Muda</option>
-									<option value="Sarjana">Sarjana</option>
+									<option value="Sarjana Muda/D3">Sarjana Muda/D3</option>
+									<option value="Sarjana/S1">Sarjana/S1</option>
 									<option value="S2">S2</option>
 									<option value="S3">S3</option>
 								</select>
@@ -953,11 +954,11 @@
 							</select>
 						</div>
 						<label for="lok-cbg" class="col-md-2 control-label">Lokasi Cabang/Agen :</label>
-						<div class="col-md-2">
+						<div class="col-md-4">
 							<select name="lok-cbg" id="lok-cbg" class="col-md-3 form-control">
-								<option value="Dalam kota yang sama">Dalam kota yang sama</option>
-								<option value="Dalam kota dan kuar kota">Dalam kota dan kuar kota</option>
-								<option value="Luar kota">Luar kota</option>	
+								<option value="dk">Dalam kota yang sama</option>
+								<option value="dlk">Dalam kota dan luar kota</option>
+								<option value="lk">Luar kota</option>	
 							</select>
 						</div>
 					</div>
@@ -966,28 +967,28 @@
 					<div class="panel-heading">Media Pemasaran</div>
 					<div class="panel-body">
 						<div class="col-md-4">
-							<label class="checkbox-inline"><input name="mp1" type="checkbox" value="1">Internet</label>
+							<label class="checkbox-inline"><input name="mp1" type="checkbox" value="Internet">Internet</label>
 						</div>
 						<div class="col-md-4">
-							<label class="checkbox-inline"><input name="mp2" type="checkbox" value="1">Media Elektronik</label>
+							<label class="checkbox-inline"><input name="mp2" type="checkbox" value="Media Elektronik">Media Elektronik</label>
 						</div>
 						<div class="col-md-4">
-							<label class="checkbox-inline"><input name="mp3" type="checkbox" value="1">Media Cetak</label>
+							<label class="checkbox-inline"><input name="mp3" type="checkbox" value="Media Cetak">Media Cetak</label>
 						</div>
 						<div class="col-md-4">
-							<label class="checkbox-inline"><input name="mp4" type="checkbox" value="1">Brosur</label>
+							<label class="checkbox-inline"><input name="mp4" type="checkbox" value="Brosur">Brosur</label>
 						</div>
 						<div class="col-md-4">
-							<label class="checkbox-inline"><input name="mp5" type="checkbox" value="1">Pengajian</label>
+							<label class="checkbox-inline"><input name="mp5" type="checkbox" value="Pengajian">Pengajian</label>
 						</div>
 						<div class="col-md-4">
-							<label class="checkbox-inline"><input name="mp6" type="checkbox" value="1">Kerjasama Instansi</label>
+							<label class="checkbox-inline"><input name="mp6" type="checkbox" value="Kerjasama Instansi">Kerjasama Instansi</label>
 						</div>
 						<div class="col-md-4">
-							<label class="checkbox-inline"><input name="mp7" type="checkbox" value="1">Proyek Pemerintah</label>
+							<label class="checkbox-inline"><input name="mp7" type="checkbox" value="Proyek Pemerintah">Proyek Pemerintah</label>
 						</div>
 						<div class="col-md-4">
-							<label class="checkbox-inline"><input name="mp8" type="checkbox" value="1">Web Sendiri</label>
+							<label class="checkbox-inline"><input name="mp8" type="checkbox" value="Web Online">Web Online</label>
 						</div>
 						<label for="mp9" class="col-md-1 control-label">Lainnya :</label>
 						<div class="col-md-3">
@@ -1022,21 +1023,21 @@
 				<div class="form-group panel panel-default">
 					<div class="panel-heading">Jumlah Keberangkatan</div>
 					<div class="panel-body">
-						<label for="umr-2014" class="col-md-4 control-label">Jumlah keberangkatan jamaah Umroh 2014 :</label>
+						<label for="umr-<?php echo $year1; ?>" class="col-md-4 control-label">Jumlah keberangkatan jamaah Umroh <?php echo $year1; ?> :</label>
 						<div class="col-md-2">
-							<input type="text" class="form-control" name="umr-2014">
+							<input type="text" class="form-control" name="umr-<?php echo $year1; ?>">
 						</div>
-						<label for="hj-2014" class="col-md-4 control-label">Jumlah keberangkatan Haji Khusus 2014 :</label>
+						<label for="hj-<?php echo $year1; ?>" class="col-md-4 control-label">Jumlah keberangkatan Haji Khusus <?php echo $year1; ?> :</label>
 						<div class="col-md-2">
-							<input type="text" class="form-control" name="hj-2014">
+							<input type="text" class="form-control" name="hj-<?php echo $year1; ?>">
 						</div>
-						<label for="umr-2015" class="col-md-4 control-label">Jumlah keberangkatan jamaah Umroh 2015 :</label>
+						<label for="umr-<?php echo $year2; ?>" class="col-md-4 control-label">Jumlah keberangkatan jamaah Umroh <?php echo $year2; ?> :</label>
 						<div class="col-md-2">
-							<input type="text" class="form-control" name="umr-2015">
+							<input type="text" class="form-control" name="umr-<?php echo $year2; ?>">
 						</div>
-						<label for="hj-2015" class="col-md-4 control-label">Jumlah keberangkatan Haji Khusus 2015 :</label>
+						<label for="hj-<?php echo $year2; ?>" class="col-md-4 control-label">Jumlah keberangkatan Haji Khusus <?php echo $year2; ?> :</label>
 						<div class="col-md-2">
-							<input type="text" class="form-control" name="hj-2015">
+							<input type="text" class="form-control" name="hj-<?php echo date('Y')-1; ?>">
 						</div>
 					</div>
 				</div>
@@ -1062,8 +1063,8 @@
 							<label for="sdm-qs2" class="col-md-6 control-label">Apakah PPIU Anda juga bertindak sebagai agen penjual Visa?</label>
 							<div class="col-md-2">
 								<select name="sdm-qs2" id="sdm-qs2" class="form-control">
-									<option value="tidak">Tidak</option>
-									<option value="ya">Ya</option>
+									<option value="Tidak">Tidak</option>
+									<option value="Ya">Ya</option>
 								</select>
 							</div>
 						</div>
@@ -1071,8 +1072,8 @@
 							<label for="sdm-qs3" class="col-md-6 control-label">Apakah PPIU Anda juga bertindak sebagai agen penjual Landing Arrangement?</label>
 							<div class="col-md-2">
 								<select name="sdm-qs3" id="sdm-qs3" class="form-control">
-									<option value="tidak">Tidak</option>
-									<option value="ya">Ya</option>
+									<option value="Tidak">Tidak</option>
+									<option value="Ya">Ya</option>
 								</select>
 							</div>
 						</div>
@@ -1089,24 +1090,24 @@
 							<label for="lap-keu" class="col-md-4">Apakah perusahaan telah memiliki laporan keuangan?</label>
 							<div class="col-md-2">
 								<select name="lap-keu" id="lap-keu" class="form-control">
-									<option value="tidak">Tidak</option>
-									<option value="ya">Ya</option>
+									<option value="Tidak">Tidak</option>
+									<option value="Ya">Ya</option>
 								</select>
 							</div>
 						</div>
 						<div class="form-group" id="jns-keu-con">
 							<label for="jns-keu" class="col-md-4">Jenis Laporan Keuangan :</label>
 							<div class="col-md-2">
-								<select name="jns-keu" id="jns-keu" class="form-control">
-									<option value="inhouse">Inhouse</option>
-									<option value="audit">Audit</option>
+								<select name="jns-keu" id="jns-keu" class="form-control" disabled>
+									<option value="Inhouse">Inhouse</option>
+									<option value="Audit">Audit</option>
 								</select>
 							</div>
 						</div>
 						<div class="form-group" id="opn-keu-con">
 							<label for="opn-keu" class="col-md-5">Apakah opini auditor terhadap laporan keuangan PPIU Auditor Anda?</label>
 							<div class="col-md-4">
-								<select name="opn-keu" id="opn-keu" class="form-control">
+								<select name="opn-keu" id="opn-keu" class="form-control" disabled>
 									<option value="wtp">Wajar Tanpa Pengecualian</option>
 									<option value="wtpp">Wajar Tanpa Pengecualian dengan paragraf penjelas</option>
 									<option value="wdp">Wajar Dengan Pengecualian</option>
@@ -1131,13 +1132,13 @@
 								<option value="bank2">BCA</option>
 								<option value="bank2">Bank Danamon</option>
 								<option value="bank2">CIMB Niaga</option>
-								<option value="bank3">BNI Syariah</option>
-								<option value="bank3">BRI Syariah</option>
-								<option value="bank3">Bank Panin</option>
-								<option value="bank3">Bank Panin Dubai Syariah</option>
-								<option value="bank3">Bank Muamalat</option>
-								<option value="bank4">Bank Lokal lainnya</option>
-								<option value="bank5">Bank Asing</option>
+								<option value="bank2">BNI Syariah</option>
+								<option value="bank2">BRI Syariah</option>
+								<option value="bank2">Bank Panin</option>
+								<option value="bank2">Bank Panin Dubai Syariah</option>
+								<option value="bank2">Bank Muamalat</option>
+								<option value="bank3">Bank Lokal lainnya</option>
+								<option value="bank3">Bank Asing</option>
 							</select>
 						</div>
 					</div>
@@ -1152,7 +1153,7 @@
 						<div class="form-group">
 							<label for="tgl-pp-a" class="col-md-4 control-label">Tanggal rencana keberangkatan :</label>
 							<div class="col-md-2">
-								<input type="text" class="form-control" name="tgl-pp-a" id="tgl-pp-a">
+								<input type="text" class="form-control" name="tgl-pp-a" id="tgl-pp-a" placeholder="HH/BB/TTTT">
 							</div>
 							<label for="wkt-pp" class="col-md-4 control-label">Jangka waktu :</label>
 							<div class="col-md-2">
@@ -1166,49 +1167,55 @@
 							</div>
 							<label for="jml-pp" class="col-md-4 control-label">Proyeksi jumlah jamaah yang akan berangkat :</label>
 							<div class="col-md-2">
-								<input type="text" class="form-control" name="jml-pp">
+								<input type="text" class="form-control number-only" name="jml-pp">
 							</div>
 							<label for="dp-pp" class="col-md-4 control-label">Jumlah jamaah yang sudah terdaftar dan membayar DP :</label>
 							<div class="col-md-2">
-								<input type="text" class="form-control" name="dp-pp">
+								<input type="text" class="form-control number-only" name="dp-pp" id="dp-pp">
 							</div>	
 							<label for="pkt-pp" class="col-md-4 control-label">Harga jual paket umroh :</label>
-							<div class="col-md-2">
-								<input type="text" class="form-control" name="pkt-pp">
+							<div class="col-md-1">
+								<input type="text" class="form-control number-only" name="pkt-pp">
 							</div>
+							<div class="col-md-1 control-label">USD</div>
 							<label for="dpj-pp" class="col-md-4 control-label">DP per jamaah :</label>
-							<div class="col-md-2">
-								<input type="text" class="form-control" name="dpj-pp">
+							<div class="col-md-1">
+								<input type="text" class="form-control number-only" name="dpj-pp" id="dpj-pp">
 							</div>
+							<div class="col-md-1 control-label">USD</div>
 							<label for="ln-pp" class="col-md-4 control-label">Pelunasan biaya paket umroh oleh jamaah :</label>
-							<div class="col-md-2">
-								<input type="text" class="form-control" name="ln-pp">
+							<div class="col-md-1">
+								<input type="text" class="form-control number-only" name="ln-pp">
 							</div>
+							<div class="col-md-1 control-label">USD</div>
 							<label for="tkt-pp" class="col-md-4 control-label">Biaya tiket pesawat :</label>
-							<div class="col-md-2">
-								<input type="text" class="form-control" name="tkt-pp">
+							<div class="col-md-1">
+								<input type="text" class="form-control number-only" name="tkt-pp" id="tkt-pp">
 							</div>
+							<div class="col-md-1 control-label">USD</div>
 							<label for="la-pp" class="col-md-4 control-label">Biaya Landing Arrangement :</label>
-							<div class="col-md-2">
-								<input type="text" class="form-control" name="la-pp">
+							<div class="col-md-1">
+								<input type="text" class="form-control number-only" name="la-pp" id="la-pp">
 							</div>
+							<div class="col-md-1 control-label">USD</div>
 						</div>
 						<div class="form-group">
 							<label for="tgl-pp-b" class="col-md-4 control-label">Jatuh tempo pelengkapan dokumen Permohonan Pendanaan ini :</label>
 							<div class="col-md-2">
-								<input type="text" class="form-control" name="tgl-pp-b" id="tgl-pp-b" disabled>
+								<input type="text" class="form-control" name="tgl-pp-b" id="tgl-pp-b" readonly>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="ned-pp" class="col-md-4 control-label">Jumlah kebutuhan pendanaan :</label>
 							<div class="col-md-2">
-								<input type="text" class="form-control" name="ned-pp" disabled>
+								<input type="text" class="form-control" name="ned-pp" id="ned-pp" readonly>
 							</div>
+							<div class="col-md-1 control-label">USD</div>
 						</div>
 						<div class="form-group">
 							<label for="sum-pp" class="col-md-4 control-label">Jumlah pendanaan yang dapat difasilitasi :</label>
 							<div class="col-md-2">
-								<input type="text" class="form-control" name="sum-pp" disabled>
+								<input type="text" class="form-control" name="sum-pp" id="sum-pp" readonly>
 							</div>
 						</div>
 					</div>
@@ -1224,8 +1231,8 @@
 							<label for="p-gua" class="col-md-6 control-label">Apakah Anda bersedia menyerahkan Garansi Personal?</label>
 							<div class="col-md-2">
 								<select name="p-gua" id="p-gua" class="form-control">
-									<option value="tidak">Tidak</option>
-									<option value="ya">Ya</option>
+									<option value="Tidak">Tidak</option>
+									<option value="Ya">Ya</option>
 								</select>
 							</div>
 						</div>
@@ -1233,8 +1240,8 @@
 							<label for="c-gua" class="col-md-6 control-label">Apakah Anda bersedia menyerahkan Garansi Corporate?</label>
 							<div class="col-md-2">
 								<select name="c-gua" id="c-gua" class="form-control">
-									<option value="tidak">Tidak</option>
-									<option value="ya">Ya</option>
+									<option value="Tidak">Tidak</option>
+									<option value="Ya">Ya</option>
 								</select>
 							</div>
 						</div>
@@ -1242,8 +1249,8 @@
 							<label for="s-gua" class="col-md-6 control-label">Garansi Personal/Corporate Anda akan menyebutkan barang yang menjadi jaminan?</label>
 							<div class="col-md-2">
 								<select name="s-gua" id="s-gua" class="form-control">
-									<option value="tidak">Tidak</option>
-									<option value="ya">Ya</option>
+									<option value="Tidak">Tidak</option>
+									<option value="Ya">Ya</option>
 								</select>
 							</div>
 						</div>
@@ -1251,15 +1258,15 @@
 							<label for="n-gua" class="col-md-6 control-label">Perkiraan nilai barang yang disebutkan lebih dari nilai pendanaan?</label>
 							<div class="col-md-2">
 								<select name="n-gua" id="n-gua" class="form-control">
-									<option value="tidak">Tidak</option>
-									<option value="ya">Ya</option>
+									<option value="Tidak">Tidak</option>
+									<option value="Ya">Ya</option>
 								</select>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="align-right">
-					<input type="button" class="btn btn-default align-right" value="Ajukan">
+					<input type="submit" class="btn btn-default align-right" value="Ajukan">
 				</div>
 				<button type="button" class="btn btn-default" id="btn-dp-prev5"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
 			</div>

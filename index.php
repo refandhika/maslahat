@@ -283,6 +283,21 @@ switch (ENVIRONMENT)
 	define('VIEWPATH', $view_folder);
 
 /*
+ |---------------------------------------------------------------
+ | DEFAULT TIMEZONE
+ |---------------------------------------------------------------
+ |
+ | Set the default timezone for date/time functions to use if
+ | none is set on the server.
+ |
+ */
+
+if( ! ini_get('date.timezone') )
+{
+   date_default_timezone_set('Asia/Jakarta');
+}
+
+/*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
  * --------------------------------------------------------------------
