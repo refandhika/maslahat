@@ -29,16 +29,12 @@ $(document).ready(function(){
 	$('#btn-dp-next1').on('click', function(e){
 		e.preventDefault();
 		var tab = "dp-tab2";
-		$('#dp-tab1').find('.required').each(function(){
-            if($(this).val() != ""){
-				$('#tab1').removeClass('active');
-				$('#tab2').addClass('active');
-				$('#tab2').children('a').removeClass('tab-disable');
-			    $('.nav-content').children().hide();
-			    $('div#'+tab).show();
-			    $(".nav-content").scrollTop(0);
-            };
-        });
+		$('#tab1').removeClass('active');
+		$('#tab2').addClass('active');
+		$('#tab2').children('a').removeClass('tab-disable');
+	    $('.nav-content').children().hide();
+	    $('div#'+tab).show();
+	    $(".nav-content").scrollTop(0);
 	});
 	$('#btn-dp-next2').on('click', function(e){
 		e.preventDefault();
@@ -180,9 +176,9 @@ $(document).ready(function(){
     	else {
     		$('#tgl-pp-b').val("Masukkan Jangka Waktu");
     	};
-    	console.log('Tanggal Berangkat : ' + $('#tgl-pp-a').val());
-    	console.log('Jangka Waktu : ' + $('#wkt-pp').val());
-	    console.log('Jatuh Tempo :' + $('#tgl-pp-b').val());
+    	//console.log('Tanggal Berangkat : ' + $('#tgl-pp-a').val());
+    	//console.log('Jangka Waktu : ' + $('#wkt-pp').val());
+	    //console.log('Jatuh Tempo :' + $('#tgl-pp-b').val());
     });
     $('#dp-pp, #dpj-pp, #tkt-pp, #la-pp').change(function(){
     	if($(this).val()){
@@ -198,13 +194,13 @@ $(document).ready(function(){
     	else {
     		$('#ned-pp').val("");
     		$('#sum-pp').val("");
-    	}
-    	console.log('Pelunas : ' + $('#dp-pp').val());
-    	console.log('DP : ' + $('#dpj-pp').val());
-    	console.log('Tiket : ' + $('#tkt-pp').val());
-    	console.log('LA : ' + $('#la-pp').val());
-    	console.log('Kebutuhan : ' + $('#ned-pp').val());
-    	console.log('Available : ' + $('#sum-pp').val());
+    	};
+    	//console.log('Pelunas : ' + $('#dp-pp').val());
+    	//console.log('DP : ' + $('#dpj-pp').val());
+    	//console.log('Tiket : ' + $('#tkt-pp').val());
+    	//console.log('LA : ' + $('#la-pp').val());
+    	//console.log('Kebutuhan : ' + $('#ned-pp').val());
+    	//console.log('Available : ' + $('#sum-pp').val());
     });
 
     /* Isian Lokasi Kantor */
@@ -2616,10 +2612,10 @@ function toDate(date, subs){
 	var r = new Date(d.setDate(d.getDate() - subs));
 	//console.log(r);
 	return r.toLocaleDateString('en-GB');
-}
+};
 
 function commafy(num){
 	var str = num.toString();
 	str = str.replace(/(\d)(?=(\d{3})+$)/g, '$1.');
 	return str;
-}
+};
