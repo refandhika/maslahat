@@ -175,7 +175,7 @@ class Model_scoring extends CI_Model {
 			'landing_arrangement' => $array['la-pp'],
 			'jatuh_tempo' => $array['tgl-pp-b'],
 			'kebutuhan_pendanaan' => $array['ned-pp'],
-			'fasilitas_pendanaan' => $array['sum-pp']
+			'fasilitas_pendanaan' => $output = preg_replace( '/[^0-9]/', '', $array['sum-pp'])
 		);
 
 		$this->db->insert('permohonan_pendanaan', $insertdata);

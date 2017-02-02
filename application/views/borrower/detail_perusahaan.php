@@ -7,7 +7,10 @@
 			<li role="presentation" id="tab4"><a class="tab-disable" name="dp-tab4">Informasi Keuangan</a></li>
 			<li role="presentation" id="tab5"><a class="tab-disable" name="dp-tab5">Permohonan Pendanaan</a></li>
 			<li role="presentation" id="tab6"><a class="tab-disable" name="dp-tab6">Agunan</a></li>
+			<button type="button" class="btn btn-default disabled" id="btn-dp-pt"><span class="glyphicon glyphicon-chevron-left"></span></button>
+			<button type="button" class="btn btn-default" id="btn-dp-nt"><span class="glyphicon glyphicon-chevron-right"></span></button>
 		</ul>
+
 		<div class="nav-content">
 			<div id="dp-tab1">
 				<div class="form-group panel panel-default">
@@ -201,7 +204,7 @@
 						</div>
 					</div>
 				</div>
-				<button type="button" class="btn btn-default" id="btn-dp-next1">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
+				<button type="button" class="btn btn-default btn-dp-nb">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
 			</div>
 			<div id="dp-tab2">
 				<div class="form-group panel panel-default">
@@ -740,8 +743,8 @@
 						</table>
 					</div>
 				</div>
-				<button type="button" class="btn btn-default" id="btn-dp-prev1"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
-				<button type="button" class="btn btn-default" id="btn-dp-next2">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
+				<button type="button" class="btn btn-default btn-dp-pb"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
+				<button type="button" class="btn btn-default btn-dp-nb">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
 			</div>
 			<div id="dp-tab3">
 				<div class="form-group panel panel-default">
@@ -1079,8 +1082,8 @@
 						</div>
 					</div>
 				</div>
-				<button type="button" class="btn btn-default" id="btn-dp-prev2"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
-				<button type="button" class="btn btn-default" id="btn-dp-next3">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
+				<button type="button" class="btn btn-default btn-dp-pb"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
+				<button type="button" class="btn btn-default btn-dp-nb">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
 			</div>
 			<div id="dp-tab4">
 				<div class="form-group panel panel-default">
@@ -1143,8 +1146,8 @@
 						</div>
 					</div>
 				</div>
-				<button type="button" class="btn btn-default" id="btn-dp-prev3"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
-				<button type="button" class="btn btn-default" id="btn-dp-next4">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
+				<button type="button" class="btn btn-default btn-dp-pb"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
+				<button type="button" class="btn btn-default btn-dp-nb">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
 			</div>
 			<div id="dp-tab5">
 				<div class="form-group panel panel-default">
@@ -1167,37 +1170,41 @@
 							</div>
 							<label for="jml-pp" class="col-md-4 control-label">Proyeksi jumlah jamaah yang akan berangkat :</label>
 							<div class="col-md-2">
-								<input type="text" class="form-control number-only" name="jml-pp">
+								<input type="text" class="form-control number-only" name="jml-pp" id="jml-pp">
 							</div>
 							<label for="dp-pp" class="col-md-4 control-label">Jumlah jamaah yang sudah terdaftar dan membayar DP :</label>
 							<div class="col-md-2">
 								<input type="text" class="form-control number-only" name="dp-pp" id="dp-pp">
 							</div>	
-							<label for="pkt-pp" class="col-md-4 control-label">Harga jual paket umroh :</label>
-							<div class="col-md-1">
-								<input type="text" class="form-control number-only" name="pkt-pp">
+							<div class="col-md-6 box-clean">
+								<label for="pkt-pp" class="col-md-8 control-label">Harga jual paket umroh :</label>
+								<div class="col-md-2">
+									<input type="text" class="form-control number-only" name="pkt-pp" id="pkt-pp">
+								</div>
+								<div class="col-md-2 control-label">USD</div>
+								<label for="dpj-pp" class="col-md-8 control-label">DP per jamaah :</label>
+								<div class="col-md-2">
+									<input type="text" class="form-control number-only" name="dpj-pp" id="dpj-pp">
+								</div>
+								<div class="col-md-2 control-label">USD</div>
+								<label for="ln-pp" class="col-md-8 control-label">Pelunasan biaya paket umroh oleh jamaah :</label>
+								<div class="col-md-2">
+									<input type="text" class="form-control number-only" name="ln-pp" id="ln-pp" readonly>
+								</div>
+								<div class="col-md-2 control-label">USD</div>
 							</div>
-							<div class="col-md-1 control-label">USD</div>
-							<label for="dpj-pp" class="col-md-4 control-label">DP per jamaah :</label>
-							<div class="col-md-1">
-								<input type="text" class="form-control number-only" name="dpj-pp" id="dpj-pp">
+							<div class="col-md-6 box-clean">
+								<label for="tkt-pp" class="col-md-8 control-label">Biaya tiket pesawat :</label>
+								<div class="col-md-2">
+									<input type="text" class="form-control number-only" name="tkt-pp" id="tkt-pp">
+								</div>
+								<div class="col-md-2 control-label">USD</div>
+								<label for="la-pp" class="col-md-8 control-label">Biaya Landing Arrangement :</label>
+								<div class="col-md-2">
+									<input type="text" class="form-control number-only" name="la-pp" id="la-pp">
+								</div>
+								<div class="col-md-2 control-label">USD</div>
 							</div>
-							<div class="col-md-1 control-label">USD</div>
-							<label for="ln-pp" class="col-md-4 control-label">Pelunasan biaya paket umroh oleh jamaah :</label>
-							<div class="col-md-1">
-								<input type="text" class="form-control number-only" name="ln-pp">
-							</div>
-							<div class="col-md-1 control-label">USD</div>
-							<label for="tkt-pp" class="col-md-4 control-label">Biaya tiket pesawat :</label>
-							<div class="col-md-1">
-								<input type="text" class="form-control number-only" name="tkt-pp" id="tkt-pp">
-							</div>
-							<div class="col-md-1 control-label">USD</div>
-							<label for="la-pp" class="col-md-4 control-label">Biaya Landing Arrangement :</label>
-							<div class="col-md-1">
-								<input type="text" class="form-control number-only" name="la-pp" id="la-pp">
-							</div>
-							<div class="col-md-1 control-label">USD</div>
 						</div>
 						<div class="form-group">
 							<label for="tgl-pp-b" class="col-md-4 control-label">Jatuh tempo pelengkapan dokumen Permohonan Pendanaan ini :</label>
@@ -1220,8 +1227,8 @@
 						</div>
 					</div>
 				</div>
-				<button type="button" class="btn btn-default" id="btn-dp-prev4"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
-				<button type="button" class="btn btn-default" id="btn-dp-next5">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
+				<button type="button" class="btn btn-default btn-dp-pb"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
+				<button type="button" class="btn btn-default btn-dp-nb">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
 			</div>
 			<div id="dp-tab6">
 				<div class="form-group panel panel-default">
@@ -1268,7 +1275,7 @@
 				<div class="align-right">
 					<input type="submit" class="btn btn-default align-right" value="Ajukan">
 				</div>
-				<button type="button" class="btn btn-default" id="btn-dp-prev5"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
+				<button type="button" class="btn btn-default btn-dp-pb"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
 			</div>
 		</div>
 	</form>

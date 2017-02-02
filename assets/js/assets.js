@@ -26,105 +26,67 @@ $(document).ready(function(){
 		    $(".nav-content").scrollTop(0);
 		};
 	});
-	$('#btn-dp-next1').on('click', function(e){
+	var notab = 1;
+	$('#btn-dp-pt').on('click', function(e){
 		e.preventDefault();
-		var tab = "dp-tab2";
-		$('#tab1').removeClass('active');
-		$('#tab2').addClass('active');
-		$('#tab2').children('a').removeClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
-	    $(".nav-content").scrollTop(0);
+		if(notab>1){
+			$('#tab'+notab.toString()).removeClass('active');
+			notab = notab - 1;
+			$('#tab'+notab.toString()).addClass('active');
+			//$('#tab'+notab.toString()).children('a').removeClass('tab-disable');
+		    $('.nav-content').children().hide();
+		    $('div#dp-tab'+notab.toString()).show();
+		    $(".nav-content").scrollTop(0);
+		    if(notab == 1){
+		    	$(this).addClass('disabled');
+		    }
+		    else{
+		    	$('#btn-dp-nt').removeClass('disabled');
+		    };
+		};
 	});
-	$('#btn-dp-next2').on('click', function(e){
+	$('#btn-dp-nt').on('click', function(e){
 		e.preventDefault();
-		var tab = "dp-tab3";
-		$('#tab2').removeClass('active');
-		$('#tab3').addClass('active');
-		$('#tab3').children('a').removeClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
-		$(".nav-content").scrollTop(0);
+		if(notab<6){
+			$('#tab'+notab.toString()).removeClass('active');
+			notab = notab + 1;
+			$('#tab'+notab.toString()).addClass('active');
+			$('#tab'+notab.toString()).children('a').removeClass('tab-disable');
+		    $('.nav-content').children().hide();
+		    $('div#dp-tab'+notab.toString()).show();
+		    $(".nav-content").scrollTop(0);
+		    if(notab == 6){
+		    	$(this).addClass('disabled');
+		    }
+		    else{
+		    	$('#btn-dp-pt').removeClass('disabled');
+		    };
+		};
 	});
-	$('#btn-dp-next3').on('click', function(e){
+
+	$('.btn-dp-nb').on('click', function(e){
 		e.preventDefault();
-		var tab = "dp-tab4";
-		$('#tab3').removeClass('active');
-		$('#tab4').addClass('active');
-		$('#tab4').children('a').removeClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
-		$(".nav-content").scrollTop(0);
+		if(notab<6){
+			$('#tab'+notab.toString()).removeClass('active');
+			notab = notab + 1;
+			$('#tab'+notab.toString()).addClass('active');
+			$('#tab'+notab.toString()).children('a').removeClass('tab-disable');
+		    $('.nav-content').children().hide();
+		    $('div#dp-tab'+notab.toString()).show();
+		    $(".nav-content").scrollTop(0);
+		};
 	});
-	$('#btn-dp-next4').on('click', function(e){
+	$('.btn-dp-pb').on('click', function(e){
 		e.preventDefault();
-		var tab = "dp-tab5";
-		$('#tab4').removeClass('active');
-		$('#tab5').addClass('active');
-		$('#tab5').children('a').removeClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
-		$(".nav-content").scrollTop(0);
-	});
-	$('#btn-dp-next5').on('click', function(e){
-		e.preventDefault();
-		var tab = "dp-tab6";
-		$('#tab5').removeClass('active');
-		$('#tab6').addClass('active');
-		$('#tab6').children('a').removeClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
-		$(".nav-content").scrollTop(0);
-	});
-	$('#btn-dp-prev1').on('click', function(e){
-		e.preventDefault();
-		var tab = "dp-tab1";
-		$('#tab1').addClass('active');
-		$('#tab2').removeClass('active');
-		//$('#tab2').children('a').addClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
-		$(".nav-content").scrollTop(0);
-	});
-	$('#btn-dp-prev2').on('click', function(e){
-		e.preventDefault();
-		var tab = "dp-tab2";
-		$('#tab2').addClass('active');
-		$('#tab3').removeClass('active');
-		//$('#tab3').children('a').addClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
-		$(".nav-content").scrollTop(0);
-	});
-	$('#btn-dp-prev3').on('click', function(e){
-		e.preventDefault();
-		var tab = "dp-tab3";
-		$('#tab3').addClass('active');
-		$('#tab4').removeClass('active');
-		//$('#tab4').children('a').addClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
-		$(".nav-content").scrollTop(0);
-	});
-	$('#btn-dp-prev4').on('click', function(e){
-		e.preventDefault();
-		var tab = "dp-tab4";
-		$('#tab4').addClass('active');
-		$('#tab5').removeClass('active');
-		//$('#tab5').children('a').addClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
-		$(".nav-content").scrollTop(0);
-	});
-	$('#btn-dp-prev5').on('click', function(e){
-		e.preventDefault();
-		var tab = "dp-tab5";
-		$('#tab5').addClass('active');
-		$('#tab6').removeClass('active');
-		//$('#tab6').children('a').addClass('tab-disable');
-	    $('.nav-content').children().hide();
-	    $('div#'+tab).show();
-		$(".nav-content").scrollTop(0);
+		if(notab>1){
+			$('#tab'+notab.toString()).addClass('active');
+			notab = notab - 1;
+			$('#tab'+notab.toString()).removeClass('active');
+			//$('#tab2').children('a').addClass('tab-disable');
+		    $('.nav-content').children().hide();
+		    $('div#dp-tab'+notab.toString()).show();
+			$(".nav-content").scrollTop(0);
+		};
 	});
 
 	/* Data Toggle */
@@ -180,13 +142,24 @@ $(document).ready(function(){
     	//console.log('Jangka Waktu : ' + $('#wkt-pp').val());
 	    //console.log('Jatuh Tempo :' + $('#tgl-pp-b').val());
     });
-    $('#dp-pp, #dpj-pp, #tkt-pp, #la-pp').change(function(){
+    $('#pkt-pp, #dpj-pp').change(function(){
     	if($(this).val()){
-    		var dp = parseInt($('#dp-pp').val());
+    		var pkt = parseInt($('#pkt-pp').val());
+    		var dpj = parseInt($('#dpj-pp').val());
+    		var ln = pkt - dpj;
+    		$('#ln-pp').val(ln);
+    	}
+    	else {
+    		$('#ln-pp').val("");
+    	};
+    });
+    $('#jml-pp, #dpj-pp, #tkt-pp, #la-pp').change(function(){
+    	if($(this).val()){
+    		var jml = parseInt($('#jml-pp').val());
     		var dpj = parseInt($('#dpj-pp').val());
     		var tkt = parseInt($('#tkt-pp').val());
     		var la = parseInt($('#la-pp').val());
-    		var ned = dp * (tkt + la - dpj);
+    		var ned = jml * (tkt + la - dpj);
     		$('#ned-pp').val(commafy(ned));
     		var sum = ned * 13145 * 0.8;
     		$('#sum-pp').val("Rp. " + commafy(sum) + ",-");
