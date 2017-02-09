@@ -15,18 +15,19 @@ $(document).ready(function(){
 	});
 
 	/* Tab Nav */
+	var notab = 1;
+	console.log(notab);
 	$('.nav-tabs a').on('click', function(e){
 		e.preventDefault();
-		var name = $(this).attr('name');
+		notab = parseInt($(this).attr('name').slice(-1));
 		if($(this).attr('class') != "tab-disable"){
 		    $(this).parent().siblings().removeClass("active");
 		    $(this).parent().addClass("active");
 		    $('.nav-content').children().hide();
-		    $('div#'+name).show();
+		    $('div#dp-tab'+notab.toString()).show();
 		    $(".nav-content").scrollTop(0);
 		};
 	});
-	var notab = 1;
 	$('#btn-dp-pt').on('click', function(e){
 		e.preventDefault();
 		if(notab>1){
@@ -160,7 +161,7 @@ $(document).ready(function(){
     		var tkt = parseInt($('#tkt-pp').val());
     		var la = parseInt($('#la-pp').val());
     		var ned = jml * (tkt + la - dpj);
-    		$('#ned-pp').val(commafy(ned));
+    		$('#ned-pp').val(commafy(ned)+" USD");
     		var sum = ned * 13145 * 0.8;
     		$('#sum-pp').val("Rp. " + commafy(sum) + ",-");
     	}

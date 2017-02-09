@@ -174,7 +174,7 @@ class Model_scoring extends CI_Model {
 			'tiket_pesawat' => $array['tkt-pp'],
 			'landing_arrangement' => $array['la-pp'],
 			'jatuh_tempo' => $array['tgl-pp-b'],
-			'kebutuhan_pendanaan' => $array['ned-pp'],
+			'kebutuhan_pendanaan' => $output = preg_replace( '/[^0-9]/', '', $array['ned-pp']),
 			'fasilitas_pendanaan' => $output = preg_replace( '/[^0-9]/', '', $array['sum-pp'])
 		);
 

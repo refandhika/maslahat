@@ -932,15 +932,15 @@
 						<label for="lok-jln" class="col-md-2 control-label">Jalan Kantor :</label>
 						<div class="col-md-2">
 							<select name="lok-jln" id="lok-jln" class="col-md-3 form-control">
-								<option value="Jalan Utama">Jalan Utama</option>
-								<option value="Jalan Arteri">Jalan Arteri</option>	
+								<option value="60">Jalan Utama</option>
+								<option value="40">Jalan Arteri</option>	
 							</select>
 						</div>
 						<label for="lok-drh" class="col-md-2 control-label">Daerah Kantor :</label>
 						<div class="col-md-2">
 							<select name="lok-drh" id="lok-drh" class="col-md-3 form-control">
-								<option value="Pusat Kota">Pusat Kota</option>
-								<option value="Pinggir Kota">Pinggir Kota</option>	
+								<option value="60">Pusat Kota</option>
+								<option value="40">Pinggir Kota</option>	
 							</select>
 						</div>
 						<label for="jml-cbg" class="col-md-2 control-label">Jumlah Cabang/Agen :</label>
@@ -950,10 +950,10 @@
 						<label for="lok-stg" class="col-md-2 control-label">Posisi Kantor :</label>
 						<div class="col-md-2">
 							<select name="lok-stg" id="lok-stg" class="col-md-3 form-control">
-								<option value="Sangat Strategis">Sangat Strategis</option>
-								<option value="Strategis">Strategis</option>
-								<option value="Kurang Strategis">Kurang Strategis</option>
-								<option value="Tidak Strategis">Tidak Strategis</option>	
+								<option value="40">Sangat Strategis</option>
+								<option value="30">Strategis</option>
+								<option value="20">Kurang Strategis</option>
+								<option value="10">Tidak Strategis</option>	
 							</select>
 						</div>
 						<label for="lok-cbg" class="col-md-2 control-label">Lokasi Cabang/Agen :</label>
@@ -1006,8 +1006,8 @@
 							<label for="chk-sanksi" class="col-md-6 control-label">Apakah PPIU Anda pernah mendapatkan sanksi atau peringatan dari Kementrian Agama?</label>
 							<div class="col-md-2">
 								<select name="chk-sanksi" id="chk-sanksi" class="form-control">
-									<option value="tidak">Tidak</option>
-									<option value="ya">Ya</option>
+									<option value="Tidak">Tidak</option>
+									<option value="Ya">Ya</option>
 								</select>
 							</div>
 						</div>
@@ -1057,8 +1057,8 @@
 							<label for="sdm-qs1" class="col-md-6 control-label">Apakah Anda sebagai pengurus terlibat langsung dalam pengelolaan usaha?</label>
 							<div class="col-md-2">
 								<select name="sdm-qs1" id="sdm-qs1" class="form-control">
-									<option value="tidak">Tidak</option>
-									<option value="ya">Ya</option>
+									<option value="Tidak">Tidak</option>
+									<option value="Ya">Ya</option>
 								</select>
 							</div>
 						</div>
@@ -1128,20 +1128,20 @@
 						<div class="col-md-3">
 							<select name="giro-bank" id="giro-bank" class="form-control">
 								<option value="bank1">Bank Mandiri</option>
-								<option value="bank1">BRI</option>
-								<option value="bank1">BNI</option>
-								<option value="bank2">BTN</option>
-								<option value="bank2">Bank Syariah Mandiri</option>
-								<option value="bank2">BCA</option>
-								<option value="bank2">Bank Danamon</option>
-								<option value="bank2">CIMB Niaga</option>
-								<option value="bank2">BNI Syariah</option>
-								<option value="bank2">BRI Syariah</option>
-								<option value="bank2">Bank Panin</option>
-								<option value="bank2">Bank Panin Dubai Syariah</option>
-								<option value="bank2">Bank Muamalat</option>
-								<option value="bank3">Bank Lokal lainnya</option>
-								<option value="bank3">Bank Asing</option>
+								<option value="bank2">BRI</option>
+								<option value="bank3">BNI</option>
+								<option value="bank31">BTN</option>
+								<option value="bank32">Bank Syariah Mandiri</option>
+								<option value="bank33">BCA</option>
+								<option value="bank34">Bank Danamon</option>
+								<option value="bank35">CIMB Niaga</option>
+								<option value="bank36">BNI Syariah</option>
+								<option value="bank37">BRI Syariah</option>
+								<option value="bank38">Bank Panin</option>
+								<option value="bank39">Bank Panin Dubai Syariah</option>
+								<option value="bank40">Bank Muamalat</option>
+								<option value="bank98">Bank Lokal lainnya</option>
+								<option value="bank99">Bank Asing</option>
 							</select>
 						</div>
 					</div>
@@ -1217,7 +1217,6 @@
 							<div class="col-md-2">
 								<input type="text" class="form-control" name="ned-pp" id="ned-pp" readonly>
 							</div>
-							<div class="col-md-1 control-label">USD</div>
 						</div>
 						<div class="form-group">
 							<label for="sum-pp" class="col-md-4 control-label">Jumlah pendanaan yang dapat difasilitasi :</label>

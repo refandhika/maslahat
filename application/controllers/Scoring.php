@@ -344,63 +344,166 @@ class Scoring extends CI_Controller {
 
 	private function calculateScore($data){
 
+		#1
 		$ju = $data['tab1']['badan-hukum'];
+		#2
+		$sah1 = true;
+		if(empty($data['tab1']['pendirian-ham'])){
+			$sah1 = false;
+		};
+		#3
+		$sah2 = true;
+		if(empty($data['tab1']['pendirian-bn'])){
+			$sah2 = false;
+		};
+		#4
+		$sah3 = true;
+		#5
+		$sah4 = true;
+		#6
 		$temp = explode('/', $data['tab5']['tgl-pp-b']);
 		$string = $temp[1] . '/' . $temp[0] . '/' . $temp[2];
 		$tb = date('d/m/Y', strtotime($string));
+		#7
 		$temp = explode('/', $data['tab1']['no-iupu-jt']);
 		$string = $temp[1] . '/' . $temp[0] . '/' . $temp[2];
 		$iu1 = date('d/m/Y', strtotime($string));
+		#8
 		$temp = explode('/', $data['tab1']['no-iut-jt']);
 		$string = $temp[1] . '/' . $temp[0] . '/' . $temp[2];
 		$iu2 = date('d/m/Y', strtotime($string));
+		#9
 		$temp = explode('/', $data['tab1']['no-iphk-jt']);
 		$string = $temp[1] . '/' . $temp[0] . '/' . $temp[2];
 		$iu3 = date('d/m/Y', strtotime($string));
-		$y = $this->yuridisScore($ju,$tb,$iu1,$iu2,$iu3,true,true,true,true,true,true,true);
+		#10
+		$alk = true;
+		#11
+		$al1 = true;
+		#12
+		$al2 = true;
+		#13
+		$al3 = true;
+		#14
+		$al4 = true;
+		#15
+		$al5 = true;
+		#16
+		$al6 = true;
+		#Score
+		$y = $this->yuridisScore($ju,$sah1,$sah2,$sah3,$sah4,$tb,$iu1,$iu2,$iu3,$alk,$al1,$al2,$al3,$al4,$al5,$al6);
 
+		#1
 		$pglmn = (int)$data['year'] - (int)$data['tab2']['pemilik']['kelola-pemilik'];
+		#2
+		$rep = ((int)$data['tab3']['umr-'.$data['year1']] + (int)$data['tab3']['umr-'.$data['year2']]) / 2;
+		#3
+		$iu = true;
+		if(empty($data['tab1']['no-iupu'])){
+			$iu = false;
+		};
+		#4
+		$ik = true;
+		if(empty($data['tab1']['no-iphk'])){
+			$ik = false;
+		};
+		#5
+		if(((int)$data['year'] - (int)$data['tab1']['no-iupu-th'])>=0){
+			$bu = true;
+		}
+		else{
+			$bu = false;
+		};
+		#6
+		if(((int)$data['year'] - (int)$data['tab1']['no-iphk-th'])>=0){
+			$bk = true;
+		}
+		else{
+			$bk = false;
+		};
+		#7
 		$aa = 0;
 		if ($data['tab1']['asosiasi'] == "Himpuh"){
 			$aa = (int)$data['year'] - (int)$data['tab1']['aso-th'];
 		};
-		$m = $this->manajemenScore($pglmn,true,true,true,true,true,$aa);
+		#Score
+		$m = $this->manajemenScore($pglmn,$rep,$iu,$ik,$bu,$bk,$aa);
 
+		#1
 		$jr = ((int)$data['tab3']['jmh-brgkt1'] + (int)$data['tab3']['jmh-brgkt2'] + (int)$data['tab3']['jmh-brgkt3'] + (int)$data['tab3']['jmh-brgkt4'] + (int)$data['tab3']['jmh-brgkt5'] + (int)$data['tab3']['jmh-brgkt6']) / 6;
+		#2
+		$lok = ((int)$data['tab3']['lok-jln'] + (int)$data['tab3']['lok-drh'] + (int)$data['tab3']['lok-stg']) / 3;
+		#3
 		$sdm = (int)$data['tab3']['jml-sdm'];
+		#4
+		$pgrs = false;
+		if ($data['tab3']['sdm-qs1'] == "Ya"){
+			$pgrs = true;
+		};
+		#5
+		$lu = ((int)$data['year'] - (int)$data['tab1']['no-iupu-th']);
+		#6
 		$la = false;
 		if ($data['tab3']['sdm-qs2'] == "Ya"){
 			$la = true;
 		};
+		#7
 		$visa = false;
 		if ($data['tab3']['sdm-qs3'] == "Ya"){
 			$visa = true;
 		};
-		$t = $this->teknisScore($jr,true,$sdm,true,$la,$visa,true);
+		#8
+		$iata = true;
+		if (empty($data['tab1']['no-iata'])){
+			$iata = false;
+		};
+		#Score
+		$t = $this->teknisScore($jr,$lok,$sdm,$pgrs,$lu,$la,$visa,$iata);
 
+		#1
 		$jj = ((int)$data['tab3']['umr-'.$data['year1']] + (int)$data['tab3']['hj-'.$data['year1']] + (int)$data['tab3']['umr-'.$data['year2']] + (int)$data['tab3']['hj-'.$data['year2']]) / 2;
+		#2
 		$pkt = (int)$data['tab5']['pkt-pp'];
+		#3
 		$ka = false;
 		if ($data['tab3']['lok-cbg'] == "dlk"){
 			$ka = true;
 		};
+		#4
 		$web = false;
 		if (strpos($data['tab3']['mp'], 'Web Online') !== false){
 			$web = true;
 		};
+		#Score
 		$p = $this->pemasaranScore($jj,$pkt,$ka,$web);
 
+		#1
 		$lk = $data['tab4']['jns-keu'];
+		#2
 		$oa = $data['tab4']['opn-keu'];
-		$k = $this->keuanganScore($lk,$oa,true);
+		#4
+		$ar = true;
+		#Score
+		$k = $this->keuanganScore($lk,$oa,$ar);
 
-		$bank = $data['tab4']['giro-bank'];
+		#1
+		$bank = (int)preg_replace( '/[^0-9]/', '', $data['tab4']['giro-bank']);
+		#2
+		$mr = true;
+		#3
 		$pg = $data['tab6']['p-gua'];
+		#4
 		$cg = $data['tab6']['c-gua'];
-		$a = $this->agunanScore($bank,true,$pg,$cg);
+		#5
+		$ng = $data['tab6']['n-gua'];
+		#Score
+		$a = $this->agunanScore($bank,$mr,$pg,$cg,$ng);
 
+		#1
 		$durasi = (int)$data['tab5']['wkt-pp'];
+		#2
 		$pendanaan = (int)preg_replace('/[^0-9]/', '', $data['tab5']['sum-pp']);
+		#Score
 		$f = $this->fasilitasScore($durasi,$pendanaan);
 
 		$final = ($y + $m + $t + $p + $k + $a + $f) / 7;
@@ -419,14 +522,12 @@ class Scoring extends CI_Controller {
 		return $score;
 	}
 
-	private function yuridisScore($ju,$tb,$iu1,$iu2,$iu3,$alk,$al1,$al2,$al3,$al4,$al5,$al6)
+	private function yuridisScore($ju,$sah1,$sah2,$sah3,$sah4,$tb,$iu1,$iu2,$iu3,$alk,$al1,$al2,$al3,$al4,$al5,$al6)
 	{
 		$y1 = 1;
 		$y2 = 1;
 		$y3 = 1;
 
-		$sah1 = true;
-		$sah2 = true;
 		if ($ju == 'PT' and $sah1 and $sah2){
 			$y1 = 1;
 		}
@@ -443,8 +544,6 @@ class Scoring extends CI_Controller {
 			$y1 = 3;
 		};
 
-		$sah3 = true;
-		$sah4 = true;
 		if ($tb <= $iu1 and $tb <= $iu2 and $tb <= $iu3){
 			$y2 = 1;
 		}
@@ -493,16 +592,16 @@ class Scoring extends CI_Controller {
 			$m1 = 3;
 		};
 
-		if ($rep == "Wide" and $rep == "Prov"){
+		if ($rep >= 1000){
 			$m2 = 1;
 		}
-		else if ($rep == "Kota/Kab"){
+		else if ($rep >= 600){
 			$m2 = 2;
 		}
-		else if ($rep == "No Record"){
+		else if ($rep >= 400){
 			$m2 = 3;
 		}
-		else if ($rep == "Buruk"){
+		else if ($rep < 400){
 			$m2 = 10;
 		};
 
@@ -537,7 +636,7 @@ class Scoring extends CI_Controller {
 		return $m;
 	}
 
-	private function teknisScore ($jr,$lok,$sdm,$lu,$la,$visa,$iata)
+	private function teknisScore ($jr,$lok,$sdm,$pgrs,$lu,$la,$visa,$iata)
 	{
 		$t1 = 1;
 		$t2 = 1;
@@ -561,24 +660,22 @@ class Scoring extends CI_Controller {
 			$t1 = 10;
 		};
 
-		$kon = "Mewah";
-		if ($kon = "Mewah" and $lok = "Strategis"){
+		if ($lok > 50){
 			$t2 = 1;
 		}
-		else if ($kon = "Bersih" and $lok = "Strategis"){
+		else if ($lok >= 45){
 			$t2 = 2;
 		}
-		else if ($kon = "Mewah" and $lok = "Tidak Strategis"){
+		else if ($lok >= 35){
 			$t2 = 3;
 		}
-		else if ($kon = "Bersih" and $lok = "Tidak Strategis"){
+		else if ($lok >= 25){
 			$t2 = 4;
 		}
 		else {
 			$t2 = 5;
 		};
 
-		$pgrs = true;
 		if ($sdm > 10){
 			$t3 = 1;
 		}
@@ -714,19 +811,19 @@ class Scoring extends CI_Controller {
 		return $k;
 	}
 
-	private function agunanScore ($bank, $mr, $pg, $cg)
+	private function agunanScore ($bank, $mr, $pg, $cg, $ng)
 	{
 		$a1 = 1;
 		$a2 = 1;
 		$a3 = 1;
 
-		if ($bank == "bank1"){
+		if ($bank <= 30){
 			$a1 = 1;
 		}
-		else if ($bank == "bank2"){
+		else if ($bank <= 90){
 			$al = 2;
 		}
-		else if ($bank == "bank3"){
+		else if ($bank <= 99){
 			$al = 3;
 		};
 
@@ -740,12 +837,10 @@ class Scoring extends CI_Controller {
 			$a2 = 3;
 		};
 
-		$hk = 3000;
-		$hp = 2000;
-		if ($pg == "Ya" or $cg == "Ya" and $hk > $hp){
+		if (($pg == "Ya" or $cg == "Ya") and $ng == "Ya"){
 			$a3 = 1;
 		}
-		else if ($pg == "Ya" or $cg == "Ya" and $hk == $hp){
+		else if (($pg == "Ya" or $cg == "Ya") or $ng == "Ya"){
 			$a3 = 2;
 		}
 		else {
