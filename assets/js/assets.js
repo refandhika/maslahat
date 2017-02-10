@@ -16,7 +16,6 @@ $(document).ready(function(){
 
 	/* Tab Nav */
 	var notab = 1;
-	console.log(notab);
 	$('.nav-tabs a').on('click', function(e){
 		e.preventDefault();
 		notab = parseInt($(this).attr('name').slice(-1));
@@ -90,21 +89,77 @@ $(document).ready(function(){
 		};
 	});
 
+	/* Bank Addable */
+	var nobank = 1;
+	$("#btn-add-bank").on('click', function(e){
+		e.preventDefault();
+		if(nobank<5){
+			nobank = nobank + 1;
+			addBankInput("bank-addable",nobank);
+			if(nobank == 5){
+		    	$(this).addClass('disabled');
+		    }
+		    else{
+		    	$('#btn-sub-bank').removeClass('disabled');
+		    };
+		};
+	});
+	$("#btn-sub-bank").on('click', function(e){
+		e.preventDefault();
+		if(nobank>1){
+			$("#giro-bank"+nobank).parent().remove();
+			nobank = nobank - 1;
+			if(nobank == 1){
+		    	$(this).addClass('disabled');
+		    }
+		    else{
+		    	$('#btn-add-bank').removeClass('disabled');
+		    };
+		};
+	});
+
+	/* Pengurus Addable */
+	var nopengurus = 0;
+	$("#btn-add-pengurus").on('click', function(e){
+		e.preventDefault();
+		if(nopengurus<4){
+			nopengurus = nopengurus + 1;
+			addPengurusInput("pengurus-addable",nopengurus);
+			if(nopengurus == 4){
+		    	$(this).addClass('disabled');
+		    }
+		    else{
+		    	$('#btn-sub-pengurus').removeClass('disabled');
+		    };
+		};
+	});
+	$("#btn-sub-pengurus").on('click', function(e){
+		e.preventDefault();
+		if(nopengurus>0){
+			$("#pengurus"+nopengurus).remove();
+			nopengurus = nopengurus - 1;
+			if(nopengurus == 0){
+		    	$(this).addClass('disabled');
+		    }
+		    else{
+		    	$('#btn-add-pengurus').removeClass('disabled');
+		    };
+		};
+	});	
+
 	/* Data Toggle */
     $('[data-toggle="tooltip"]').tooltip();
 
     /* Select Toggle */
     $('#chk-sanksi').change(function(){
-    	//console.log($('#chk-sanksi').val());
-    	if($('#chk-sanksi').val() == 'ya'){
+    	if($('#chk-sanksi').val() == 'Ya'){
     		$('#sanksi-true').show();
     	}
-    	else if(($('#chk-sanksi').val() == 'tidak')){
+    	else if(($('#chk-sanksi').val() == 'Tidak')){
     		$('#sanksi-true').hide();
     	};
     });
     $('#lap-keu').change(function(){
-    	//console.log($('#lap-keu').val());
     	if($('#lap-keu').val() == 'Ya'){
     		$('#jns-keu-con').show();
     		$('#jns-keu').prop('disabled',false);
@@ -117,7 +172,6 @@ $(document).ready(function(){
     	};
     });
     $('#jns-keu').change(function(){
-    	//console.log($('#jns-keu').val());
     	if($('#jns-keu').val() == 'Audit'){
     		$('#opn-keu-con').show();
     		$('#opn-keu').prop('disabled',false);
@@ -2569,12 +2623,12 @@ $(document).ready(function(){
 	});
 
 	/* Date Picker */
-	$("#pendirian-th, #pendirian-ham-th, #pendirian-bn-th, #terakhir-th, #terakhir-ham-th, #terakhir-bn-th, #no-iupu-th, #no-iut-th, #no-iphk-th, #no-iata-th, #aso-th, #kelola-pemilik, #kelola-pengurus1, #kelola-pengurus2, #kelola-pengurus3, #pemilik-tha1, #pemilik-thb1, #pemilik-tha2, #pemilik-thb2, #pemilik-tha3, #pemilik-thb3, #pemilik-tha4, #pemilik-thb4, #pemilik-tha5, #pemilik-thb5, #pengurus1-tha1, #pengurus1-thb1, #pengurus1-tha2, #pengurus1-thb2, #pengurus1-tha3, #pengurus1-thb3, #pengurus1-tha4, #pengurus1-thb4, #pengurus1-tha5, #pengurus1-thb5, #pengurus2-tha1, #pengurus2-thb1, #pengurus2-tha2, #pengurus2-thb2, #pengurus2-tha3, #pengurus2-thb3, #pengurus2-tha4, #pengurus2-thb4, #pengurus2-tha5, #pengurus2-thb5, #pengurus3-tha1, #pengurus3-thb1, #pengurus3-tha2, #pengurus3-thb2, #pengurus3-tha3, #pengurus3-thb3, #pengurus3-tha4, #pengurus3-thb4, #pengurus3-tha5, #pengurus3-thb5, #thn-brgkt1, #thn-brgkt2, #thn-brgkt3, #thn-brgkt4, #thn-brgkt5, #thn-brgkt6, #thn-sanksi").datepicker( {
+	$("#pendirian-th, #pendirian-ham-th, #pendirian-bn-th, #terakhir-th, #terakhir-ham-th, #terakhir-bn-th, #no-iupu-th, #no-iut-th, #no-iphk-th, #no-iata-th, #aso-th, #kelola-pemilik, #thn-brgkt1, #thn-brgkt2, #thn-brgkt3, #thn-brgkt4, #thn-brgkt5, #thn-brgkt6, #thn-sanksi").datepicker( {
 	    format: " yyyy",
 	    viewMode: "years", 
 	    minViewMode: "years"
 	});
-	$("#no-iupu-jt, #no-iut-jt, #no-iphk-jt, #no-iata-jt, #tgl-pemilik, #tgl-pengurus1, #tgl-pengurus2, #tgl-pengurus3, #tgl-pp-a").datepicker( {
+	$("#no-iupu-jt, #no-iut-jt, #no-iphk-jt, #no-iata-jt, #tgl-pemilik, #tgl-pp-a").datepicker( {
 	    format: "dd/mm/yyyy",
 	});
 });
@@ -2592,4 +2646,195 @@ function commafy(num){
 	var str = num.toString();
 	str = str.replace(/(\d)(?=(\d{3})+$)/g, '$1.');
 	return str;
+};
+
+function addBankInput(divId, bankNo){
+	$("#"+divId).append(
+		$("<div/>",{'class':'row'}).append(
+			$("<div/>",{'class':'col-md-6'}).append(
+				$("<select/>").attr("name", "giro-bank"+bankNo)
+					.attr("id", "giro-bank"+bankNo)
+					.addClass("form-control")
+			)
+		)
+	);
+	$.each(bankOption, function(key,value){
+		$('#giro-bank'+bankNo).append($("<option></option>").attr("value",key).text(value));
+	});
+};
+
+function addPengurusInput(divId,pengurusNo){
+	$("#"+divId).append(
+		$("<div/>",{"class":"form-group panel panel-default"})
+		.attr("id", "pengurus"+pengurusNo)
+			.append(
+				$("<div/>",{"class":"panel-heading"})
+					.text("Pengurus "+pengurusNo)
+			)
+			.append(
+				$("<div/>",{"class":"panel-body"})
+					.append(
+						$("<div/>",{"class":"form-group"})
+							.append('<label for="nama-pengurus'+pengurusNo+'" class="col-md-1 control-label">Nama :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-1"})
+									.append('<input type="text" name="nama-pengurus'+pengurusNo+'-g1" class="form-control" placeholder="Gelar" />')
+							)
+							.append(
+								$("<div/>",{"class":"col-md-3"})
+									.append('<input type="text" name="nama-pengurus'+pengurusNo+'-nd" class="form-control" placeholder="Nama Depan" />')
+							)
+							.append(
+								$("<div/>",{"class":"col-md-3"})
+									.append('<input type="text" name="nama-pengurus'+pengurusNo+'-nt" class="form-control" placeholder="Nama Tengah" />')
+							)
+							.append(
+								$("<div/>",{"class":"col-md-3"})
+									.append('<input type="text" name="nama-pengurus'+pengurusNo+'-nb" class="form-control" placeholder="Nama Belakang" />')
+							)
+							.append(
+								$("<div/>",{"class":"col-md-1"})
+									.append('<input type="text" name="nama-pengurus'+pengurusNo+'-g2" class="form-control" placeholder="Gelar" />')
+							)
+							.append('<label for="ktp-pengurus'+pengurusNo+'" class="col-md-2 control-label">Nomor KTP :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-4"})
+									.append('<input type="text" name="ktp-pengurus'+pengurusNo+'" class="form-control" />')
+							)
+							.append('<label for="tl-pengurus'+pengurusNo+'" class="col-md-2 control-label">Tempat Lahir :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-4"})
+									.append('<input type="text" name="tl-pengurus'+pengurusNo+'" class="form-control" />')
+							)
+							.append('<label for="tgl-pengurus'+pengurusNo+'" class="col-md-2 control-label">Tanggal Lahir :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-4"})
+									.append('<input type="text" name="tgl-pengurus'+pengurusNo+'" id="tgl-pengurus'+pengurusNo+'" class="form-control" placeholder="HH/BB/TTTT" />')
+							)
+					)
+					.append(
+						$("<div/>",{"class":"form-group"})
+							.append('<label for="alamat-pengurus'+pengurusNo+'" class="col-md-2 control-label">Alamat :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-10"})
+									.append('<textarea name="alamat-pengurus'+pengurusNo+'" class="form-control" rows="3" data-toggle="tooltip" data-placement="left" title=\'Gunakan kata "Jalan" untuk mengawali alamat atau gunakan kata "Perumahan" jika lokasi berada di Kompleks\'></textarea>')
+							)
+							.append('<label for="kota-kab-pengurus'+pengurusNo+'" class="col-md-2 control-label">Kota/Kabupaten :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-4"})
+									.append('<input type="text" name="kota-kab-pengurus'+pengurusNo+'" class="form-control" />')
+							)
+							.append('<label for="prov-pengurus'+pengurusNo+'" class="col-md-1 control-label">Provinsi :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-5"})
+									.append('<input type="text" name="prov-pengurus'+pengurusNo+'" class="form-control" />')
+							)
+							.append('<label for="jab-pengurus'+pengurusNo+'" class="col-md-2 control-label">Jabatan :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-4"})
+									.append('<input type="text" name="jab-pengurus'+pengurusNo+'" class="form-control" />')
+							)
+							.append('<label for="kelola-pengurus'+pengurusNo+'" class="col-md-3 control-label">Mengelola Haji/Umrah Sejak Tahun :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-3"})
+									.append('<input type="text" name="kelola-pengurus'+pengurusNo+'" id="kelola-pengurus'+pengurusNo+'" class="form-control" />')
+							)
+							.append('<label for="pendidikan-pengurus'+pengurusNo+'" class="col-md-2 control-label">Jurusan/Bidang :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-4"})
+									.append('<select type="text" name="pendidikan-pengurus'+pengurusNo+'" id="pendidikan-pengurus'+pengurusNo+'" class="form-control"></select>')
+							)
+							.append('<label for="jurusan-pengurus'+pengurusNo+'" class="col-md-2 control-label">Jurusan/Bidang :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-4"})
+									.append('<input type="text" name="jurusan-pengurus'+pengurusNo+'" class="form-control" />')
+							)
+							.append('<label for="sklh-pt-pengurus'+pengurusNo+'" class="col-md-3 control-label">Nama Sekolah/Perguruan Tinggi :</label>')
+							.append(
+								$("<div/>",{"class":"col-md-3"})
+									.append('<input type="text" name="sklh-pt-pengurus'+pengurusNo+'" class="form-control" />')
+							)
+					)
+					.append(
+						$("<label/>",{"class":"col-md-12 control-label"}).text("Pengalaman")
+					)
+					.append(
+						$("<table/>",{"class":"table table-striped"})
+							.append(
+								$("<thead/>")
+									.append(
+										$("<tr/>")
+											.append(
+												$("<th/>").text("#")
+											)
+											.append(
+												$("<th/>").text("Jabatan")
+											)
+											.append(
+												$("<th/>").text("Nama Perusahaan/Organisasi")
+											)
+											.append(
+												$("<th/>").text("Bidang Perusahaan")
+											)
+											.append(
+												$("<th/>").text("Tahun")
+											)
+											.append(
+												$("<th/>").text(" ")
+											)
+											.append(
+												$("<th/>").text("Tahun")
+											)
+									)
+							)
+							.append(
+								$("<tbody/>").attr("id","table-pengurus"+pengurusNo)
+							)
+					)
+			)
+	);
+    $('[data-toggle="tooltip"]').tooltip();
+	$("#kelola-pengurus"+pengurusNo).datepicker( {
+	    format: " yyyy",
+	    viewMode: "years", 
+	    minViewMode: "years"
+	});
+	$.each(pendidikanOption, function(key,value){
+		$('#pendidikan-pengurus'+pengurusNo).append($("<option></option>").attr("value",key).text(value));
+	});
+	for (i=1; i<=5; i++){
+		$("#table-pengurus"+pengurusNo)
+			.append(
+				$("<tr/>")
+					.append(
+						$("<td/>").text(i)
+					)
+					.append(
+						$("<td/>").append('<input type="text" name="pengurus'+pengurusNo+'-jab'+i+'" class="form-control" />')
+					)
+					.append(
+						$("<td/>").append('<input type="text" name="pengurus'+pengurusNo+'-po'+i+'" class="form-control" />')
+					)
+					.append(
+						$("<td/>").append('<input type="text" name="pengurus'+pengurusNo+'-bid'+i+'" class="form-control" />')
+					)
+					.append(
+						$("<td/>",{"class":"col-md-1"}).append('<input type="text" name="pengurus'+pengurusNo+'-tha'+i+'" id="pengurus'+pengurusNo+'-tha'+i+'" class="form-control" />')
+					)
+					.append(
+						$("<td/>").text("s.d.")
+					)
+					.append(
+						$("<td/>",{"class":"col-md-1"}).append('<input type="text" name="pengurus'+pengurusNo+'-thb'+i+'" id="pengurus'+pengurusNo+'-thb'+i+'" class="form-control" />')
+					)
+			);
+		$("#pengurus"+pengurusNo+"-tha"+i+", #pengurus"+pengurusNo+"-thb"+i).datepicker( {
+		    format: " yyyy",
+		    viewMode: "years", 
+		    minViewMode: "years"
+		});
+	};
+	$("#tgl-pengurus"+pengurusNo).datepicker( {
+	    format: "dd/mm/yyyy",
+	});
 };

@@ -109,132 +109,187 @@ class Scoring extends CI_Controller {
 			'pemilik-thb5' => $this->input->post('pemilik-thb5')
 		);
 
-		$pengurus1 = array(
-			'nama-pengurus1' => $this->input->post('nama-pengurus1-g1'). ' ' .$this->input->post('nama-pengurus1-nd').' '.$this->input->post('nama-pengurus1-nt').' '.$this->input->post('nama-pengurus1-nb').' '.$this->input->post('nama-pengurus1-g2'),
-			'ktp-pengurus1' => $this->input->post('ktp-pengurus1'),
-			'tl-pengurus1' => $this->input->post('tl-pengurus1'),
-			'tgl-pengurus1' => $this->input->post('tgl-pengurus1'),
-			'alamat-pengurus1' => $this->input->post('alamat-pengurus1'),
-			'kota-kab-pengurus1' => $this->input->post('kota-kab-pengurus1'),
-			'prov-pengurus1' => $this->input->post('prov-pengurus1'),
-			'jab-pengurus1' => $this->input->post('jab-pengurus1'),
-			'kelola-pengurus1' => $this->input->post('kelola-pengurus1'),
-			'pendidikan-pengurus1' => $this->input->post('pendidikan-pengurus1'),
-			'jurusan-pengurus1' => $this->input->post('jurusan-pengurus1'),
-			'sklh-pt-pengurus1' => $this->input->post('sklh-pt-pengurus1'),
-			'pengurus1-jab1' => $this->input->post('pengurus1-jab1'),
-			'pengurus1-po1' => $this->input->post('pengurus1-po1'),
-			'pengurus1-bid1' => $this->input->post('pengurus1-bid1'),
-			'pengurus1-tha1' => $this->input->post('pengurus1-tha1'),
-			'pengurus1-thb1' => $this->input->post('pengurus1-thb1'),
-			'pengurus1-jab2' => $this->input->post('pengurus1-jab2'),
-			'pengurus1-po2' => $this->input->post('pengurus1-po2'),
-			'pengurus1-bid2' => $this->input->post('pengurus1-bid2'),
-			'pengurus1-tha2' => $this->input->post('pengurus1-tha2'),
-			'pengurus1-thb2' => $this->input->post('pengurus1-thb2'),
-			'pengurus1-jab3' => $this->input->post('pengurus1-jab3'),
-			'pengurus1-po3' => $this->input->post('pengurus1-po3'),
-			'pengurus1-bid3' => $this->input->post('pengurus1-bid3'),
-			'pengurus1-tha3' => $this->input->post('pengurus1-tha3'),
-			'pengurus1-thb3' => $this->input->post('pengurus1-thb3'),
-			'pengurus1-jab4' => $this->input->post('pengurus1-jab4'),
-			'pengurus1-po4' => $this->input->post('pengurus1-po4'),
-			'pengurus1-bid4' => $this->input->post('pengurus1-bid4'),
-			'pengurus1-tha4' => $this->input->post('pengurus1-tha4'),
-			'pengurus1-thb4' => $this->input->post('pengurus1-thb4'),
-			'pengurus1-jab5' => $this->input->post('pengurus1-jab5'),
-			'pengurus1-po5' => $this->input->post('pengurus1-po5'),
-			'pengurus1-bid5' => $this->input->post('pengurus1-bid5'),
-			'pengurus1-tha5' => $this->input->post('pengurus1-tha5'),
-			'pengurus1-thb5' => $this->input->post('pengurus1-thb5')
-		);
+		$jmlpgrs = 0;
 
-		$pengurus2 = array(
-			'nama-pengurus2' => $this->input->post('nama-pengurus2-g1'). ' ' .$this->input->post('nama-pengurus2-nd').' '.$this->input->post('nama-pengurus2-nt').' '.$this->input->post('nama-pengurus2-nb').' '.$this->input->post('nama-pengurus2-g2'),
-			'ktp-pengurus2' => $this->input->post('ktp-pengurus2'),
-			'tl-pengurus2' => $this->input->post('tl-pengurus2'),
-			'tgl-pengurus2' => $this->input->post('tgl-pengurus2'),
-			'alamat-pengurus2' => $this->input->post('alamat-pengurus2'),
-			'kota-kab-pengurus2' => $this->input->post('kota-kab-pengurus2'),
-			'prov-pengurus2' => $this->input->post('prov-pengurus2'),
-			'jab-pengurus2' => $this->input->post('jab-pengurus2'),
-			'kelola-pengurus2' => $this->input->post('kelola-pengurus2'),
-			'pendidikan-pengurus2' => $this->input->post('pendidikan-pengurus2'),
-			'jurusan-pengurus2' => $this->input->post('jurusan-pengurus2'),
-			'sklh-pt-pengurus2' => $this->input->post('sklh-pt-pengurus2'),
-			'pengurus2-jab1' => $this->input->post('pengurus2-jab1'),
-			'pengurus2-po1' => $this->input->post('pengurus2-po1'),
-			'pengurus2-bid1' => $this->input->post('pengurus2-bid1'),
-			'pengurus2-tha1' => $this->input->post('pengurus2-tha1'),
-			'pengurus2-thb1' => $this->input->post('pengurus2-thb1'),
-			'pengurus2-jab2' => $this->input->post('pengurus2-jab2'),
-			'pengurus2-po2' => $this->input->post('pengurus2-po2'),
-			'pengurus2-bid2' => $this->input->post('pengurus2-bid2'),
-			'pengurus2-tha2' => $this->input->post('pengurus2-tha2'),
-			'pengurus2-thb2' => $this->input->post('pengurus2-thb2'),
-			'pengurus2-jab3' => $this->input->post('pengurus2-jab3'),
-			'pengurus2-po3' => $this->input->post('pengurus2-po3'),
-			'pengurus2-bid3' => $this->input->post('pengurus2-bid3'),
-			'pengurus2-tha3' => $this->input->post('pengurus2-tha3'),
-			'pengurus2-thb3' => $this->input->post('pengurus2-thb3'),
-			'pengurus2-jab4' => $this->input->post('pengurus2-jab4'),
-			'pengurus2-po4' => $this->input->post('pengurus2-po4'),
-			'pengurus2-bid4' => $this->input->post('pengurus2-bid4'),
-			'pengurus2-tha4' => $this->input->post('pengurus2-tha4'),
-			'pengurus2-thb4' => $this->input->post('pengurus2-thb4'),
-			'pengurus2-jab5' => $this->input->post('pengurus2-jab5'),
-			'pengurus2-po5' => $this->input->post('pengurus2-po5'),
-			'pengurus2-bid5' => $this->input->post('pengurus2-bid5'),
-			'pengurus2-tha5' => $this->input->post('pengurus2-tha5'),
-			'pengurus2-thb5' => $this->input->post('pengurus2-thb5')
-		);
+		if(!empty($this->input->post('ktp-pengurus1'))){
+			$pengurus1 = array(
+				'nama-pengurus1' => $this->input->post('nama-pengurus1-g1'). ' ' .$this->input->post('nama-pengurus1-nd').' '.$this->input->post('nama-pengurus1-nt').' '.$this->input->post('nama-pengurus1-nb').' '.$this->input->post('nama-pengurus1-g2'),
+				'ktp-pengurus1' => $this->input->post('ktp-pengurus1'),
+				'tl-pengurus1' => $this->input->post('tl-pengurus1'),
+				'tgl-pengurus1' => $this->input->post('tgl-pengurus1'),
+				'alamat-pengurus1' => $this->input->post('alamat-pengurus1'),
+				'kota-kab-pengurus1' => $this->input->post('kota-kab-pengurus1'),
+				'prov-pengurus1' => $this->input->post('prov-pengurus1'),
+				'jab-pengurus1' => $this->input->post('jab-pengurus1'),
+				'kelola-pengurus1' => $this->input->post('kelola-pengurus1'),
+				'pendidikan-pengurus1' => $this->input->post('pendidikan-pengurus1'),
+				'jurusan-pengurus1' => $this->input->post('jurusan-pengurus1'),
+				'sklh-pt-pengurus1' => $this->input->post('sklh-pt-pengurus1'),
+				'pengurus1-jab1' => $this->input->post('pengurus1-jab1'),
+				'pengurus1-po1' => $this->input->post('pengurus1-po1'),
+				'pengurus1-bid1' => $this->input->post('pengurus1-bid1'),
+				'pengurus1-tha1' => $this->input->post('pengurus1-tha1'),
+				'pengurus1-thb1' => $this->input->post('pengurus1-thb1'),
+				'pengurus1-jab2' => $this->input->post('pengurus1-jab2'),
+				'pengurus1-po2' => $this->input->post('pengurus1-po2'),
+				'pengurus1-bid2' => $this->input->post('pengurus1-bid2'),
+				'pengurus1-tha2' => $this->input->post('pengurus1-tha2'),
+				'pengurus1-thb2' => $this->input->post('pengurus1-thb2'),
+				'pengurus1-jab3' => $this->input->post('pengurus1-jab3'),
+				'pengurus1-po3' => $this->input->post('pengurus1-po3'),
+				'pengurus1-bid3' => $this->input->post('pengurus1-bid3'),
+				'pengurus1-tha3' => $this->input->post('pengurus1-tha3'),
+				'pengurus1-thb3' => $this->input->post('pengurus1-thb3'),
+				'pengurus1-jab4' => $this->input->post('pengurus1-jab4'),
+				'pengurus1-po4' => $this->input->post('pengurus1-po4'),
+				'pengurus1-bid4' => $this->input->post('pengurus1-bid4'),
+				'pengurus1-tha4' => $this->input->post('pengurus1-tha4'),
+				'pengurus1-thb4' => $this->input->post('pengurus1-thb4'),
+				'pengurus1-jab5' => $this->input->post('pengurus1-jab5'),
+				'pengurus1-po5' => $this->input->post('pengurus1-po5'),
+				'pengurus1-bid5' => $this->input->post('pengurus1-bid5'),
+				'pengurus1-tha5' => $this->input->post('pengurus1-tha5'),
+				'pengurus1-thb5' => $this->input->post('pengurus1-thb5')
+			);
+			$jmlpgrs = 1;
+		};
 
-		$pengurus3 = array(
-			'nama-pengurus3' => $this->input->post('nama-pengurus3-g1'). ' ' .$this->input->post('nama-pengurus3-nd').' '.$this->input->post('nama-pengurus3-nt').' '.$this->input->post('nama-pengurus3-nb').' '.$this->input->post('nama-pengurus3-g2'),
-			'ktp-pengurus3' => $this->input->post('ktp-pengurus3'),
-			'tl-pengurus3' => $this->input->post('tl-pengurus3'),
-			'tgl-pengurus3' => $this->input->post('tgl-pengurus3'),
-			'alamat-pengurus3' => $this->input->post('alamat-pengurus3'),
-			'kota-kab-pengurus3' => $this->input->post('kota-kab-pengurus3'),
-			'prov-pengurus3' => $this->input->post('prov-pengurus3'),
-			'jab-pengurus3' => $this->input->post('jab-pengurus3'),
-			'kelola-pengurus3' => $this->input->post('kelola-pengurus3'),
-			'pendidikan-pengurus3' => $this->input->post('pendidikan-pengurus3'),
-			'jurusan-pengurus3' => $this->input->post('jurusan-pengurus3'),
-			'sklh-pt-pengurus3' => $this->input->post('sklh-pt-pengurus3'),
-			'pengurus3-jab1' => $this->input->post('pengurus3-jab1'),
-			'pengurus3-po1' => $this->input->post('pengurus3-po1'),
-			'pengurus3-bid1' => $this->input->post('pengurus3-bid1'),
-			'pengurus3-tha1' => $this->input->post('pengurus3-tha1'),
-			'pengurus3-thb1' => $this->input->post('pengurus3-thb1'),
-			'pengurus3-jab2' => $this->input->post('pengurus3-jab2'),
-			'pengurus3-po2' => $this->input->post('pengurus3-po2'),
-			'pengurus3-bid2' => $this->input->post('pengurus3-bid2'),
-			'pengurus3-tha2' => $this->input->post('pengurus3-tha2'),
-			'pengurus3-thb2' => $this->input->post('pengurus3-thb2'),
-			'pengurus3-jab3' => $this->input->post('pengurus3-jab3'),
-			'pengurus3-po3' => $this->input->post('pengurus3-po3'),
-			'pengurus3-bid3' => $this->input->post('pengurus3-bid3'),
-			'pengurus3-tha3' => $this->input->post('pengurus3-tha3'),
-			'pengurus3-thb3' => $this->input->post('pengurus3-thb3'),
-			'pengurus3-jab4' => $this->input->post('pengurus3-jab4'),
-			'pengurus3-po4' => $this->input->post('pengurus3-po4'),
-			'pengurus3-bid4' => $this->input->post('pengurus3-bid4'),
-			'pengurus3-tha4' => $this->input->post('pengurus3-tha4'),
-			'pengurus3-thb4' => $this->input->post('pengurus3-thb4'),
-			'pengurus3-jab5' => $this->input->post('pengurus3-jab5'),
-			'pengurus3-po5' => $this->input->post('pengurus3-po5'),
-			'pengurus3-bid5' => $this->input->post('pengurus3-bid5'),
-			'pengurus3-tha5' => $this->input->post('pengurus3-tha5'),
-			'pengurus3-thb5' => $this->input->post('pengurus3-thb5')
-		);
+		if(!empty($this->input->post('ktp-pengurus2'))){
+			$pengurus2 = array(
+				'nama-pengurus2' => $this->input->post('nama-pengurus2-g1'). ' ' .$this->input->post('nama-pengurus2-nd').' '.$this->input->post('nama-pengurus2-nt').' '.$this->input->post('nama-pengurus2-nb').' '.$this->input->post('nama-pengurus2-g2'),
+				'ktp-pengurus2' => $this->input->post('ktp-pengurus2'),
+				'tl-pengurus2' => $this->input->post('tl-pengurus2'),
+				'tgl-pengurus2' => $this->input->post('tgl-pengurus2'),
+				'alamat-pengurus2' => $this->input->post('alamat-pengurus2'),
+				'kota-kab-pengurus2' => $this->input->post('kota-kab-pengurus2'),
+				'prov-pengurus2' => $this->input->post('prov-pengurus2'),
+				'jab-pengurus2' => $this->input->post('jab-pengurus2'),
+				'kelola-pengurus2' => $this->input->post('kelola-pengurus2'),
+				'pendidikan-pengurus2' => $this->input->post('pendidikan-pengurus2'),
+				'jurusan-pengurus2' => $this->input->post('jurusan-pengurus2'),
+				'sklh-pt-pengurus2' => $this->input->post('sklh-pt-pengurus2'),
+				'pengurus2-jab1' => $this->input->post('pengurus2-jab1'),
+				'pengurus2-po1' => $this->input->post('pengurus2-po1'),
+				'pengurus2-bid1' => $this->input->post('pengurus2-bid1'),
+				'pengurus2-tha1' => $this->input->post('pengurus2-tha1'),
+				'pengurus2-thb1' => $this->input->post('pengurus2-thb1'),
+				'pengurus2-jab2' => $this->input->post('pengurus2-jab2'),
+				'pengurus2-po2' => $this->input->post('pengurus2-po2'),
+				'pengurus2-bid2' => $this->input->post('pengurus2-bid2'),
+				'pengurus2-tha2' => $this->input->post('pengurus2-tha2'),
+				'pengurus2-thb2' => $this->input->post('pengurus2-thb2'),
+				'pengurus2-jab3' => $this->input->post('pengurus2-jab3'),
+				'pengurus2-po3' => $this->input->post('pengurus2-po3'),
+				'pengurus2-bid3' => $this->input->post('pengurus2-bid3'),
+				'pengurus2-tha3' => $this->input->post('pengurus2-tha3'),
+				'pengurus2-thb3' => $this->input->post('pengurus2-thb3'),
+				'pengurus2-jab4' => $this->input->post('pengurus2-jab4'),
+				'pengurus2-po4' => $this->input->post('pengurus2-po4'),
+				'pengurus2-bid4' => $this->input->post('pengurus2-bid4'),
+				'pengurus2-tha4' => $this->input->post('pengurus2-tha4'),
+				'pengurus2-thb4' => $this->input->post('pengurus2-thb4'),
+				'pengurus2-jab5' => $this->input->post('pengurus2-jab5'),
+				'pengurus2-po5' => $this->input->post('pengurus2-po5'),
+				'pengurus2-bid5' => $this->input->post('pengurus2-bid5'),
+				'pengurus2-tha5' => $this->input->post('pengurus2-tha5'),
+				'pengurus2-thb5' => $this->input->post('pengurus2-thb5')
+			);
+			$jmlpgrs = 2;
+		};
+
+		if(!empty($this->input->post('ktp-pengurus3'))){
+			$pengurus3 = array(
+				'nama-pengurus3' => $this->input->post('nama-pengurus3-g1'). ' ' .$this->input->post('nama-pengurus3-nd').' '.$this->input->post('nama-pengurus3-nt').' '.$this->input->post('nama-pengurus3-nb').' '.$this->input->post('nama-pengurus3-g2'),
+				'ktp-pengurus3' => $this->input->post('ktp-pengurus3'),
+				'tl-pengurus3' => $this->input->post('tl-pengurus3'),
+				'tgl-pengurus3' => $this->input->post('tgl-pengurus3'),
+				'alamat-pengurus3' => $this->input->post('alamat-pengurus3'),
+				'kota-kab-pengurus3' => $this->input->post('kota-kab-pengurus3'),
+				'prov-pengurus3' => $this->input->post('prov-pengurus3'),
+				'jab-pengurus3' => $this->input->post('jab-pengurus3'),
+				'kelola-pengurus3' => $this->input->post('kelola-pengurus3'),
+				'pendidikan-pengurus3' => $this->input->post('pendidikan-pengurus3'),
+				'jurusan-pengurus3' => $this->input->post('jurusan-pengurus3'),
+				'sklh-pt-pengurus3' => $this->input->post('sklh-pt-pengurus3'),
+				'pengurus3-jab1' => $this->input->post('pengurus3-jab1'),
+				'pengurus3-po1' => $this->input->post('pengurus3-po1'),
+				'pengurus3-bid1' => $this->input->post('pengurus3-bid1'),
+				'pengurus3-tha1' => $this->input->post('pengurus3-tha1'),
+				'pengurus3-thb1' => $this->input->post('pengurus3-thb1'),
+				'pengurus3-jab2' => $this->input->post('pengurus3-jab2'),
+				'pengurus3-po2' => $this->input->post('pengurus3-po2'),
+				'pengurus3-bid2' => $this->input->post('pengurus3-bid2'),
+				'pengurus3-tha2' => $this->input->post('pengurus3-tha2'),
+				'pengurus3-thb2' => $this->input->post('pengurus3-thb2'),
+				'pengurus3-jab3' => $this->input->post('pengurus3-jab3'),
+				'pengurus3-po3' => $this->input->post('pengurus3-po3'),
+				'pengurus3-bid3' => $this->input->post('pengurus3-bid3'),
+				'pengurus3-tha3' => $this->input->post('pengurus3-tha3'),
+				'pengurus3-thb3' => $this->input->post('pengurus3-thb3'),
+				'pengurus3-jab4' => $this->input->post('pengurus3-jab4'),
+				'pengurus3-po4' => $this->input->post('pengurus3-po4'),
+				'pengurus3-bid4' => $this->input->post('pengurus3-bid4'),
+				'pengurus3-tha4' => $this->input->post('pengurus3-tha4'),
+				'pengurus3-thb4' => $this->input->post('pengurus3-thb4'),
+				'pengurus3-jab5' => $this->input->post('pengurus3-jab5'),
+				'pengurus3-po5' => $this->input->post('pengurus3-po5'),
+				'pengurus3-bid5' => $this->input->post('pengurus3-bid5'),
+				'pengurus3-tha5' => $this->input->post('pengurus3-tha5'),
+				'pengurus3-thb5' => $this->input->post('pengurus3-thb5')
+			);
+			$jmlpgrs = 3;
+		};
+
+		if(!empty($this->input->post('ktp-pengurus4'))){
+			$pengurus4 = array(
+				'nama-pengurus4' => $this->input->post('nama-pengurus4-g1'). ' ' .$this->input->post('nama-pengurus4-nd').' '.$this->input->post('nama-pengurus4-nt').' '.$this->input->post('nama-pengurus4-nb').' '.$this->input->post('nama-pengurus4-g2'),
+				'ktp-pengurus4' => $this->input->post('ktp-pengurus4'),
+				'tl-pengurus4' => $this->input->post('tl-pengurus4'),
+				'tgl-pengurus4' => $this->input->post('tgl-pengurus4'),
+				'alamat-pengurus4' => $this->input->post('alamat-pengurus4'),
+				'kota-kab-pengurus4' => $this->input->post('kota-kab-pengurus4'),
+				'prov-pengurus4' => $this->input->post('prov-pengurus4'),
+				'jab-pengurus4' => $this->input->post('jab-pengurus4'),
+				'kelola-pengurus4' => $this->input->post('kelola-pengurus4'),
+				'pendidikan-pengurus4' => $this->input->post('pendidikan-pengurus4'),
+				'jurusan-pengurus4' => $this->input->post('jurusan-pengurus4'),
+				'sklh-pt-pengurus4' => $this->input->post('sklh-pt-pengurus4'),
+				'pengurus4-jab1' => $this->input->post('pengurus4-jab1'),
+				'pengurus4-po1' => $this->input->post('pengurus4-po1'),
+				'pengurus4-bid1' => $this->input->post('pengurus4-bid1'),
+				'pengurus4-tha1' => $this->input->post('pengurus4-tha1'),
+				'pengurus4-thb1' => $this->input->post('pengurus4-thb1'),
+				'pengurus4-jab2' => $this->input->post('pengurus4-jab2'),
+				'pengurus4-po2' => $this->input->post('pengurus4-po2'),
+				'pengurus4-bid2' => $this->input->post('pengurus4-bid2'),
+				'pengurus4-tha2' => $this->input->post('pengurus4-tha2'),
+				'pengurus4-thb2' => $this->input->post('pengurus4-thb2'),
+				'pengurus4-jab3' => $this->input->post('pengurus4-jab3'),
+				'pengurus4-po3' => $this->input->post('pengurus4-po3'),
+				'pengurus4-bid3' => $this->input->post('pengurus4-bid3'),
+				'pengurus4-tha3' => $this->input->post('pengurus4-tha3'),
+				'pengurus4-thb3' => $this->input->post('pengurus4-thb3'),
+				'pengurus4-jab4' => $this->input->post('pengurus4-jab4'),
+				'pengurus4-po4' => $this->input->post('pengurus4-po4'),
+				'pengurus4-bid4' => $this->input->post('pengurus4-bid4'),
+				'pengurus4-tha4' => $this->input->post('pengurus4-tha4'),
+				'pengurus4-thb4' => $this->input->post('pengurus4-thb4'),
+				'pengurus4-jab5' => $this->input->post('pengurus4-jab5'),
+				'pengurus4-po5' => $this->input->post('pengurus4-po5'),
+				'pengurus4-bid5' => $this->input->post('pengurus4-bid5'),
+				'pengurus4-tha5' => $this->input->post('pengurus4-tha5'),
+				'pengurus4-thb5' => $this->input->post('pengurus4-thb5')
+			);
+			$jmlpgrs = 4;
+		};
 
 		$tab2 = array(
-			'pemilik' => $pemilik,
-			'pengurus1' => $pengurus1,
-			'pengurus2' => $pengurus2,
-			'pengurus3' => $pengurus3
-		);	
+			'pemilik' => $pemilik
+		);
+
+		for($i=1;$i<=$jmlpgrs;$i++){
+			$tab2['pengurus'.$i] = ${'pengurus'.$i};
+		}
 
 		$tab3 = array(
 			'bln-brgkt1' => $this->input->post('bln-brgkt1'),
@@ -284,7 +339,7 @@ class Scoring extends CI_Controller {
 			'lap-keu' => $this->input->post('lap-keu'),
 			'jns-keu' => $this->input->post('jns-keu'),
 			'opn-keu' => $this->input->post('opn-keu'),
-			'giro-bank' => $this->input->post('giro-bank')
+			'giro-bank' => $this->input->post('giro-bank1').','.$this->input->post('giro-bank2').','.$this->input->post('giro-bank3').','.$this->input->post('giro-bank4').','.$this->input->post('giro-bank5')
 		);
 
 		$tab5 = array(
@@ -318,7 +373,8 @@ class Scoring extends CI_Controller {
 			'tab6' => $tab6,
 			'year' => $year,
 			'year1' => $year1,
-			'year2' => $year2
+			'year2' => $year2,
+			'jmlpgrs' => $jmlpgrs
 		);
 
 		//$data['score'] = number_format(array_sum($temp)/count($temp), 2, '.','');
@@ -487,7 +543,14 @@ class Scoring extends CI_Controller {
 		$k = $this->keuanganScore($lk,$oa,$ar);
 
 		#1
-		$bank = (int)preg_replace( '/[^0-9]/', '', $data['tab4']['giro-bank']);
+		$bank = explode(',', $data['tab4']['giro-bank']);
+		$bt1 = 100;
+		for($i=0;$i<count($bank);$i++){
+			$bt2 = (int)preg_replace( '/[^0-9]/', '', $bank[$i]);
+			if($bt1>$bt2){
+				$bt1 = $bt2;
+			};
+		};
 		#2
 		$mr = true;
 		#3
@@ -497,7 +560,7 @@ class Scoring extends CI_Controller {
 		#5
 		$ng = $data['tab6']['n-gua'];
 		#Score
-		$a = $this->agunanScore($bank,$mr,$pg,$cg,$ng);
+		$a = $this->agunanScore($bt1,$mr,$pg,$cg,$ng);
 
 		#1
 		$durasi = (int)$data['tab5']['wkt-pp'];

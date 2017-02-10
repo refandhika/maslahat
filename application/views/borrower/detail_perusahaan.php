@@ -292,6 +292,8 @@
 							        <th> </th>
 							        <th>Tahun</th>
 							    </tr>
+							</thead>
+							<tbody>
 							    <tr>
 							    	<td>1</td>
 							    	<td><input type="text" name="pemilik-jab1" class="form-control"></td>
@@ -337,411 +339,15 @@
 							    	<td>s.d.</td>
 							    	<td class="col-md-1"><input type="text" name="pemilik-thb5" id="pemilik-thb5" class="form-control"></td>
 							    </tr>
-						    </thead>
+						    </tbody>
 						</table>
 					</div>
 				</div>
-				<div class="form-group panel panel-default">
-					<div class="panel-heading">Pengurus 1</div>
-					<div class="panel-body">
-						<div class="form-group">
-							<label for="nama-pengurus1" class="col-md-1 control-label">Nama :</label>
-							<div class="col-md-1">
-									<input type="text" name="nama-pengurus1-g1" class="form-control" placeholder="Gelar">
-								</div>
-								<div class="col-md-3">
-									<input type="text" name="nama-pengurus1-nd" class="form-control" placeholder="Nama Depan">
-								</div>
-								<div class="col-md-3">
-									<input type="text" name="nama-pengurus1-nt" class="form-control" placeholder="Nama Tengah">
-								</div>
-								<div class="col-md-3">
-									<input type="text" name="nama-pengurus1-nb" class="form-control" placeholder="Nama Belakang">
-								</div>
-								<div class="col-md-1">
-									<input type="text" name="nama-pengurus1-g2" class="form-control" placeholder="Gelar">
-								</div>
-							<label for="ktp-pengurus1" class="col-md-2 control-label">Nomor KTP :</label>
-							<div class="col-md-4">
-								<input type="text" name="ktp-pengurus1" class="form-control">
-							</div>
-							<label for="tl-pengurus1" class="col-md-2 control-label">Tempat Lahir :</label>
-							<div class="col-md-4">
-								<input type="text" name="tl-pengurus1" class="form-control">
-							</div>
-							<label for="tgl-pengurus1" class="col-md-2 control-label">Tanggal Lahir :</label>
-							<div class="col-md-4">
-								<input type="text" name="tgl-pengurus1" id="tgl-pengurus1" class="form-control" placeholder="HH/BB/TTTT">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="alamat-pengurus1" class="col-md-2 control-label">Alamat :</label>
-							<div class="col-md-10">
-								<textarea name="alamat-pengurus1" class="form-control" rows="3" data-toggle="tooltip" data-placement="left" title='Gunakan kata "Jalan" untuk mengawali alamat atau gunakan kata "Perumahan" jika lokasi berada di Kompleks'></textarea>
-							</div>
-							<label for="kota-kab-pengurus1" class="col-md-2 control-label">Kota/Kabupaten :</label>
-							<div class="col-md-4">
-								<input type="text" name="kota-kab-pengurus1" class="form-control">
-							</div>
-							<label for="prov-pengurus1" class="col-md-1 control-label">Provinsi :</label>
-							<div class="col-md-5">
-								<input type="text" name="prov-pengurus1" class="form-control">
-							</div>
-							<label for="jab-pengurus1" class="col-md-2 control-label">Jabatan :</label>
-							<div class="col-md-4">
-								<input type="text" name="jab-pengurus1" class="form-control">
-							</div>
-							<label for="kelola-pengurus1" class="col-md-3 control-label">Mengelola Haji/Umrah Sejak Tahun :</label>
-							<div class="col-md-3">
-								<input type="text" name="kelola-pengurus1" id="kelola-pengurus1" class="form-control">
-							</div>
-							<label for="pendidikan-pengurus1" class="col-md-2 control-label">Pendidikan Terakhir :</label>
-							<div class="col-md-4">
-								<select name="pendidikan-pengurus1" class="form-control" id="pendidikan-pengurus1">
-									<option value="SLTA">SLTA</option>
-									<option value="Sarjana Muda/D3">Sarjana Muda/D3</option>
-									<option value="Sarjana/S1">Sarjana/S1</option>
-									<option value="S2">S2</option>
-									<option value="S3">S3</option>
-								</select>
-							</div>
-							<label for="jurusan-pengurus1" class="col-md-2 control-label">Jurusan/Bidang :</label>
-							<div class="col-md-4">
-								<input type="text" name="jurusan-pengurus1" class="form-control">
-							</div>
-							<label for="sklh-pt-pengurus1" class="col-md-3 control-label">Nama Sekolah/Perguruan Tinggi :</label>
-							<div class="col-md-3">
-								<input type="text" name="sklh-pt-pengurus1" class="form-control">
-							</div>
-						</div>
-						<Label class="col-md-12 control-label">Pengalaman</label>
-						<table class="table table-striped">
-						    <thead>
-							    <tr>
-							        <th>#</th>
-							        <th>Jabatan</th>
-							        <th>Nama Perusahaan/Organisasi</th>
-							        <th>Bidang Perusahaan</th>
-							        <th>Tahun</th>
-							        <th> </th>
-							        <th>Tahun</th>
-							    </tr>
-							    <tr>
-							    	<td>1</td>
-							    	<td><input type="text" name="pengurus1-jab1" class="form-control"></td>
-							    	<td><input type="text" name="pengurus1-po1" class="form-control"></td>
-							    	<td><input type="text" name="pengurus1-bid1" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus1-tha1" id="pengurus1-tha1" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus1-thb1" id="pengurus1-thb1" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>2</td>
-							    	<td><input type="text" name="pengurus1-jab2" class="form-control"></td>
-							    	<td><input type="text" name="pengurus1-po2" class="form-control"></td>
-							    	<td><input type="text" name="pengurus1-bid2" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus1-tha2" id="pengurus1-tha2" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus1-thb2" id="pengurus1-thb2" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>3</td>
-							    	<td><input type="text" name="pengurus1-jab3" class="form-control"></td>
-							    	<td><input type="text" name="pengurus1-po3" class="form-control"></td>
-							    	<td><input type="text" name="pengurus1-bid3" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus1-tha3" id="pengurus1-tha3" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus1-thb3" id="pengurus1-thb3" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>4</td>
-							    	<td><input type="text" name="pengurus1-jab4" class="form-control"></td>
-							    	<td><input type="text" name="pengurus1-po4" class="form-control"></td>
-							    	<td><input type="text" name="pengurus1-bid4" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus1-tha4" id="pengurus1-tha4" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus1-thb4" id="pengurus1-thb4" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>5</td>
-							    	<td><input type="text" name="pengurus1-jab5" class="form-control"></td>
-							    	<td><input type="text" name="pengurus1-po5" class="form-control"></td>
-							    	<td><input type="text" name="pengurus1-bid5" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus1-tha5" id="pengurus1-tha5" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus1-thb5" id="pengurus1-thb5" class="form-control"></td>
-							    </tr>
-						    </thead>
-						</table>
-					</div>
+				<div id="pengurus-addable">
 				</div>
-				<div class="form-group panel panel-default">
-					<div class="panel-heading">Pengurus 2</div>
-					<div class="panel-body">
-						<div class="form-group">
-							<label for="nama-pengurus2" class="col-md-1 control-label">Nama :</label>
-							<div class="col-md-1">
-									<input type="text" name="nama-pengurus2-g1" class="form-control" placeholder="Gelar">
-								</div>
-								<div class="col-md-3">
-									<input type="text" name="nama-pengurus2-nd" class="form-control" placeholder="Nama Depan">
-								</div>
-								<div class="col-md-3">
-									<input type="text" name="nama-pengurus2-nt" class="form-control" placeholder="Nama Tengah">
-								</div>
-								<div class="col-md-3">
-									<input type="text" name="nama-pengurus2-nb" class="form-control" placeholder="Nama Belakang">
-								</div>
-								<div class="col-md-1">
-									<input type="text" name="nama-pengurus2-g2" class="form-control" placeholder="Gelar">
-								</div>
-							<label for="ktp-pengurus2" class="col-md-2 control-label">Nomor KTP :</label>
-							<div class="col-md-4">
-								<input type="text" name="ktp-pengurus2" class="form-control">
-							</div>
-							<label for="tl-pengurus2" class="col-md-2 control-label">Tempat Lahir :</label>
-							<div class="col-md-4">
-								<input type="text" name="tl-pengurus2" class="form-control">
-							</div>
-							<label for="tgl-pengurus2" class="col-md-2 control-label">Tanggal Lahir :</label>
-							<div class="col-md-4">
-								<input type="text" name="tgl-pengurus2" id="tgl-pengurus2" class="form-control" placeholder="HH/BB/TTTT">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="alamat-pengurus2" class="col-md-2 control-label">Alamat :</label>
-							<div class="col-md-10">
-								<textarea name="alamat-pengurus2" class="form-control" rows="3" data-toggle="tooltip" data-placement="left" title='Gunakan kata "Jalan" untuk mengawali alamat atau gunakan kata "Perumahan" jika lokasi berada di Kompleks'></textarea>
-							</div>
-							<label for="kota-kab-pengurus2" class="col-md-2 control-label">Kota/Kabupaten :</label>
-							<div class="col-md-4">
-								<input type="text" name="kota-kab-pengurus2" class="form-control">
-							</div>
-							<label for="prov-pengurus2" class="col-md-1 control-label">Provinsi :</label>
-							<div class="col-md-5">
-								<input type="text" name="prov-pengurus2" class="form-control">
-							</div>
-							<label for="jab-pengurus2" class="col-md-2 control-label">Jabatan :</label>
-							<div class="col-md-4">
-								<input type="text" name="jab-pengurus2" class="form-control">
-							</div>
-							<label for="kelola-pengurus2" class="col-md-3 control-label">Mengelola Haji/Umrah Sejak Tahun :</label>
-							<div class="col-md-3">
-								<input type="text" name="kelola-pengurus2" id="kelola-pengurus2" class="form-control">
-							</div>
-							<label for="pendidikan-pengurus2" class="col-md-2 control-label">Pendidikan Terakhir :</label>
-							<div class="col-md-4">
-								<select name="pendidikan-pengurus2" class="form-control" id="pendidikan-pengurus2">
-									<option value="SLTA">SLTA</option>
-									<option value="Sarjana Muda/D3">Sarjana Muda/D3</option>
-									<option value="Sarjana/S1">Sarjana/S1</option>
-									<option value="S2">S2</option>
-									<option value="S3">S3</option>
-								</select>
-							</div>
-							<label for="jurusan-pengurus2" class="col-md-2 control-label">Jurusan/Bidang :</label>
-							<div class="col-md-4">
-								<input type="text" name="jurusan-pengurus2" class="form-control">
-							</div>
-							<label for="sklh-pt-pengurus2" class="col-md-3 control-label">Nama Sekolah/Perguruan Tinggi :</label>
-							<div class="col-md-3">
-								<input type="text" name="sklh-pt-pengurus2" class="form-control">
-							</div>
-						</div>
-						<Label class="col-md-12 control-label">Pengalaman</label>
-						<table class="table table-striped">
-						    <thead>
-							    <tr>
-							        <th>#</th>
-							        <th>Jabatan</th>
-							        <th>Nama Perusahaan/Organisasi</th>
-							        <th>Bidang Perusahaan</th>
-							        <th>Tahun</th>
-							        <th> </th>
-							        <th>Tahun</th>
-							    </tr>
-							    <tr>
-							    	<td>1</td>
-							    	<td><input type="text" name="pengurus2-jab1" class="form-control"></td>
-							    	<td><input type="text" name="pengurus2-po1" class="form-control"></td>
-							    	<td><input type="text" name="pengurus2-bid1" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus2-tha1" id="pengurus2-tha1" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus2-thb1" id="pengurus2-thb1" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>2</td>
-							    	<td><input type="text" name="pengurus2-jab2" class="form-control"></td>
-							    	<td><input type="text" name="pengurus2-po2" class="form-control"></td>
-							    	<td><input type="text" name="pengurus2-bid2" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus2-tha2" id="pengurus2-tha2" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus2-thb2" id="pengurus2-thb2" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>3</td>
-							    	<td><input type="text" name="pengurus2-jab3" class="form-control"></td>
-							    	<td><input type="text" name="pengurus2-po3" class="form-control"></td>
-							    	<td><input type="text" name="pengurus2-bid3" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus2-tha3" id="pengurus2-tha3" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus2-thb3" id="pengurus2-thb3" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>4</td>
-							    	<td><input type="text" name="pengurus2-jab4" class="form-control"></td>
-							    	<td><input type="text" name="pengurus2-po4" class="form-control"></td>
-							    	<td><input type="text" name="pengurus2-bid4" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus2-tha4" id="pengurus2-tha4" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus2-thb4" id="pengurus2-thb4" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>5</td>
-							    	<td><input type="text" name="pengurus2-jab5" class="form-control"></td>
-							    	<td><input type="text" name="pengurus2-po5" class="form-control"></td>
-							    	<td><input type="text" name="pengurus2-bid5" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus2-tha5" id="pengurus2-tha5" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus2-thb5" id="pengurus2-thb5" class="form-control"></td>
-							    </tr>
-						    </thead>
-						</table>
-					</div>
-				</div>
-				<div class="form-group panel panel-default">
-					<div class="panel-heading">Pengurus 3</div>
-					<div class="panel-body">
-						<div class="form-group">
-							<label for="nama-pengurus3" class="col-md-1 control-label">Nama :</label>
-							<div class="col-md-1">
-									<input type="text" name="nama-pengurus3-g1" class="form-control" placeholder="Gelar">
-								</div>
-								<div class="col-md-3">
-									<input type="text" name="nama-pengurus3-nd" class="form-control" placeholder="Nama Depan">
-								</div>
-								<div class="col-md-3">
-									<input type="text" name="nama-pengurus3-nt" class="form-control" placeholder="Nama Tengah">
-								</div>
-								<div class="col-md-3">
-									<input type="text" name="nama-pengurus3-nb" class="form-control" placeholder="Nama Belakang">
-								</div>
-								<div class="col-md-1">
-									<input type="text" name="nama-pengurus3-g2" class="form-control" placeholder="Gelar">
-								</div>
-							<label for="ktp-pengurus3" class="col-md-2 control-label">Nomor KTP :</label>
-							<div class="col-md-4">
-								<input type="text" name="ktp-pengurus3" class="form-control">
-							</div>
-							<label for="tl-pengurus3" class="col-md-2 control-label">Tempat Lahir :</label>
-							<div class="col-md-4">
-								<input type="text" name="tl-pengurus3" class="form-control">
-							</div>
-							<label for="tgl-pengurus3" class="col-md-2 control-label">Tanggal Lahir :</label>
-							<div class="col-md-4">
-								<input type="text" name="tgl-pengurus3" id="tgl-pengurus3" class="form-control" placeholder="HH/BB/TTTT">
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="alamat-pengurus3" class="col-md-2 control-label">Alamat :</label>
-							<div class="col-md-10">
-								<textarea name="alamat-pengurus3" class="form-control" rows="3" data-toggle="tooltip" data-placement="left" title='Gunakan kata "Jalan" untuk mengawali alamat atau gunakan kata "Perumahan" jika lokasi berada di Kompleks'></textarea>
-							</div>
-							<label for="kota-kab-pengurus3" class="col-md-2 control-label">Kota/Kabupaten :</label>
-							<div class="col-md-4">
-								<input type="text" name="kota-kab-pengurus3" class="form-control">
-							</div>
-							<label for="prov-pengurus3" class="col-md-1 control-label">Provinsi :</label>
-							<div class="col-md-5">
-								<input type="text" name="prov-pengurus3" class="form-control">
-							</div>
-							<label for="jab-pengurus3" class="col-md-2 control-label">Jabatan :</label>
-							<div class="col-md-4">
-								<input type="text" name="jab-pengurus3" class="form-control">
-							</div>
-							<label for="kelola-pengurus3" class="col-md-3 control-label">Mengelola Haji/Umrah Sejak Tahun :</label>
-							<div class="col-md-3">
-								<input type="text" name="kelola-pengurus3" id="kelola-pengurus3" class="form-control">
-							</div>
-							<label for="pendidikan-pengurus3" class="col-md-2 control-label">Pendidikan Terakhir :</label>
-							<div class="col-md-4">
-								<select name="pendidikan-pengurus3" class="form-control" id="pendidikan-pengurus3">
-									<option value="SLTA">SLTA</option>
-									<option value="Sarjana Muda/D3">Sarjana Muda/D3</option>
-									<option value="Sarjana/S1">Sarjana/S1</option>
-									<option value="S2">S2</option>
-									<option value="S3">S3</option>
-								</select>
-							</div>
-							<label for="jurusan-pengurus3" class="col-md-2 control-label">Jurusan/Bidang :</label>
-							<div class="col-md-4">
-								<input type="text" name="jurusan-pengurus3" class="form-control">
-							</div>
-							<label for="sklh-pt-pengurus3" class="col-md-3 control-label">Nama Sekolah/Perguruan Tinggi :</label>
-							<div class="col-md-3">
-								<input type="text" name="sklh-pt-pengurus3" class="form-control">
-							</div>
-						</div>
-						<Label class="col-md-12 control-label">Pengalaman</label>
-						<table class="table table-striped">
-						    <thead>
-							    <tr>
-							        <th>#</th>
-							        <th>Jabatan</th>
-							        <th>Nama Perusahaan/Organisasi</th>
-							        <th>Bidang Perusahaan</th>
-							        <th>Tahun</th>
-							        <th> </th>
-							        <th>Tahun</th>
-							    </tr>
-							    <tr>
-							    	<td>1</td>
-							    	<td><input type="text" name="pengurus3-jab1" class="form-control"></td>
-							    	<td><input type="text" name="pengurus3-po1" class="form-control"></td>
-							    	<td><input type="text" name="pengurus3-bid1" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus3-tha1" id="pengurus3-tha1" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus3-thb1" id="pengurus3-thb1" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>2</td>
-							    	<td><input type="text" name="pengurus3-jab2" class="form-control"></td>
-							    	<td><input type="text" name="pengurus3-po2" class="form-control"></td>
-							    	<td><input type="text" name="pengurus3-bid2" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus3-tha2" id="pengurus3-tha2" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus3-thb2" id="pengurus3-thb2" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>3</td>
-							    	<td><input type="text" name="pengurus3-jab3" class="form-control"></td>
-							    	<td><input type="text" name="pengurus3-po3" class="form-control"></td>
-							    	<td><input type="text" name="pengurus3-bid3" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus3-tha3" id="pengurus3-tha3" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus3-thb3" id="pengurus3-thb3" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>4</td>
-							    	<td><input type="text" name="pengurus3-jab4" class="form-control"></td>
-							    	<td><input type="text" name="pengurus3-po4" class="form-control"></td>
-							    	<td><input type="text" name="pengurus3-bid4" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus3-tha4" id="pengurus3-tha4" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus3-thb4" id="pengurus3-thb4" class="form-control"></td>
-							    </tr>
-							    <tr>
-							    	<td>5</td>
-							    	<td><input type="text" name="pengurus3-jab5" class="form-control"></td>
-							    	<td><input type="text" name="pengurus3-po5" class="form-control"></td>
-							    	<td><input type="text" name="pengurus3-bid5" class="form-control"></td>
-							    	<td class="col-md-1"><input type="text" name="pengurus3-tha5" id="pengurus3-tha5" class="form-control"></td>
-							    	<td>s.d.</td>
-							    	<td class="col-md-1"><input type="text" name="pengurus3-thb5" id="pengurus3-thb5" class="form-control"></td>
-							    </tr>
-						    </thead>
-						</table>
-					</div>
+				<div class="col-md-12 align-right">
+					<button type="button" class="btn btn-default" id="btn-add-pengurus">Tambah Pengurus</button>
+					<button type="button" class="btn btn-default disabled" id="btn-sub-pengurus">Kurangi Pengurus</button>
 				</div>
 				<button type="button" class="btn btn-default btn-dp-pb"><span class="glyphicon glyphicon-chevron-left"></span> Kembali</button>
 				<button type="button" class="btn btn-default btn-dp-nb">Lanjut <span class="glyphicon glyphicon-chevron-right"></span></button>
@@ -1125,24 +731,38 @@
 					<div class="panel-heading">Bank</div>
 					<div class="panel-body">
 						<label for="giro-bank" class="col-md-4 control-label">Perusahaan menggunakan Giro pada Bank :</label>
-						<div class="col-md-3">
-							<select name="giro-bank" id="giro-bank" class="form-control">
-								<option value="bank1">Bank Mandiri</option>
-								<option value="bank2">BRI</option>
-								<option value="bank3">BNI</option>
-								<option value="bank31">BTN</option>
-								<option value="bank32">Bank Syariah Mandiri</option>
-								<option value="bank33">BCA</option>
-								<option value="bank34">Bank Danamon</option>
-								<option value="bank35">CIMB Niaga</option>
-								<option value="bank36">BNI Syariah</option>
-								<option value="bank37">BRI Syariah</option>
-								<option value="bank38">Bank Panin</option>
-								<option value="bank39">Bank Panin Dubai Syariah</option>
-								<option value="bank40">Bank Muamalat</option>
-								<option value="bank98">Bank Lokal lainnya</option>
-								<option value="bank99">Bank Asing</option>
-							</select>
+						<div class="col-md-6">
+							<div id="bank-addable">
+								<div class="row">
+									<div class="col-md-6">
+										<select name="giro-bank1" id="giro-bank1" class="form-control">
+											<option value="bank1">Bank Mandiri</option>
+											<option value="bank2">BRI</option>
+											<option value="bank3">BNI</option>
+											<option value="bank31">BTN</option>
+											<option value="bank32">Bank Syariah Mandiri</option>
+											<option value="bank33">BCA</option>
+											<option value="bank34">Bank Danamon</option>
+											<option value="bank35">CIMB Niaga</option>
+											<option value="bank36">BNI Syariah</option>
+											<option value="bank37">BRI Syariah</option>
+											<option value="bank38">Bank Panin</option>
+											<option value="bank39">Bank Panin Dubai Syariah</option>
+											<option value="bank40">Bank Muamalat</option>
+											<option value="bank98">Bank Lokal lainnya</option>
+											<option value="bank99">Bank Asing</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">
+									<button type="button" class="btn btn-default" id="btn-add-bank">Tambah Bank</button>
+								</div>
+								<div class="col-md-3">
+									<button type="button" class="btn btn-default disabled" id="btn-sub-bank">Kurangi Bank</button>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

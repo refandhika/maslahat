@@ -3,6 +3,34 @@ var NAOption = {
 	"Belum Tersedia" : "None"
 }
 
+/* Bank Option */
+var bankOption = {
+	"bank1" : "Bank Mandiri",
+	"bank2" : "BRI",
+	"bank3" : "BNI",
+	"bank31" : "BTN",
+	"bank32" : "Bank Syariah Mandiri",
+	"bank33" : "BCA",
+	"bank34" : "Bank Danamon",
+	"bank35" : "CIMB Niaga",
+	"bank36" : "BNI Syariah",
+	"bank37" : "BRI Syariah",
+	"bank38" : "Bank Panin",
+	"bank39" : "Bank Panin Dubai Syariah",
+	"bank40" : "Bank Muamalat",
+	"bank98" : "Bank Lokal lainnya",
+	"bank99" : "Bank Asing"
+}
+
+/* Pendidikan Option */
+var pendidikanOption = {
+	"SLTA" : "SLTA",
+	"Sarjana Muda/D3" : "Sarjana Muda/D3",
+	"Sarjana/S1" : "Sarjana/S1",
+	"S2" : "S2",
+	"S3" : "S3"
+}
+
 /* Data Option Negara */
 var indonesiaOption = {
 	"-" : "None",

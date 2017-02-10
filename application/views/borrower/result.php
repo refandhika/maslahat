@@ -57,60 +57,26 @@
 			- <?php echo($tab2['pemilik']['pemilik-jab3'].'-'.$tab2['pemilik']['pemilik-po3'].'-'.$tab2['pemilik']['pemilik-tha3'].'-'.$tab2['pemilik']['pemilik-thb3']); ?><br>
 			- <?php echo($tab2['pemilik']['pemilik-jab4'].'-'.$tab2['pemilik']['pemilik-po4'].'-'.$tab2['pemilik']['pemilik-tha4'].'-'.$tab2['pemilik']['pemilik-thb4']); ?><br>
 			- <?php echo($tab2['pemilik']['pemilik-jab5'].'-'.$tab2['pemilik']['pemilik-po5'].'-'.$tab2['pemilik']['pemilik-tha5'].'-'.$tab2['pemilik']['pemilik-thb5']); ?><br>
-			<h3>Pengurus 1</h3><br>
-			Nama : <?php echo($tab2['pengurus1']['nama-pengurus1']); ?><br>
-			No. KTP : <?php echo($tab2['pengurus1']['ktp-pengurus1']); ?><br>
-			Tempat Tanggal Lahir : <?php echo($tab2['pengurus1']['tl-pengurus1'].','.$tab2['pengurus1']['tgl-pengurus1']); ?><br>
-			Alamat : <?php echo($tab2['pengurus1']['alamat-pengurus1']); ?><br>
-			Kota/Kabupaten : <?php echo($tab2['pengurus1']['kota-kab-pengurus1']); ?><br>
-			Provinsi : <?php echo($tab2['pengurus1']['prov-pengurus1']); ?><br>
-			Jabatan : <?php echo($tab2['pengurus1']['jab-pengurus1']); ?><br>
-			Mengelola Haji Sejak : <?php echo($tab2['pengurus1']['kelola-pengurus1']); ?><br>
-			Pendidikan Terakhir : <?php echo($tab2['pengurus1']['pendidikan-pengurus1']); ?><br>
-			Jurusan/Bidang : <?php echo($tab2['pengurus1']['jurusan-pengurus1']); ?><br>
-			Nama Sekolah/Perguruan Tinggi : <?php echo($tab2['pengurus1']['sklh-pt-pengurus1']); ?><br>
-			<b>Pengalaman</b><br>
-			- <?php echo($tab2['pengurus1']['pengurus1-jab1'].'-'.$tab2['pengurus1']['pengurus1-po1'].'-'.$tab2['pengurus1']['pengurus1-tha1'].'-'.$tab2['pengurus1']['pengurus1-thb1']); ?><br>
-			- <?php echo($tab2['pengurus1']['pengurus1-jab2'].'-'.$tab2['pengurus1']['pengurus1-po2'].'-'.$tab2['pengurus1']['pengurus1-tha2'].'-'.$tab2['pengurus1']['pengurus1-thb2']); ?><br>
-			- <?php echo($tab2['pengurus1']['pengurus1-jab3'].'-'.$tab2['pengurus1']['pengurus1-po3'].'-'.$tab2['pengurus1']['pengurus1-tha3'].'-'.$tab2['pengurus1']['pengurus1-thb3']); ?><br>
-			- <?php echo($tab2['pengurus1']['pengurus1-jab4'].'-'.$tab2['pengurus1']['pengurus1-po4'].'-'.$tab2['pengurus1']['pengurus1-tha4'].'-'.$tab2['pengurus1']['pengurus1-thb4']); ?><br>
-			- <?php echo($tab2['pengurus1']['pengurus1-jab5'].'-'.$tab2['pengurus1']['pengurus1-po5'].'-'.$tab2['pengurus1']['pengurus1-tha5'].'-'.$tab2['pengurus1']['pengurus1-thb5']); ?><br>
-			<h3>Pengurus 2</h3><br>
-			Nama : <?php echo($tab2['pengurus2']['nama-pengurus2']); ?><br>
-			No. KTP : <?php echo($tab2['pengurus2']['ktp-pengurus2']); ?><br>
-			Tempat Tanggal Lahir : <?php echo($tab2['pengurus2']['tl-pengurus2'].','.$tab2['pengurus2']['tgl-pengurus2']); ?><br>
-			Alamat : <?php echo($tab2['pengurus2']['alamat-pengurus2']); ?><br>
-			Kota/Kabupaten : <?php echo($tab2['pengurus2']['kota-kab-pengurus2']); ?><br>
-			Provinsi : <?php echo($tab2['pengurus2']['prov-pengurus2']); ?><br>
-			Jabatan : <?php echo($tab2['pengurus2']['jab-pengurus2']); ?><br>
-			Mengelola Haji Sejak : <?php echo($tab2['pengurus2']['kelola-pengurus2']); ?><br>
-			Pendidikan Terakhir : <?php echo($tab2['pengurus2']['pendidikan-pengurus2']); ?><br>
-			Jurusan/Bidang : <?php echo($tab2['pengurus2']['jurusan-pengurus2']); ?><br>
-			Nama Sekolah/Perguruan Tinggi : <?php echo($tab2['pengurus2']['sklh-pt-pengurus2']); ?><br>
-			<b>Pengalaman</b><br>
-			- <?php echo($tab2['pengurus2']['pengurus2-jab1'].'-'.$tab2['pengurus2']['pengurus2-po1'].'-'.$tab2['pengurus2']['pengurus2-tha1'].'-'.$tab2['pengurus2']['pengurus2-thb1']); ?><br>
-			- <?php echo($tab2['pengurus2']['pengurus2-jab2'].'-'.$tab2['pengurus2']['pengurus2-po2'].'-'.$tab2['pengurus2']['pengurus2-tha2'].'-'.$tab2['pengurus2']['pengurus2-thb2']); ?><br>
-			- <?php echo($tab2['pengurus2']['pengurus2-jab3'].'-'.$tab2['pengurus2']['pengurus2-po3'].'-'.$tab2['pengurus2']['pengurus2-tha3'].'-'.$tab2['pengurus2']['pengurus2-thb3']); ?><br>
-			- <?php echo($tab2['pengurus2']['pengurus2-jab4'].'-'.$tab2['pengurus2']['pengurus2-po4'].'-'.$tab2['pengurus2']['pengurus2-tha4'].'-'.$tab2['pengurus2']['pengurus2-thb4']); ?><br>
-			- <?php echo($tab2['pengurus2']['pengurus2-jab5'].'-'.$tab2['pengurus2']['pengurus2-po5'].'-'.$tab2['pengurus2']['pengurus2-tha5'].'-'.$tab2['pengurus2']['pengurus2-thb5']); ?><br>
-			<h3>Pengurus 3</h3><br>
-			Nama : <?php echo($tab2['pengurus3']['nama-pengurus3']); ?><br>
-			No. KTP : <?php echo($tab2['pengurus3']['ktp-pengurus3']); ?><br>
-			Tempat Tanggal Lahir : <?php echo($tab2['pengurus3']['tl-pengurus3'].','.$tab2['pengurus3']['tgl-pengurus3']); ?><br>
-			Alamat : <?php echo($tab2['pengurus3']['alamat-pengurus3']); ?><br>
-			Kota/Kabupaten : <?php echo($tab2['pengurus3']['kota-kab-pengurus3']); ?><br>
-			Provinsi : <?php echo($tab2['pengurus3']['prov-pengurus3']); ?><br>
-			Jabatan : <?php echo($tab2['pengurus3']['jab-pengurus3']); ?><br>
-			Mengelola Haji Sejak : <?php echo($tab2['pengurus3']['kelola-pengurus3']); ?><br>
-			Pendidikan Terakhir : <?php echo($tab2['pengurus3']['pendidikan-pengurus3']); ?><br>
-			Jurusan/Bidang : <?php echo($tab2['pengurus3']['jurusan-pengurus3']); ?><br>
-			Nama Sekolah/Perguruan Tinggi : <?php echo($tab2['pengurus3']['sklh-pt-pengurus3']); ?><br>
-			<b>Pengalaman</b><br>
-			- <?php echo($tab2['pengurus3']['pengurus3-jab1'].'-'.$tab2['pengurus3']['pengurus3-po1'].'-'.$tab2['pengurus3']['pengurus3-tha1'].'-'.$tab2['pengurus3']['pengurus3-thb1']); ?><br>
-			- <?php echo($tab2['pengurus3']['pengurus3-jab2'].'-'.$tab2['pengurus3']['pengurus3-po2'].'-'.$tab2['pengurus3']['pengurus3-tha2'].'-'.$tab2['pengurus3']['pengurus3-thb2']); ?><br>
-			- <?php echo($tab2['pengurus3']['pengurus3-jab3'].'-'.$tab2['pengurus3']['pengurus3-po3'].'-'.$tab2['pengurus3']['pengurus3-tha3'].'-'.$tab2['pengurus3']['pengurus3-thb3']); ?><br>
-			- <?php echo($tab2['pengurus3']['pengurus3-jab4'].'-'.$tab2['pengurus3']['pengurus3-po4'].'-'.$tab2['pengurus3']['pengurus3-tha4'].'-'.$tab2['pengurus3']['pengurus3-thb4']); ?><br>
-			- <?php echo($tab2['pengurus3']['pengurus3-jab5'].'-'.$tab2['pengurus3']['pengurus3-po5'].'-'.$tab2['pengurus3']['pengurus3-tha5'].'-'.$tab2['pengurus3']['pengurus3-thb5']); ?><br>
+			<?php for($i=1;$i<=$jmlpgrs;$i++){ ?>
+				<h3>Pengurus <?php echo($i); ?></h3><br>
+				Nama : <?php echo($tab2['pengurus'.$i]['nama-pengurus'.$i]); ?><br>
+				No. KTP : <?php echo($tab2['pengurus'.$i]['ktp-pengurus'.$i]); ?><br>
+				Tempat Tanggal Lahir : <?php echo($tab2['pengurus'.$i]['tl-pengurus'.$i].','.$tab2['pengurus'.$i]['tgl-pengurus'.$i]); ?><br>
+				Alamat : <?php echo($tab2['pengurus'.$i]['alamat-pengurus'.$i]); ?><br>
+				Kota/Kabupaten : <?php echo($tab2['pengurus'.$i]['kota-kab-pengurus'.$i]); ?><br>
+				Provinsi : <?php echo($tab2['pengurus'.$i]['prov-pengurus'.$i]); ?><br>
+				Jabatan : <?php echo($tab2['pengurus'.$i]['jab-pengurus'.$i]); ?><br>
+				Mengelola Haji Sejak : <?php echo($tab2['pengurus'.$i]['kelola-pengurus'.$i]); ?><br>
+				Pendidikan Terakhir : <?php echo($tab2['pengurus'.$i]['pendidikan-pengurus'.$i]); ?><br>
+				Jurusan/Bidang : <?php echo($tab2['pengurus'.$i]['jurusan-pengurus'.$i]); ?><br>
+				Nama Sekolah/Perguruan Tinggi : <?php echo($tab2['pengurus'.$i]['sklh-pt-pengurus'.$i]); ?><br>
+				<b>Pengalaman</b><br>
+				- <?php echo($tab2['pengurus'.$i]['pengurus'.$i.'-jab1'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-po1'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-tha1'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-thb1']); ?><br>
+				- <?php echo($tab2['pengurus'.$i]['pengurus'.$i.'-jab2'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-po2'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-tha2'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-thb2']); ?><br>
+				- <?php echo($tab2['pengurus'.$i]['pengurus'.$i.'-jab3'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-po3'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-tha3'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-thb3']); ?><br>
+				- <?php echo($tab2['pengurus'.$i]['pengurus'.$i.'-jab4'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-po4'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-tha4'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-thb4']); ?><br>
+				- <?php echo($tab2['pengurus'.$i]['pengurus'.$i.'-jab5'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-po5'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-tha5'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-thb5']); ?><br>	
+			<?php }; ?>
 		</div>
 		<div class="col-md-6">
 			Lokasi Jalan : <?php if($tab3['lok-jln'] == "60"){
@@ -139,7 +105,13 @@
 								echo("Tidak Strategis");
 							}; ?><br>
 			Lokasi Cabang : <?php echo($tab3['lok-cbg']); ?><br>
-			Media Pemasaran : <?php echo($tab3['mp']); ?><br>
+			Media Pemasaran : <?php $mp = explode(',',$tab3['mp']);
+								for ($i = 0; $i < count($mp); $i++){
+									if($i != 0 and !empty($mp[$i])){
+										echo ",";
+									};
+									echo($mp[$i]); 
+								}; ?><br>
 			Sanksi : <?php echo($tab3['chk-sanksi']); ?><br>
 			Jenis Sanksi : <?php echo($tab3['jns-sanksi']); ?><br>
 			Tahun Sanksi : <?php echo($tab3['thn-sanksi']); ?><br>
@@ -147,10 +119,6 @@
 			Haji <?php echo $year1; ?> : <?php echo($tab3['hj-'.$year1]); ?><br>
 			Umroh <?php echo $year2; ?> : <?php echo($tab3['umr-'.$year2]); ?><br>
 			Haji <?php echo $year2; ?> : <?php echo($tab3['hj-'.$year2]); ?><br>
-			Media Pemasaran : <?php echo($tab3['mp']); ?><br>
-			Sanksi : <?php echo($tab3['chk-sanksi']); ?><br>
-			Jenis Sanksi : <?php echo($tab3['jns-sanksi']); ?><br>
-			Tahun Sanksi : <?php echo($tab3['thn-sanksi']); ?><br>
 			Jumlah SDM : <?php echo($tab3['jml-sdm']); ?><br>
 			Keterlibatan Pengurus : <?php echo($tab3['sdm-qs1']); ?><br>
 			Jual Visa : <?php echo($tab3['sdm-qs2']); ?><br>
@@ -173,52 +141,59 @@
 									else if($tab4['opn-keu'] == "tp"){
 										echo("Tidak memberikan pendapat");
 									}; ?><br>
-			Bank Giro : <?php if($tab4['giro-bank'] == "bank1"){
-									echo("Bank Mandiri");
-								}
-								else if($tab4['giro-bank'] == "bank2"){
-									echo("BRI");
-								}
-								else if($tab4['giro-bank'] == "bank3"){
-									echo("BNI");
-								}
-								else if($tab4['giro-bank'] == "bank4"){
-									echo("BTN");
-								}
-								else if($tab4['giro-bank'] == "bank5"){
-									echo("Bank Syariah Mandiri");
-								}
-								else if($tab4['giro-bank'] == "bank6"){
-									echo("BCA");
-								}
-								else if($tab4['giro-bank'] == "bank7"){
-									echo("Bank Danamon");
-								}
-								else if($tab4['giro-bank'] == "bank8"){
-									echo("CIMB Niaga");
-								}
-								else if($tab4['giro-bank'] == "bank9"){
-									echo("BNI Syariah");
-								}
-								else if($tab4['giro-bank'] == "bank10"){
-									echo("BRI Syariah");
-								}
-								else if($tab4['giro-bank'] == "bank11"){
-									echo("Bank Panin");
-								}
-								else if($tab4['giro-bank'] == "bank12"){
-									echo("Bank Panin Dubai Syariah");
-								}
-								else if($tab4['giro-bank'] == "bank13"){
-									echo("Bank Muamalat");
-								}
-								else if($tab4['giro-bank'] == "bank98"){
-									echo("Bank Lokal Lainnya");
-								}
-								else if($tab4['giro-bank'] == "bank99"){
-									echo("Bank Asing");
-								}; ?><br>
-								
+			Bank Giro : <?php $bank = explode(',', $tab4['giro-bank']);
+								for ($i = 0; $i < count($bank); $i++){
+									if($i != 0 and !empty($bank[$i])){
+										echo(",");
+									};
+									if($bank[$i] == "bank1"){
+										echo("Bank Mandiri");
+									}
+									else if($bank[$i] == "bank2"){
+										echo("BRI");
+									}
+									else if($bank[$i] == "bank3"){
+										echo("BNI");
+									}
+									else if($bank[$i] == "bank4"){
+										echo("BTN");
+									}
+									else if($bank[$i] == "bank5"){
+										echo("Bank Syariah Mandiri");
+									}
+									else if($bank[$i] == "bank6"){
+										echo("BCA");
+									}
+									else if($bank[$i] == "bank7"){
+										echo("Bank Danamon");
+									}
+									else if($bank[$i] == "bank8"){
+										echo("CIMB Niaga");
+									}
+									else if($bank[$i] == "bank9"){
+										echo("BNI Syariah");
+									}
+									else if($bank[$i] == "bank10"){
+										echo("BRI Syariah");
+									}
+									else if($bank[$i] == "bank11"){
+										echo("Bank Panin");
+									}
+									else if($bank[$i] == "bank12"){
+										echo("Bank Panin Dubai Syariah");
+									}
+									else if($bank[$i] == "bank13"){
+										echo("Bank Muamalat");
+									}
+									else if($bank[$i] == "bank98"){
+										echo("Bank Lokal Lainnya");
+									}
+									else if($bank[$i] == "bank99"){
+										echo("Bank Asing");
+									};
+								};
+								?><br>
+
 			<br>
 			Tanggal Keberangkatan : <?php echo($tab5['tgl-pp-a']); ?><br>
 			Tanggal Jatuh Tempo : <?php echo($tab5['tgl-pp-b']); ?><br>

@@ -10,9 +10,9 @@ class Model_scoring extends CI_Model {
 	{
 		$this->insertIDPerusahaan($data['tab1']);
 		$this->insertIDPengurus($data['tab2']['pemilik'],'pemilik');
-		$this->insertIDPengurus($data['tab2']['pengurus1'],'pengurus1');
-		$this->insertIDPengurus($data['tab2']['pengurus2'],'pengurus2');
-		$this->insertIDPengurus($data['tab2']['pengurus3'],'pengurus3');
+		for($i=1;$i<=$data['jmlpgrs'];$i++){
+			$this->insertIDPengurus($data['tab2']['pengurus'.$i],'pengurus'.$i);
+		};
 		$this->insertInfoUsaha($data['tab3'],$data['year1'],$data['year2']);
 		$this->insertInfoKeuangan($data['tab4']);
 		$this->insertPermohonanPendanaan($data['tab5']);
