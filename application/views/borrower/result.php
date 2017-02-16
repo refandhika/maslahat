@@ -104,7 +104,15 @@
 							else if($tab3['lok-stg'] == "10"){
 								echo("Tidak Strategis");
 							}; ?><br>
-			Lokasi Cabang : <?php echo($tab3['lok-cbg']); ?><br>
+			Lokasi Cabang : <?php if($tab3['lok-cbg'] == "dk"){
+										echo("Dalam kota yang sama");
+									}
+									else if($tab3['lok-cbg'] == "dlk"){
+										echo("Dalam kota dan luar kota");
+									}
+									else if($tab3['lok-cbg'] == "lk"){
+										echo("Luar kota");
+									}; ?><br>
 			Media Pemasaran : <?php $mp = explode(',',$tab3['mp']);
 								for ($i = 0; $i < count($mp); $i++){
 									if($i != 0 and !empty($mp[$i])){

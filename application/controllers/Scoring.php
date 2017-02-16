@@ -4,7 +4,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Scoring extends CI_Controller {
 
+
 	public function index()
+	{
+		if ($this->session->userdata('logged_in'))
+        {
+			$this->home();
+        }
+        else
+        {
+			redirect('', 'location');
+        };
+
+	}
+
+	public function home()
 	{
 		$hdata['title'] = "Maslahat";
 
@@ -15,7 +29,7 @@ class Scoring extends CI_Controller {
 		$mdata['year1'] = $year1;
 		$mdata['year2'] = $year2;
 
-		$this->load->view('template/header', $hdata);
+		$this->load->view('template/header_logged', $hdata);
 		$this->load->view('borrower/detail_perusahaan', $mdata);
 		$this->load->view('template/footer');
 	}
