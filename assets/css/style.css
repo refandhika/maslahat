@@ -17,7 +17,9 @@ textarea {
 
 .scroll {
 	height: 80vh;
+	width: inherit;
 	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 #result {
@@ -87,4 +89,24 @@ a.tab-disable {
 }
 a.tab-disable:hover {
 	color: #999999;
+}
+
+.navbar-default {
+	background-color: #193D87;
+	color: #FFF;
+}
+
+.navbar-default .navbar-brand, 
+.navbar-default .navbar-nav>li>a{
+	color: #FFF;
+}
+
+.navbar-default .navbar-brand:hover, 
+.navbar-default .navbar-nav>li>a:hover{
+	color: #E9F3EA;
+	background: transparent;
+}
+
+.c-align{
+	text-align: center;
 }

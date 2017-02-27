@@ -216,7 +216,8 @@ $(document).ready(function(){
     		var la = parseInt($('#la-pp').val());
     		var ned = jml * (tkt + la - dpj);
     		$('#ned-pp').val(commafy(ned)+" USD");
-    		var sum = ned * 13145 * 0.8;
+    		var kursdollar = 13145;
+    		var sum = ned * kursdollar * 0.8;
     		$('#sum-pp').val("Rp. " + commafy(sum) + ",-");
     	}
     	else {

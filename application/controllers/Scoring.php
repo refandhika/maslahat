@@ -4,6 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Scoring extends CI_Controller {
 
+	function __construct() {
+		parent::__construct();
+		$this->load->model('model_scoring');
+
+	}
 
 	public function index()
 	{
@@ -37,8 +42,6 @@ class Scoring extends CI_Controller {
 	public function saveData()
 	{
 		$hdata['title'] = "Result";
-
-		$this->load->model('model_scoring');
 
 		$year = date("Y");
 		$year1 = (string)($year - 2);

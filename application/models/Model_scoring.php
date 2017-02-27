@@ -5,6 +5,25 @@ class Model_scoring extends CI_Model {
 	function __construct() {
 		parent::__construct();
 	}
+
+	public function getLastStored()
+	{
+		$condition = "borrowers_name =" . "'" . $data['username'] . "'";
+		$this->db->select('id_perusahaan');
+		$this->db->from('id_perusahaan');
+		$this->db->join('form_permohonan','form_permohonan.id_perusahaan=id_perusahaan.id_perusahaan');
+        $this->db->where($condition);
+        $this->db->order_by('id_perusahaan','DESC');
+        $this->db->limit(1);
+        $query = $this->db->get();
+        
+        if ($query->num_rows() == 1){
+            ChromePhp::log($query);
+        }
+        else {
+            return false;
+        };
+	}
 	
 	public function insertDataScoring($data)
 	{
