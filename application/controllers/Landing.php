@@ -30,7 +30,7 @@ class Landing extends CI_Controller {
 
 		$data['title'] = "Maslahat";
 
-		$this->load->view('template/header', $data);
+		$this->load->view('template/no_header', $data);
 		$this->load->view('landing/section1');
 		$this->load->view('template/footer');
 

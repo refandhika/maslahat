@@ -1,9 +1,13 @@
 <div class="section-1">
-	<div class="v-align">
-		<button type="button" class="btn btn-default" data-toggle="modal" data-target="#landing-modal">Daftar Peminjam</button>
-		<button type="button" class="btn btn-default" data-toggle="modal" data-target="#landing-modal" disabled>Daftar Pendana</button>
-	</div>
+  <div id="position-1">
+    <div class="img-logo-md center-block">
+      <img src="<?php echo base_url('assets/css/image/logo_maslahat.svg'); ?>" class="img-responsive">
+    </div>
+  	<button type="button" class="btn btn-default" data-toggle="modal" data-target="#landing-modal">Pengguna Dana</button>
+  	<button type="button" class="btn btn-default" data-toggle="modal" data-target="#landing-modal" disabled>Pemberi Dana</button>
+  </div>
 </div>
+
 <div class="modal fade" id="landing-modal" tabindex="-1" role="dialog" aria-labelledby="myLarge">
 	 <div class="modal-dialog">
 

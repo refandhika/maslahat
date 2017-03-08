@@ -34,9 +34,9 @@ textarea {
 	text-align: center;
 }
 
-.v-align{
+#position-1{
 	position: relative;
-	top: 50%;
+	top: 15vh;
 }
 
 .v-align-left{
@@ -51,9 +51,15 @@ textarea {
 
 .section-1 {
 	height: 80vh;
-	width: 95vw;
+	width: 98vw;
 	position: absolute;
 	top: 50px
+}
+
+.img-logo-md {
+	width: 25vw;
+	height: auto;
+	padding: 20px;
 }
 
 #scoring {

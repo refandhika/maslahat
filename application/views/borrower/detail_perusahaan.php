@@ -19,7 +19,7 @@
 						<div class="form-group">
 							<label for="nama-perusahaan" class="col-md-2 control-label">Nama Perusahaan :</label>
 							<div class="col-md-4">
-								<input type="text" id="scoring-nama-perusahaan" name="nama-perusahaan" class="form-control" readonly>
+								<input type="text" name="nama-perusahaan" class="form-control" readonly>
 							</div>
 							<label for="badan-hukum" class="col-md-2 control-label">Badan Hukum :</label>
 							<div class="col-md-4">

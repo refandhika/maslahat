@@ -7,8 +7,8 @@ $(document).ready(function(){
 	getSessionData(function(data){
 		session_data = data;
 	});
-
-	$('#scoring-nama-perusahaan').val(session_data.username);
+	
+	$('[name="nama-perusahaan"]').val(session_data.username);
 
 	/* Data Table */
 	$('#table-result, #table-rm').DataTable();

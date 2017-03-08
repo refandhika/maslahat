@@ -51,7 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'landing';
 $route['landing'] = 'landing';
-$route['borrower_register'] = 'borrower_register';
+$route['borrower'] = 'borrower';
+$route['rm'] = 'RM';
+$route['rm/rmLogin'] = 'RM/rmLogin';
 $route['scoring'] = 'scoring';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
