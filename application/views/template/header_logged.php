@@ -7,9 +7,16 @@
 	<!-- Style -->
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-datepicker.min.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/dataTables.bootstrap.css')?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/normalize.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>?version=5">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>?version=7">
 	<!--<link rel="stylesheet" href="assets/css/style-s.css">-->
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>

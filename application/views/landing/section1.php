@@ -32,6 +32,7 @@
         <?php echo validation_errors(); ?>
       </div>
       <div class="modal-footer">
+        <a href="<?php echo base_url('borrower/register'); ?>">Daftar</a>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

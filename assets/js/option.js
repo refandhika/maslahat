@@ -3,6 +3,12 @@ var NAOption = {
 	"Belum Tersedia" : "None"
 }
 
+/* Jenis Kelamin Option */
+var jekelOption = {
+	"Laki-laki" : "Laki-laki",
+	"Perempuan" : "Perempuan"
+}
+
 /* Bank Option */
 var bankOption = {
 	"bank1" : "Bank Mandiri",

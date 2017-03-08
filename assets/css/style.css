@@ -50,7 +50,10 @@ textarea {
 }
 
 .section-1 {
-	height: 100vh;
+	height: 80vh;
+	width: 95vw;
+	position: absolute;
+	top: 50px
 }
 
 #scoring {
@@ -109,4 +112,8 @@ a.tab-disable:hover {
 
 .c-align{
 	text-align: center;
+}
+
+.rm-section-1{
+	height: 60vh;
 }

@@ -1,295 +1,133 @@
-<div id="result">
-	<h3>
-		<span>Scoring Result</span>
-		<a href="<?php echo base_url("scoring"); ?>" class="btn btn-default pull-right">Back to Scoring</a>
-	</h3>
-	</div>
-	<div class="scroll">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-default">
-					<div class="panel-heading">Total Score</div>
-					<div class="panel-body c-align"><h1><?php echo($score['final']); ?></h1></div>
-				</div>
+<div class="section-1">
+	<h3>List Result</h3>
+	<table id="table-result" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    	<thead>
+    		<tr>
+				<th>Form ID</th>
+				<th>Nama Perusahaan</th>
+				<!--<th>ID Perusahaan</th>
+				<th>ID Pemilik</th>
+				<th>ID Keuangan</th>
+				<th>ID Usaha</th>
+				<th>ID Permohonan</th>
+				<th>ID Agunan</th>
+				<th>ID Isian</th>
+				<th>Score</th>
+				<th>Isian RM</th>-->
+				<th>Created At</th>
+				<th>Approved</th>
+				<th>Update</th>
+        	</tr>
+        </thead>
+        <tbody>
+		<?php foreach($forms as $form){?>
+	    	<tr>
+		        <td><?php echo $form->id_form;?></td>
+		        <td><?php echo $form->nama_perusahaan;?></td>
+		        <!--<td><?php echo $form->id_perusahaan;?></td>
+				<td><?php echo $form->id_pemilik;?></td>
+				<td><?php echo $form->id_info_keuangan;?></td>
+				<td><?php echo $form->id_info_usaha;?></td>
+		        <td><?php echo $form->id_permohonan;?></td>
+				<td><?php echo $form->id_agunan;?></td>
+				<td><?php echo $form->id_isian;?></td>
+				<td><?php echo $form->score;?></td>
+				<td><?php echo $form->isian_rm;?></td>-->
+				<td><?php echo $form->created_at;?></td>
+				<td><?php echo $form->approved;?></td>
+				<td>
+					<a class="btn btn-warning" href="<?php echo base_url('result/detailedResult/'.$form->id_form); ?>"><i class="glyphicon glyphicon-info-sign"></i></button>
+				</td>
+		    </tr>
+		<?php }?>
+        </tbody>
+        <tfoot>
+        	<tr>
+				<th>Form ID</th>
+				<th>Nama Perusahaan</th>
+				<!--<th>ID Perusahaan</th>
+				<th>ID Pemilik</th>
+				<th>ID Keuangan</th>
+				<th>ID Usaha</th>
+				<th>ID Permohonan</th>
+				<th>ID Agunan</th>
+				<th>ID Isian</th>
+				<th>Score</th>
+				<th>Isian RM</th>-->
+				<td>Created At</td>
+				<th>Approved</th>
+				<th>Update</th>
+        	</tr>
+    	</tfoot>
+    </table>
+</div>
+
+<!--Bootstrap Modal-->
+<div class="modal fade" id="modal-form-rm" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h3 class="modal-title">Form RM</h3>
 			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Breakdown Score</div>
-					<div class="panel-body">
-						Aspek Yuridis : <?php echo($score['yuridis']); ?><br>
-						Aspek Manajemen : <?php echo($score['manajemen']); ?><br>
-						Aspek Teknis : <?php echo($score['teknis']); ?><br>
-						Aspek Pemasaran : <?php echo($score['pemasaran']); ?><br>
-						Aspek Keuangan : <?php echo($score['keuangan']); ?><br>
-						Aspek Agunan : <?php echo($score['agunan']); ?><br>
-						Aspek Fasilitas : <?php echo($score['fasilitas']); ?><br>
-					</div>	
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Biodata Perusahaan</div>
-					<div class="panel-body">
-						Nama Perusahaan : <?php echo($tab1['nama-perusahaan']); ?><br>
-						Badan Hukum : <?php echo($tab1['badan-hukum']); ?><br>
-						Alamat : <?php echo($tab1['alamat']); ?><br>
-						Telpon : <?php echo($tab1['nama-perusahaan']); ?><br>
-						Provinsi : <?php echo($tab1['provinsi']); ?><br>
-						Kota/Kabupaten : <?php echo($tab1['kota-kab']); ?><br>
-						Kecamatan : <?php echo($tab1['kecamatan']); ?><br>
-						Kelurahan : <?php echo($tab1['kelurahan']); ?><br>
-						Kode Pos : <?php echo($tab1['kode-pos']); ?><br>
-						Telpon : <?php echo($tab1['telpon']); ?><br>
-					</div>	
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Akta</div>
-					<div class="panel-body">
-						No. Akta Pendirian : <?php echo($tab1['pendirian-no']); ?> | Tahun : <?php echo($tab1['pendirian-th']); ?><br>
-						No. Pengesahan Pendirian : <?php echo($tab1['pendirian-ham']); ?> | Tahun : <?php echo($tab1['pendirian-ham-th']); ?><br>
-						No. Berita Pendirian : <?php echo($tab1['pendirian-bn']); ?> | Tahun : <?php echo($tab1['pendirian-bn-th']); ?><br>
-						<br>
-						No. Akta Terakhir : <?php echo($tab1['terakhir-no']); ?> | Tahun : <?php echo($tab1['terakhir-th']); ?><br>
-						No. Pengesahan Terakhir : <?php echo($tab1['terakhir-ham']); ?> | Tahun : <?php echo($tab1['terakhir-ham-th']); ?><br>
-						No. Berita Terakhir : <?php echo($tab1['terakhir-bn']); ?> | Tahun : <?php echo($tab1['terakhir-bn-th']); ?><br>
-					</div>	
-				</div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Izin Usaha</div>
-					<div class="panel-body">
-						No. Izin Usaha Penyelenggara Umroh : <?php echo($tab1['no-iupu']); ?> | Tahun : <?php echo($tab1['no-iupu-th']); ?> | Jatuh Tempo : <?php echo($tab1['no-iupu-jt']); ?><br>
-						No. Izin Usaha Perjalanan Umum : <?php echo($tab1['no-iut']); ?> | Tahun : <?php echo($tab1['no-iut-th']); ?> | Jatuh Tempo : <?php echo($tab1['no-iut-jt']); ?><br>
-						No. Izin Penyelenggara Haji Khusus : <?php echo($tab1['no-iphk']); ?> | Tahun : <?php echo($tab1['no-iphk-th']); ?> | Jatuh Tempo : <?php echo($tab1['no-iphk-jt']); ?><br>
-						No. IATA : <?php echo($tab1['no-iata']); ?> Tahun : <?php echo($tab1['no-iata-th']); ?> | Jatuh Tempo : <?php echo($tab1['no-iata-jt']); ?><br>
-						No. NPWP : <?php echo($tab1['no-npwp']); ?><br>
-						Keanggotaan Asosiasi : <?php echo($tab1['asosiasi']); ?> | Sejak Tahun : <?php echo($tab1['aso-th']); ?><br>
+			<div class="modal-body form">
+				<form action="#" id="form-rm" class="form-horizontal">
+					<input type="hidden" value="" name="id_form" />
+					<div class="form-body">
+						<div class="form-group">
+							<label for="isian1" class="control-label col-md-3">Isian 1</label>
+							<div class="col-md-9">
+								<select name="isian1" class="form-control">
+									<option value="1">Menempati alamat kantor sesuai Akta pendirian, SITU, TDP, SIUP, NPWP, dan izin usaha lainnya</option>
+									<option value="1">Menempati alamat kantor hanya sesuai SITU, SIUP, NPWP, dan izin usaha lainnya</option>
+									<option value="2">Menempati alamat kantor hanya sesuai SITU dan izin usaha lainnya (dari pariwisata dan Kemenag)</option>
+									<option value="3">Menempati alamat kantor hanya sesuai salah satu dokumen legalitas yang dimiliki</option>
+									<option value="3">Alamat kantor usaha tidak sesuai dengan dokumen legalitas yang dimiliki</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="isian2" class="control-label col-md-3">Isian 1</label>
+							<div class="col-md-9">
+								<select name="isian2" class="form-control">
+									<option value="1">Memiliki izin penyelenggara umroh dan haji khusus serta aktif memberangkatkan umroh dan haji khusus selama lebih dari 2 tahun</option>
+									<option value="1">Memiliki izin penyelenggara umroh dan haji khusus serta aktif memberangkatkan umroh dan haji khusus selama lebih dari 2 tahun</option>
+									<option value="2">Memiliki izin penyelenggara umroh dan haji khusus serta aktif memberangkatkan umroh saja</option>
+									<option value="3">Hanya memiliki izin penyelenggara umroh saja namun pernah memiliki izin haji khusus</option>
+									<option value="3">Hanya memiliki izin penyelenggara umroh saja</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="isian3" class="control-label col-md-3">Isian 1</label>
+							<div class="col-md-9">
+								<select name="isian3" class="form-control">
+									<option value="1">Aktifitas rekening aktif dan mencerminkan aktifitas usaha 6 bulan terakhir sebesar lebih dari 90%</option>
+									<option value="2">Aktifitas rekening aktif dan mencerminkan aktifitas usaha 6 bulan terakhir sebesar 70-90%</option>
+									<option value="2">Aktifitas rekening aktif dan mencerminkan aktifitas usaha 6 bulan terakhir sebesar 50-70%</option>
+									<option value="3">Aktifitas rekening aktif dan mencerminkan aktifitas usaha 6 bulan terakhir sebesar 30-50%</option>
+									<option value="3">Aktifitas rekening tidak aktif atau aktif namun hanya mencerminkan aktifitas usaha 6 bulan terakhir sebesar kurang dari 30%</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="isian4" class="control-label col-md-3">Isian 1</label>
+							<div class="col-md-9">
+								<select name="isian4" class="form-control">
+									<option value="1">Aktifitas mutasi rekening diatas 1 miliar rupiah per bulan</option>
+									<option value="2">Aktifitas mutasi rekening 500 juta s.d. 1 miliar rupiah per bulan</option>
+									<option value="2">Aktifitas mutasi rekening 250 juta s.d. 500 juta rupiah per bulan dan 125% dari nilai pendanaan</option>
+									<option value="3">Aktifitas mutasi rekening setara nilai pendanaan</option>
+									<option value="3">Aktifitas mutasi rekening pasif</option>
+								</select>
+							</div>
+						</div>
 					</div>
-				</div>
+				</form>
 			</div>
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Pemilik</div>
-					<div class="panel-body">
-						Nama : <?php echo($tab2['pemilik']['nama-pemilik']); ?><br>
-						No. KTP : <?php echo($tab2['pemilik']['ktp-pemilik']); ?><br>
-						Tempat Tanggal Lahir : <?php echo($tab2['pemilik']['tl-pemilik'].','.$tab2['pemilik']['tgl-pemilik']); ?><br>
-						Alamat : <?php echo($tab2['pemilik']['alamat-pemilik']); ?><br>
-						Kota/Kabupaten : <?php echo($tab2['pemilik']['kota-kab-pemilik']); ?><br>
-						Provinsi : <?php echo($tab2['pemilik']['prov-pemilik']); ?><br>
-						Jabatan : <?php echo($tab2['pemilik']['jab-pemilik']); ?><br>
-						Mengelola Haji Sejak : <?php echo($tab2['pemilik']['kelola-pemilik']); ?><br>
-						Pendidikan Terakhir : <?php echo($tab2['pemilik']['pendidikan-pemilik']); ?><br>
-						Jurusan/Bidang : <?php echo($tab2['pemilik']['jurusan-pemilik']); ?><br>
-						Nama Sekolah/Perguruan Tinggi : <?php echo($tab2['pemilik']['sklh-pt-pemilik']); ?><br>
-						<b>Pengalaman</b><br>
-						- <?php echo($tab2['pemilik']['pemilik-jab1'].'-'.$tab2['pemilik']['pemilik-po1'].'-'.$tab2['pemilik']['pemilik-tha1'].'-'.$tab2['pemilik']['pemilik-thb1']); ?><br>
-						- <?php echo($tab2['pemilik']['pemilik-jab2'].'-'.$tab2['pemilik']['pemilik-po2'].'-'.$tab2['pemilik']['pemilik-tha2'].'-'.$tab2['pemilik']['pemilik-thb2']); ?><br>
-						- <?php echo($tab2['pemilik']['pemilik-jab3'].'-'.$tab2['pemilik']['pemilik-po3'].'-'.$tab2['pemilik']['pemilik-tha3'].'-'.$tab2['pemilik']['pemilik-thb3']); ?><br>
-						- <?php echo($tab2['pemilik']['pemilik-jab4'].'-'.$tab2['pemilik']['pemilik-po4'].'-'.$tab2['pemilik']['pemilik-tha4'].'-'.$tab2['pemilik']['pemilik-thb4']); ?><br>
-						- <?php echo($tab2['pemilik']['pemilik-jab5'].'-'.$tab2['pemilik']['pemilik-po5'].'-'.$tab2['pemilik']['pemilik-tha5'].'-'.$tab2['pemilik']['pemilik-thb5']); ?><br>
-					</div>
-				</div>
-			</div>
-			<?php for($i=1;$i<=$jmlpgrs;$i++){ ?>
-				<div class="col-md-12">
-					<div class="panel panel-default">
-						<div class="panel-heading">Pengurus <?php echo($i); ?></div>
-						<div class="panel-body">
-							Nama : <?php echo($tab2['pengurus'.$i]['nama-pengurus'.$i]); ?><br>
-							No. KTP : <?php echo($tab2['pengurus'.$i]['ktp-pengurus'.$i]); ?><br>
-							Tempat Tanggal Lahir : <?php echo($tab2['pengurus'.$i]['tl-pengurus'.$i].','.$tab2['pengurus'.$i]['tgl-pengurus'.$i]); ?><br>
-							Alamat : <?php echo($tab2['pengurus'.$i]['alamat-pengurus'.$i]); ?><br>
-							Kota/Kabupaten : <?php echo($tab2['pengurus'.$i]['kota-kab-pengurus'.$i]); ?><br>
-							Provinsi : <?php echo($tab2['pengurus'.$i]['prov-pengurus'.$i]); ?><br>
-							Jabatan : <?php echo($tab2['pengurus'.$i]['jab-pengurus'.$i]); ?><br>
-							Mengelola Haji Sejak : <?php echo($tab2['pengurus'.$i]['kelola-pengurus'.$i]); ?><br>
-							Pendidikan Terakhir : <?php echo($tab2['pengurus'.$i]['pendidikan-pengurus'.$i]); ?><br>
-							Jurusan/Bidang : <?php echo($tab2['pengurus'.$i]['jurusan-pengurus'.$i]); ?><br>
-							Nama Sekolah/Perguruan Tinggi : <?php echo($tab2['pengurus'.$i]['sklh-pt-pengurus'.$i]); ?><br>
-							<b>Pengalaman</b><br>
-							- <?php echo($tab2['pengurus'.$i]['pengurus'.$i.'-jab1'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-po1'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-tha1'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-thb1']); ?><br>
-							- <?php echo($tab2['pengurus'.$i]['pengurus'.$i.'-jab2'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-po2'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-tha2'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-thb2']); ?><br>
-							- <?php echo($tab2['pengurus'.$i]['pengurus'.$i.'-jab3'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-po3'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-tha3'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-thb3']); ?><br>
-							- <?php echo($tab2['pengurus'.$i]['pengurus'.$i.'-jab4'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-po4'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-tha4'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-thb4']); ?><br>
-							- <?php echo($tab2['pengurus'.$i]['pengurus'.$i.'-jab5'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-po5'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-tha5'].'-'.$tab2['pengurus'.$i]['pengurus'.$i.'-thb5']); ?><br>	
-						</div>	
-					</div>
-				</div>
-			<?php }; ?>
-		</div>
-		<div class="col-md-4">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Permohonan Pendanaan</div>
-					<div class="panel-body">
-						Tanggal Keberangkatan : <?php echo($tab5['tgl-pp-a']); ?><br>
-						Tanggal Jatuh Tempo : <?php echo($tab5['tgl-pp-b']); ?><br>
-						Jangka Waktu : <?php echo($tab5['wkt-pp']); ?><br>
-						Jumlah Jamaah : <?php echo($tab5['jml-pp']); ?><br>
-						Jamaah DP : <?php echo($tab5['dp-pp']); ?><br>
-						Harga Jual : <?php echo($tab5['pkt-pp']); ?><br>
-						DP Jamaah : <?php echo($tab5['dpj-pp']); ?><br>
-						Biaya Pelunasan : <?php echo($tab5['ln-pp']); ?><br>
-						Tiket : <?php echo($tab5['tkt-pp']); ?><br>
-						LA : <?php echo($tab5['la-pp']); ?><br>
-						Kebutuhan : <?php echo($tab5['ned-pp']); ?><br>
-						Fasilitas : <?php echo($tab5['sum-pp']); ?><br>
-					</div>	
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Informasi Usaha</div>
-					<div class="panel-body">
-						Lokasi Jalan : <?php if($tab3['lok-jln'] == "60"){
-													echo("Jalan Utama");
-												}
-												else if($tab3['lok-jln'] == "40"){
-													echo("Jalan Arteri");
-												}; ?><br>
-						Lokasi Derah : <?php if($tab3['lok-drh'] == "60"){
-													echo("Pusat Kota");
-												}
-												else if($tab3['lok-drh'] == "40"){
-													echo("Pinggir Kota");
-												}; ?><br>
-						Jumlah Cabang : <?php echo($tab3['jml-cbg']); ?><br>
-						Posisi : <?php if($tab3['lok-stg'] == "40"){
-											echo("Sangat Strategis");
-										}
-										else if($tab3['lok-stg'] == "30"){
-											echo("Strategis");
-										}
-										else if($tab3['lok-stg'] == "20"){
-											echo("Kurang Strategis");
-										}
-										else if($tab3['lok-stg'] == "10"){
-											echo("Tidak Strategis");
-										}; ?><br>
-						Lokasi Cabang : <?php if($tab3['lok-cbg'] == "dk"){
-													echo("Dalam kota yang sama");
-												}
-												else if($tab3['lok-cbg'] == "dlk"){
-													echo("Dalam kota dan luar kota");
-												}
-												else if($tab3['lok-cbg'] == "lk"){
-													echo("Luar kota");
-												}; ?><br>
-						Media Pemasaran : <?php $mp = explode(',',$tab3['mp']);
-											for ($i = 0; $i < count($mp); $i++){
-												if($i != 0 and !empty($mp[$i])){
-													echo ",";
-												};
-												echo($mp[$i]); 
-											}; ?><br>
-						Sanksi : <?php echo($tab3['chk-sanksi']); ?><br>
-						Jenis Sanksi : <?php echo($tab3['jns-sanksi']); ?><br>
-						Tahun Sanksi : <?php echo($tab3['thn-sanksi']); ?><br>
-						Umroh <?php echo $year1; ?> : <?php echo($tab3['umr-'.$year1]); ?><br>
-						Haji <?php echo $year1; ?> : <?php echo($tab3['hj-'.$year1]); ?><br>
-						Umroh <?php echo $year2; ?> : <?php echo($tab3['umr-'.$year2]); ?><br>
-						Haji <?php echo $year2; ?> : <?php echo($tab3['hj-'.$year2]); ?><br>
-						Jumlah SDM : <?php echo($tab3['jml-sdm']); ?><br>
-						Keterlibatan Pengurus : <?php echo($tab3['sdm-qs1']); ?><br>
-						Jual Visa : <?php echo($tab3['sdm-qs2']); ?><br>
-						LA : <?php echo($tab3['sdm-qs3']); ?><br>
-					</div>	
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Keuangan</div>
-					<div class="panel-body">
-						Laporan Keuangan : <?php echo($tab4['lap-keu']); ?><br>
-						Jenis Keuangan : <?php echo($tab4['jns-keu']); ?><br>
-						Opini Auditor : <?php if($tab4['opn-keu'] == "wtp"){
-													echo("Wajar Tanpa Pengecualian");
-												}
-												else if($tab4['opn-keu'] == "wtpp"){
-													echo("Wajar Tanpa Pengecualian dengan paragraf penjelas");
-												}
-												else if($tab4['opn-keu'] == "wdp"){
-													echo("Wajar Dengan Pengecualian");
-												}
-												else if($tab4['opn-keu'] == "tw"){
-													echo("Tidak Wajar");
-												}
-												else if($tab4['opn-keu'] == "tp"){
-													echo("Tidak memberikan pendapat");
-												}; ?><br>
-						Bank Giro : <?php $bank = explode(',', $tab4['giro-bank']);
-											for ($i = 0; $i < count($bank); $i++){
-												if($i != 0 and !empty($bank[$i])){
-													echo(",");
-												};
-												if($bank[$i] == "bank1"){
-													echo("Bank Mandiri");
-												}
-												else if($bank[$i] == "bank2"){
-													echo("BRI");
-												}
-												else if($bank[$i] == "bank3"){
-													echo("BNI");
-												}
-												else if($bank[$i] == "bank4"){
-													echo("BTN");
-												}
-												else if($bank[$i] == "bank5"){
-													echo("Bank Syariah Mandiri");
-												}
-												else if($bank[$i] == "bank6"){
-													echo("BCA");
-												}
-												else if($bank[$i] == "bank7"){
-													echo("Bank Danamon");
-												}
-												else if($bank[$i] == "bank8"){
-													echo("CIMB Niaga");
-												}
-												else if($bank[$i] == "bank9"){
-													echo("BNI Syariah");
-												}
-												else if($bank[$i] == "bank10"){
-													echo("BRI Syariah");
-												}
-												else if($bank[$i] == "bank11"){
-													echo("Bank Panin");
-												}
-												else if($bank[$i] == "bank12"){
-													echo("Bank Panin Dubai Syariah");
-												}
-												else if($bank[$i] == "bank13"){
-													echo("Bank Muamalat");
-												}
-												else if($bank[$i] == "bank98"){
-													echo("Bank Lokal Lainnya");
-												}
-												else if($bank[$i] == "bank99"){
-													echo("Bank Asing");
-												};
-											};
-											?><br>
-					</div>	
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-heading">Jaminan</div>
-					<div class="panel-body">
-						Garansi Personal : <?php echo($tab6['p-gua']); ?><br>
-						Garansi Corporate : <?php echo($tab6['c-gua']); ?><br>
-						Pernyataan Jaminan : <?php echo($tab6['s-gua']); ?><br>
-						Nilai Jaminan Lebih : <?php echo($tab6['n-gua']); ?><br>
-					</div>	
-				</div>
+			<div class="modal-footer">
+				<button type="button" id="btn-save" onclick="saveRMValue()" class="btn btn-primary">Save</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
 			</div>
 		</div>
 	</div>

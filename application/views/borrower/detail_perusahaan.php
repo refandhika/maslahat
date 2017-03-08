@@ -19,7 +19,7 @@
 						<div class="form-group">
 							<label for="nama-perusahaan" class="col-md-2 control-label">Nama Perusahaan :</label>
 							<div class="col-md-4">
-								<input type="text" name="nama-perusahaan" class="form-control">
+								<input type="text" id="scoring-nama-perusahaan" name="nama-perusahaan" class="form-control" readonly>
 							</div>
 							<label for="badan-hukum" class="col-md-2 control-label">Badan Hukum :</label>
 							<div class="col-md-4">
@@ -230,6 +230,13 @@
 							<label for="ktp-pemilik" class="col-md-2 control-label">Nomor KTP :</label>
 							<div class="col-md-4">
 								<input type="text" name="ktp-pemilik" class="form-control">
+							</div>
+							<label for="jk-pemilik" class="col-md-2 control-label">Jenis Kelamin :</label>
+							<div class="col-md-4">
+								<select type="text" name="jk-pemilik" class="form-control">
+									<option value="Laki-laki">Laki-laki</option>
+									<option value="Perempuan">Perempuan</option>
+								</select>
 							</div>
 							<label for="tl-pemilik" class="col-md-2 control-label">Tempat Lahir :</label>
 							<div class="col-md-4">
@@ -778,7 +785,7 @@
 							<div class="col-md-2">
 								<input type="text" class="form-control" name="tgl-pp-a" id="tgl-pp-a" placeholder="HH/BB/TTTT">
 							</div>
-							<label for="wkt-pp" class="col-md-4 control-label">Jangka waktu :</label>
+							<label for="wkt-pp" class="col-md-4 control-label">Jangka waktu (hari) :</label>
 							<div class="col-md-2">
 								<select name="wkt-pp" id="wkt-pp" class="form-control">
 									<option value="0">-</option>
@@ -898,4 +905,22 @@
 			</div>
 		</div>
 	</form>
+</div>
+
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="modal-form-score" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h3 class="modal-title">Input Error</h3>
+			</div>
+			<div class="modal-body">
+				<?php echo validation_errors(); ?>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+			</div>
+		</div>
+	</div>
 </div>

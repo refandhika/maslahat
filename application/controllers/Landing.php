@@ -5,30 +5,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Landing extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
-		if ( ! $this->session->userdata('logged_in'))
+		if(!$this->session->userdata('logged_in'))
         {
 			$this->home();
         }
         else
         {
-			redirect('scoring', 'location');
+        	if($this->session->userdata('usertype')=="borrower"){
+				redirect('borrower', 'location');
+        	}
+        	elseif($this->session->userdata('usertype')=="lender"){
+				redirect('lender', 'location');
+        	}
+        	elseif($this->session->userdata('usertype')=="rm"){
+				redirect('rm', 'location');
+        	};
         };
 
 	}
@@ -50,7 +43,6 @@ class Landing extends CI_Controller {
 			'password' => md5($this->input->post('pass-borrower'))
 		);
 
-
 		$this->load->model('model_landing');
 
 		$result = $this->model_landing->login($data);
@@ -58,15 +50,17 @@ class Landing extends CI_Controller {
 			$result = $this->model_landing->getUserData($data['username']);
 			if($result != false){
 				$session_data = array(
+					'id' => $result[0]->id_borrowers,
 					'username' => $result[0]->borrowers_name,
 					'email' => $result[0]->borrowers_mail,
+					'usertype' => 'borrower',
 					'logged_in' => TRUE 
 				);
 
 				$this->session->set_userdata($session_data);
 				$data['message_display'] = 'Success!!';
 
-				redirect('scoring', 'location');
+				redirect('borrower', 'location');
 			}
 		}	
 		else{
@@ -76,9 +70,12 @@ class Landing extends CI_Controller {
 	}
 
 	public function logout(){
+		$usertype = $this->session->userdata('usertype');
 		$session_data = array(
+			'id' => '',
 			'username' => '',
 			'email' => '',
+			'usertype' => '',
 			'logged_in' => FALSE
 		);
 
@@ -86,6 +83,20 @@ class Landing extends CI_Controller {
 		$this->session->sess_destroy();
 		$data['message_display'] = 'Successfully Logout';
 
-		redirect('', 'location');
+		if($usertype=='borrower' or $usertype=='lender'){
+			redirect('', 'location');
+		}
+		else if ($usertype=='rm') {
+			redirect('rm', 'location');
+		}
+	}
+
+	public function getSessionData()
+	{
+		$data['id'] = $this->session->userdata('id');
+		$data['username'] = $this->session->userdata('username');
+		$data['email'] = $this->session->userdata('email');
+
+		echo json_encode($data);
 	}
 }

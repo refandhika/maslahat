@@ -28,16 +28,162 @@ class Model_scoring extends CI_Model {
 	public function insertDataScoring($data)
 	{
 		$this->insertIDPerusahaan($data['tab1']);
-		$this->insertIDPengurus($data['tab2']['pemilik'],'pemilik');
+		$idpgrs = '';
+		$this->insertIDPengurus($data['tab2']['pemilik'],'Pemilik');
+		$idpgrs = $idpgrs . $this->getIDPengurus();
 		for($i=1;$i<=$data['jmlpgrs'];$i++){
-			$this->insertIDPengurus($data['tab2']['pengurus'.$i],'pengurus'.$i);
+			$this->insertIDPengurus($data['tab2']['pengurus'.$i],'Pengurus '.$i);
+			$idpgrs = $idpgrs . ',' . $this->getIDPengurus();
 		};
 		$this->insertInfoUsaha($data['tab3'],$data['year1'],$data['year2']);
 		$this->insertInfoKeuangan($data['tab4']);
 		$this->insertPermohonanPendanaan($data['tab5']);
 		$this->insertAgunan($data['tab6']);
-		$this->insertFormPermohonan($data['score']);
+		$this->insertFormPermohonan($data['score'],$idpgrs);
 	}
+
+	public function getPerusahaanByID($id)
+	{
+		$this->db->from('id_perusahaan');
+        $this->db->where('id_perusahaan',$id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        
+        if ($query->num_rows() == 1){
+            return $query->result();
+        }
+        else {
+            return false;
+        };
+	}
+
+	public function getPengurusByID($id)
+	{
+		$this->db->from('id_pengurus');
+        $this->db->where('id_pengurus',$id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        
+        if ($query->num_rows() == 1){
+            return $query->result();
+        }
+        else {
+            return false;
+        };
+	}
+
+	public function getInfoUsahaByID($id)
+	{
+		$this->db->from('info_usaha');
+        $this->db->where('id_info_usaha',$id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        
+        if ($query->num_rows() == 1){
+            return $query->result();
+        }
+        else {
+            return false;
+        };
+	}
+
+	public function getInfoKeuanganByID($id)
+	{
+		$this->db->from('info_keuangan');
+        $this->db->where('id_info_keuangan',$id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        
+        if ($query->num_rows() == 1){
+            return $query->result();
+        }
+        else {
+            return false;
+        };
+	}
+
+	public function getPermohonanByID($id)
+	{
+		$this->db->from('permohonan_pendanaan');
+        $this->db->where('id_permohonan',$id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        
+        if ($query->num_rows() == 1){
+            return $query->result();
+        }
+        else {
+            return false;
+        };
+	}
+
+	public function getAgunanByID($id)
+	{
+		$this->db->from('agunan');
+        $this->db->where('id_agunan',$id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        
+        if ($query->num_rows() == 1){
+            return $query->result();
+        }
+        else {
+            return false;
+        };
+	}
+
+	public function getIsianRMByID($id)
+	{
+		$this->db->from('isian_rm');
+        $this->db->where('id_isian',$id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        
+        if ($query->num_rows() == 1){
+            return $query->result();
+        }
+        else {
+            return false;
+        };
+	}
+
+	public function insertRMScore($array,$id)
+    {
+        $insertdata = array(
+			'yuridis' => $array['yuridis'],
+			'manajemen' => $array['manajemen'],
+			'teknis' => $array['teknis'],
+			'pemasaran' => $array['pemasaran'],
+			'keuangan' => $array['keuangan'],
+			'agunan' => $array['agunan'],
+			'fasilitas' => $array['fasilitas'],
+			'final' => $array['final']
+		);
+        $this->db->insert('score', $insertdata);
+    }
+
+    public function updateRMScore($array,$id)
+    {
+        $insertdata = array(
+			'yuridis' => $array['yuridis'],
+			'manajemen' => $array['manajemen'],
+			'teknis' => $array['teknis'],
+			'pemasaran' => $array['pemasaran'],
+			'keuangan' => $array['keuangan'],
+			'agunan' => $array['agunan'],
+			'fasilitas' => $array['fasilitas'],
+			'final' => $array['final']
+		);
+        $this->db->set($insertdata);
+        $this->db->where('id_score', $id);
+        $this->db->update('score');
+    }
+
+    public function updateScoreID($id){
+        $this->db->set('id_score',$id);
+        $this->db->where('id_form', $id);
+        $this->db->update('form_permohonan');
+    }
 
 	private function insertIDPerusahaan($array)
 	{
@@ -122,6 +268,23 @@ class Model_scoring extends CI_Model {
 		);
 
 		$this->db->insert('id_pengurus', $insertdata);
+	}
+
+	private function getIDPengurus()
+	{
+		$this->db->select('id_pengurus');
+		$this->db->from('id_pengurus');
+		$this->db->order_by('id_pengurus', 'desc');
+		$this->db->limit(1);
+
+		$query = $this->db->get();
+		if ($query->num_rows() > 0) {
+			$result = $query->row();
+			return $result->id_pengurus;
+		}
+		else {
+			return NULL;
+		};
 	}
 
 	private function insertInfoUsaha($array,$year1,$year2)
@@ -212,7 +375,7 @@ class Model_scoring extends CI_Model {
 		$this->db->insert('agunan', $insertdata);
 	}
 
-	private function insertFormPermohonan($score)
+	private function insertFormPermohonan($score,$idpgrs)
 	{
 		$this->db->select('id_perusahaan');
 		$this->db->from('id_perusahaan');
@@ -228,22 +391,7 @@ class Model_scoring extends CI_Model {
 			return NULL;
 		};
 
-
-		$this->db->select('id_pengurus');
-		$this->db->from('id_pengurus');
-		$this->db->where('tingkat_pengurus','pemilik');
-		$this->db->order_by('id_pengurus', 'desc');
-		$this->db->limit(1);
-
-		$query = $this->db->get();
-		if ($query->num_rows() > 0) {
-			$result = $query->row();
-			$insertdata['id_pemilik'] = $result->id_pengurus;
-		}
-		else {
-			return NULL;
-		};
-
+		$insertdata['id_pengurus'] = $idpgrs;
 
 		$this->db->select('id_info_usaha');
 		$this->db->from('info_usaha');
@@ -259,7 +407,6 @@ class Model_scoring extends CI_Model {
 			return NULL;
 		};
 
-
 		$this->db->select('id_info_keuangan');
 		$this->db->from('info_keuangan');
 		$this->db->order_by('id_info_keuangan', 'desc');
@@ -273,7 +420,6 @@ class Model_scoring extends CI_Model {
 		else {
 			return NULL;
 		};
-
 
 		$this->db->select('id_permohonan');
 		$this->db->from('permohonan_pendanaan');
@@ -304,9 +450,11 @@ class Model_scoring extends CI_Model {
 			return NULL;
 		};
 
-		$insertdata['score'] = $score['final'];
+		$insertdata['id_isian'] = 0;
+		$insertdata['id_score'] = 0;
 		$insertdata['approved'] = 'Belum';
 
 		$this->db->insert('form_permohonan', $insertdata);
 	}
+
 }

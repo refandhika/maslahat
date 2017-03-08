@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap-datepicker.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/normalize.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>?version=7">
 	<!--<link rel="stylesheet" href="assets/css/style-s.css">-->
 </head>
 
